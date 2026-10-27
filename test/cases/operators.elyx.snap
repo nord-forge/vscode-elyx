@@ -1,0 +1,36 @@
+>export values = tokens { arithmetic: (16 + 3 - 2 * 4 / 2) }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+#                        ^ source.elyx
+#                         ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                   ^ source.elyx punctuation.separator.colon.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.parens.begin.elyx
+#                                      ^^ source.elyx constant.numeric.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx keyword.operator.arithmetic.elyx
+#                                          ^ source.elyx
+#                                           ^ source.elyx constant.numeric.elyx
+#                                            ^ source.elyx
+#                                             ^ source.elyx keyword.operator.arithmetic.elyx
+#                                              ^ source.elyx
+#                                               ^ source.elyx constant.numeric.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx keyword.operator.arithmetic.elyx
+#                                                  ^ source.elyx
+#                                                   ^ source.elyx constant.numeric.elyx
+#                                                    ^ source.elyx
+#                                                     ^ source.elyx keyword.operator.arithmetic.elyx
+#                                                      ^ source.elyx
+#                                                       ^ source.elyx constant.numeric.elyx
+#                                                        ^ source.elyx punctuation.section.parens.end.elyx
+#                                                         ^ source.elyx
+#                                                          ^ source.elyx punctuation.section.braces.end.elyx
+>

@@ -1,0 +1,35 @@
+// The Brambleway spacing scale: one unit is 4px, so `x4` is 16.
+export space = tokens {
+  x0: 0,
+  x1: 4,
+  x2: 8,
+  x2-5: 10,
+  x3: 12,
+  x4: 16,
+  x5: 20,
+  x6: 24,
+  x8: 32,
+  x10: 40,
+  x12: 48,
+  x16: 64,
+  x20: 80,
+  x24: 96,
+  x32: 128
+}
+
+// Named insets. Fields pad 12 by 16; cards pad 24 on every side.
+export inset = tokens {
+  field: [space.x3, space.x4],
+  card: space.x6,
+  sheet: [space.x6, space.x6, space.x10],
+  stack: {gap: space.x3, section: space.x10}
+}
+
+// Content widths at the 1440px desktop breakpoint.
+export layout = tokens {
+  page: 1440,
+  content: 1200,
+  article: 720,
+  sidebar: 280,
+  dialog: 480
+}

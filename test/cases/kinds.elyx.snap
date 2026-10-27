@@ -1,0 +1,64 @@
+>f = frame {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^^ source.elyx storage.type.kind.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+#           ^ source.elyx punctuation.section.braces.end.elyx
+>b = boolean {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^^^^ source.elyx storage.type.kind.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^ source.elyx punctuation.section.braces.end.elyx
+>t = tokens {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^^^ source.elyx storage.type.kind.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.section.braces.begin.elyx
+#            ^ source.elyx punctuation.section.braces.end.elyx
+>tx = text {}
+#^^ source.elyx variable.other.definition.elyx
+#  ^ source.elyx
+#   ^ source.elyx punctuation.separator.assignment.elyx
+#    ^ source.elyx
+#     ^^^^ source.elyx storage.type.kind.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+#           ^ source.elyx punctuation.section.braces.end.elyx
+>s = shape {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^^ source.elyx storage.type.kind.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+#           ^ source.elyx punctuation.section.braces.end.elyx
+>a = asset {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^^ source.elyx storage.type.kind.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+#           ^ source.elyx punctuation.section.braces.end.elyx
+>i = icon {}
+#^ source.elyx variable.other.definition.elyx
+# ^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+#   ^ source.elyx
+#    ^^^^ source.elyx storage.type.kind.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.braces.begin.elyx
+#          ^ source.elyx punctuation.section.braces.end.elyx
+>

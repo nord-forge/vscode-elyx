@@ -1,0 +1,890 @@
+>import "./colors.dark.elyx" as dark
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                           ^ source.elyx
+#                            ^^ source.elyx keyword.control.import.elyx
+#                              ^ source.elyx
+#                               ^^^^ source.elyx variable.other.elyx
+>
+>// Brambleway colours. Brambleway is a trail planner with hut bookings, so the
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// palette leans on moss, bark and lake water. `palette` holds the fixed
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// colours. `theme` holds the roles that flip between the daylight screens
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// and the night screens; colors.dark.elyx overrides them.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>file {}
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>
+>export palette = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.braces.begin.elyx
+>  moss: #4f7d4a,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  fern: #7fae6a,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  fernPale: #cfe3c2,
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  pine: #1f3b2d,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  pineNight: #0e1612,
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  bark: #6b4f3a,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  clay: #c4693d,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  sand: #efe9dc,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  sandLight: #f8f5ee,
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  stone: #d8d2c4,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  pebble: #a39e92,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>  slate: #4a5560,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  slateLight: #6f7a84,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  ink: #1b2328,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  lake: #2f6f8f,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  lakeDeep: #1d4b63,
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  sky: #9fc9de,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  berry: #9c3d5b,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  ember: #d9502b,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  sun: #f2b632,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  white: .white
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^ source.elyx constant.language.atom.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// Waymark colours on the trail map and on the difficulty badges.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export trail = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  easy: #3f9b5a,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  moderate: #2f6f8f,
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  hard: #c4693d,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  alpine: #1b2328,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>  closed: #9c3d5b,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>  easyTint: #3f9b5a26,
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  moderateTint: #2f6f8f26,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  hardTint: #c4693d26,
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  alpineTint: #1b232826
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>@variants(dark.darkTheme)
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#         ^ source.elyx punctuation.section.parens.begin.elyx
+#          ^^^^ source.elyx variable.other.elyx
+#              ^ source.elyx punctuation.separator.accessor.elyx
+#               ^^^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.section.parens.end.elyx
+>export theme = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  page: palette.sand,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.accessor.elyx
+#                ^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  surface: palette.white,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  surfaceRaised: palette.sandLight,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.comma.elyx
+>  text: palette.ink,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.accessor.elyx
+#                ^^^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  textMuted: palette.slateLight,
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.accessor.elyx
+#                     ^^^^^^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+>  heading: palette.pine,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  link: palette.lake,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.accessor.elyx
+#                ^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  accent: palette.moss,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.accessor.elyx
+#                  ^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  border: #1b23281f,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  divider: palette.stone,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  cardTop: #ffffffb3,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  cardBottom: #f8f5ee00,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  cardShadow: .transparent,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^^^^ source.elyx constant.language.atom.elyx
+#                          ^ source.elyx punctuation.separator.comma.elyx
+>  footer: palette.pine,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.accessor.elyx
+#                  ^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  footerText: palette.stone,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^ source.elyx variable.other.elyx
+#                     ^ source.elyx punctuation.separator.accessor.elyx
+#                      ^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+>  footerMuted: opacity(palette.stone, 60%),
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^ source.elyx support.function.elyx
+#                      ^ source.elyx punctuation.section.parens.begin.elyx
+#                       ^^^^^^^ source.elyx variable.other.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                     ^ source.elyx
+#                                      ^^ source.elyx constant.numeric.elyx
+#                                        ^ source.elyx keyword.other.unit.elyx
+#                                         ^ source.elyx punctuation.section.parens.end.elyx
+#                                          ^ source.elyx punctuation.separator.comma.elyx
+>  footerActive: palette.white,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.accessor.elyx
+#                        ^^^^^ source.elyx variable.other.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+>  field: palette.white,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  fieldBorder: opacity(palette.slate, 30%),
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^ source.elyx support.function.elyx
+#                      ^ source.elyx punctuation.section.parens.begin.elyx
+#                       ^^^^^^^ source.elyx variable.other.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                     ^ source.elyx
+#                                      ^^ source.elyx constant.numeric.elyx
+#                                        ^ source.elyx keyword.other.unit.elyx
+#                                         ^ source.elyx punctuation.section.parens.end.elyx
+#                                          ^ source.elyx punctuation.separator.comma.elyx
+>  focus: opacity(palette.lake, 40%),
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx support.function.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^ source.elyx variable.other.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+#                              ^ source.elyx
+#                               ^^ source.elyx constant.numeric.elyx
+#                                 ^ source.elyx keyword.other.unit.elyx
+#                                  ^ source.elyx punctuation.section.parens.end.elyx
+#                                   ^ source.elyx punctuation.separator.comma.elyx
+>  codeSurface: palette.sandLight,
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.accessor.elyx
+#                       ^^^^^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.comma.elyx
+>  mapOverlay: palette.white
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^ source.elyx variable.other.elyx
+#                     ^ source.elyx punctuation.separator.accessor.elyx
+#                      ^^^^^ source.elyx variable.other.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// The trail map: terrain fills, contour lines and markers.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export map = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+>  meadow: #e4ecd3,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>  forest: rgba(79, 125, 74, 0.35),
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^ source.elyx support.function.elyx
+#              ^ source.elyx punctuation.section.parens.begin.elyx
+#               ^^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+#                  ^ source.elyx
+#                   ^^^ source.elyx constant.numeric.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^ source.elyx constant.numeric.elyx
+#                          ^ source.elyx punctuation.separator.comma.elyx
+#                           ^ source.elyx
+#                            ^^^^ source.elyx constant.numeric.elyx
+#                                ^ source.elyx punctuation.section.parens.end.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+>  scree: #d3cbbd,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  glacier: rgb(88%, 94%, 97%),
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx support.function.elyx
+#              ^ source.elyx punctuation.section.parens.begin.elyx
+#               ^^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx keyword.other.unit.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+#                   ^ source.elyx
+#                    ^^ source.elyx constant.numeric.elyx
+#                      ^ source.elyx keyword.other.unit.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+#                        ^ source.elyx
+#                         ^^ source.elyx constant.numeric.elyx
+#                           ^ source.elyx keyword.other.unit.elyx
+#                            ^ source.elyx punctuation.section.parens.end.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+>  water: hsl(200deg, 45%, 62%),
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^ source.elyx support.function.elyx
+#            ^ source.elyx punctuation.section.parens.begin.elyx
+#             ^^^ source.elyx constant.numeric.elyx
+#                ^^^ source.elyx keyword.other.unit.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+#                    ^ source.elyx
+#                     ^^ source.elyx constant.numeric.elyx
+#                       ^ source.elyx keyword.other.unit.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+#                         ^ source.elyx
+#                          ^^ source.elyx constant.numeric.elyx
+#                            ^ source.elyx keyword.other.unit.elyx
+#                             ^ source.elyx punctuation.section.parens.end.elyx
+#                              ^ source.elyx punctuation.separator.comma.elyx
+>  waterEdge: hsl(200, 40%, 45%, 0.8),
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^ source.elyx support.function.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^^^ source.elyx constant.numeric.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+#                     ^ source.elyx
+#                      ^^ source.elyx constant.numeric.elyx
+#                        ^ source.elyx keyword.other.unit.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+#                          ^ source.elyx
+#                           ^^ source.elyx constant.numeric.elyx
+#                             ^ source.elyx keyword.other.unit.elyx
+#                              ^ source.elyx punctuation.separator.comma.elyx
+#                               ^ source.elyx
+#                                ^^^ source.elyx constant.numeric.elyx
+#                                   ^ source.elyx punctuation.section.parens.end.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+>  contour: #6b4f3a59,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  contourMajor: #6b4f3a99,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  route: palette.ember,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  routeHalo: #ffffffd9,
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  hut: palette.berry,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.elyx
+#              ^ source.elyx punctuation.separator.accessor.elyx
+#               ^^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  summit: palette.ink
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.accessor.elyx
+#                  ^^^ source.elyx variable.other.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// Forecast strip on the trail page.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export weather = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.braces.begin.elyx
+>  clear: #f2b632,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  cloud: #a39e92,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  rain: #2f6f8f,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  snow: #e8f1f5,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  storm: #4a5560,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  warning: #d9502b,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  warningTint: #d9502b1a
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// Code samples in the guide: the GPX and route snippets.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export syntax = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>  text: .black,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^ source.elyx constant.language.atom.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  tag: #1d4b63,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  attribute: #6b4f3a,
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>  value: #3f9b5a,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>  comment: #8a8578
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>export effects = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.braces.begin.elyx
+>  shadowSoft: #1b232814,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  shadowCard: #1b23281f,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  shadowLifted: #1b232833,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  ring: #1b23280d,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>  scrim: #0e161299,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha80: #ffffffcc,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha50: #ffffff80,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha20: #ffffff33,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha10: #ffffff1a,
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha7: #ffffff12,
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  whiteAlpha3: #ffffff08,
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  inkAlpha60: #1b232899,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  inkAlpha10: #1b23281a,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  transparentInk: #1b232800,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+>  mossAlpha15: #4f7d4a26,
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  emberGlow: #d9502b66
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

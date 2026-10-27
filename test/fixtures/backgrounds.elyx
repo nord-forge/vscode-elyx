@@ -1,0 +1,332 @@
+import "./colors.elyx" as colors
+
+// Decorative backgrounds. None of them take part in layout; screens place
+// them behind content with `ignore-stack`.
+// The contour backdrop behind the route planner: a corner glow that fades
+// into the page by 40%, then a 5x5 grid of 200px cells drawn as faint
+// contour lines that fade out downwards at 25% opacity. The ember variant
+// mirrors the glow to the top-right corner for the night screens.
+export contourBackdrop = frame {
+  title: "Contour backdrop, moss",
+  caption: "Glow and fading contour grid behind the route planner.",
+  meta: {usage: "Route planner, guide header"},
+  left: 0px,
+  top: 0px,
+  width: 1200px,
+  height: 1100px,
+  children: [glow, grid],
+
+  glow = frame {
+    left: 0px,
+    top: 0px,
+    width: 100%,
+    height: 960px,
+    fill: {
+      linear-gradient: {
+        from: point(0%, 0%),
+        to: point(72.5%, 130%),
+        stops: [
+          stop(0%, colors.effects.mossAlpha15),
+          stop(40%, colors.effects.transparentInk)
+        ]
+      }
+    },
+    corner-radius: [88px, 0px, 0px, 0px]
+  }
+
+  grid = frame {
+    left: 100px,
+    top: 140px,
+    width: 1000px,
+    height: 1000px,
+    opacity: 0.25,
+    border: {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [stop(0%, colors.palette.bark), stop(100%, .transparent)]
+      }
+    },
+    corner-radius: 24px,
+    children: [
+      lineV1,
+      lineV2,
+      lineV3,
+      lineV4,
+      lineH1,
+      lineH2,
+      lineH3,
+      lineH4
+    ]
+  }
+
+  lineV1 = frame {
+    left: 200px,
+    top: 0px,
+    width: 1px,
+    height: 100%,
+    fill: {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [stop(0%, colors.map.contourMajor), stop(100%, .transparent)]
+      }
+    }
+  }
+
+  lineV2 = frame {
+    left: 400px,
+    top: 0px,
+    width: 1px,
+    height: 100%,
+    fill: {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [stop(0%, colors.map.contour), stop(100%, .transparent)]
+      }
+    }
+  }
+
+  lineV3 = frame {
+    left: 600px,
+    top: 0px,
+    width: 1px,
+    height: 100%,
+    fill: {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [stop(0%, colors.map.contourMajor), stop(100%, .transparent)]
+      }
+    }
+  }
+
+  lineV4 = frame {
+    left: 800px,
+    top: 0px,
+    width: 1px,
+    height: 100%,
+    fill: {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [stop(0%, colors.map.contour), stop(100%, .transparent)]
+      }
+    }
+  }
+
+  lineH1 = frame {
+    left: 0px,
+    top: 200px,
+    width: 100%,
+    height: 1px,
+    fill: #6b4f3ac0
+  }
+
+  lineH2 = frame {
+    left: 0px,
+    top: 400px,
+    width: 100%,
+    height: 1px,
+    fill: #6b4f3a90
+  }
+
+  lineH3 = frame {
+    left: 0px,
+    top: 600px,
+    width: 100%,
+    height: 1px,
+    fill: #6b4f3a60
+  }
+
+  lineH4 = frame {
+    left: 0px,
+    top: 800px,
+    width: 100%,
+    height: 1px,
+    fill: #6b4f3a30
+  }
+}
+
+@variant
+export contourBackdropEmber = frame : contourBackdrop {
+  title: "Contour backdrop, ember",
+  caption: "Mirrored ember glow for the night screens.",
+  left: 0px,
+  top: 1240px,
+
+  glow {
+    fill[0].linear-gradient.from: [100%, 0%],
+    fill[0].linear-gradient.to: [27.5%, 130%],
+    fill[0].linear-gradient.stops[0].color: colors.effects.emberGlow,
+    corner-radius: [0px, 88px, 0px, 0px]
+  }
+
+  grid {
+    border[0].linear-gradient.stops[0].color: colors.palette.sand
+  }
+}
+
+// The landing hero: a dusk sky over a ridge line, fading into the page at
+// the bottom so the search card can sit on it.
+export heroBackground = frame {
+  title: "Hero sky",
+  caption: "Dusk gradient behind the landing hero, fading to the page colour.",
+  meta: {usage: "Landing hero"},
+  left: 0px,
+  top: 2480px,
+  width: 1440px,
+  height: 720px,
+  fill: [
+    {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [
+          stop(0%, colors.palette.lakeDeep),
+          stop(55%, colors.palette.lake),
+          stop(85%, colors.palette.sky),
+          stop(100%, colors.palette.sun)
+        ]
+      }
+    },
+    {
+      linear-gradient: {
+        angle: 180deg,
+        stops: [
+          stop(60%, colors.effects.transparentInk),
+          stop(100%, colors.theme.page)
+        ]
+      }
+    }
+  ],
+  children: [ridge],
+
+  ridge = frame {
+    left: 0px,
+    top: 520px,
+    width: 100%,
+    height: 200px,
+    fill: colors.palette.pine,
+    corner-radius: [240px, 400px, 0px, 0px],
+    opacity: 0.9
+  }
+}
+
+// The summit glow behind the trail page title: two rotated ellipses,
+// blurred heavily, each filled with a soft radial gradient.
+export summitGlow = frame {
+  title: "Summit glow",
+  caption: "Blurred warm glow behind a trail title.",
+  meta: {usage: "Trail page header"},
+  left: 0px,
+  top: 3360px,
+  width: 1440px,
+  height: 1000px,
+  children: [outerGlow, coreGlow],
+
+  outerGlow = frame {
+    left: -160px,
+    top: -540px,
+    width: 1760px,
+    height: 1120px,
+    transform: [-0.92, -0.38, 1900, 0.38, -0.92, 760],
+    fill: {
+      radial-gradient: {
+        at: point(50%, 50%),
+        angle: 0deg,
+        radius: [90%, 140%],
+        stops: [
+          stop(0%, #f2b632e0),
+          stop(25%, #f2b632b0),
+          stop(45%, #d9502b80),
+          stop(65%, #d9502b40),
+          stop(80%, #d9502b14),
+          stop(90%, #d9502b00)
+        ]
+      }
+    },
+    filter: {type: .gaussian-blur, radius: 200px},
+    corner-radius: 9999px
+  }
+
+  coreGlow = frame {
+    left: -80px,
+    top: -420px,
+    width: 1600px,
+    height: 1000px,
+    transform: [-0.92, -0.38, 1720, 0.38, -0.92, 680],
+    fill: {
+      radial-gradient: {
+        at: point(50%, 50%),
+        angle: 0deg,
+        radius: [90%, 140%],
+        stops: [
+          stop(0%, #f2b632d0),
+          stop(30%, #f2b63290),
+          stop(50%, #d9502b50),
+          stop(70%, #d9502b00)
+        ]
+      }
+    },
+    filter: {type: .gaussian-blur, radius: 120px},
+    corner-radius: 9999px
+  }
+}
+
+// The map tile pattern under the route planner: meadow with scattered
+// forest patches and a lake.
+export mapTile = frame {
+  title: "Map tile",
+  caption: "Terrain colours for the static map preview.",
+  meta: {usage: "Route planner, trail card cover"},
+  left: 0px,
+  top: 4480px,
+  width: 760px,
+  height: 520px,
+  fill: colors.map.meadow,
+  corner-radius: 16px,
+  overflow: .clip,
+  children: [forestNorth, forestSouth, lake, scree, glacier],
+
+  forestNorth = frame {
+    left: 40px,
+    top: 24px,
+    width: 280px,
+    height: 180px,
+    fill: colors.map.forest,
+    corner-radius: [90px, 60px, 120px, 40px]
+  }
+
+  forestSouth = frame {
+    left: 420px,
+    top: 300px,
+    width: 300px,
+    height: 190px,
+    fill: colors.map.forest,
+    corner-radius: [60px, 110px, 50px, 95px]
+  }
+
+  lake = frame {
+    left: 360px,
+    top: 80px,
+    width: 220px,
+    height: 140px,
+    fill: colors.map.water,
+    border: {color: colors.map.waterEdge, width: 2px},
+    corner-radius: 9999px
+  }
+
+  scree = frame {
+    left: 80px,
+    top: 340px,
+    width: 200px,
+    height: 120px,
+    fill: colors.map.scree,
+    corner-radius: [20px, 80px, 30px, 60px]
+  }
+
+  glacier = frame {
+    left: 600px,
+    top: 20px,
+    width: 140px,
+    height: 100px,
+    fill: colors.map.glacier,
+    corner-radius: [70px, 20px, 50px, 30px]
+  }
+}

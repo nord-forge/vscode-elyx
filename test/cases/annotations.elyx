@@ -1,0 +1,18 @@
+@variant
+export hover = frame : base {}
+@context(theme="dark")
+file {}
+@context(theme=dark)
+file {}
+@with-context(theme="dark")
+one = frame : base {}
+@with-context
+two = frame : base {}
+@with-context()
+three = frame : base {}
+@with-variant(nav.sidebarItemActive)
+four = frame : base {}
+@use-variant(nav.sidebarItemActive)
+five = frame : base {}
+@with-context(theme=::theme.dark, locale="en")
+six = frame : base {}

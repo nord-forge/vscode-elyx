@@ -1,0 +1,3 @@
+export values = tokens {
+  unicode: "› ✓ 😀 café", escapes: "line\nreturn\rtab\tquote\"slash\\"
+}

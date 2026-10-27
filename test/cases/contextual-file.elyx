@@ -1,0 +1,6 @@
+file { draw-connections: .true }
+file = frame { title: "file" }
+export demo = frame { children: file, file: file }
+file
+// metadata permits whitespace and comments before its block
+{ draw-connections: .false }

@@ -1,0 +1,17 @@
+// Colours for the manual test guide. Each one checks something different.
+export palette = tokens {
+  orange: #e8590c,
+  ink: #1a1b26,
+  paper: #fdf6e3,
+  sky: #4dabf7,
+  grass: #2f9e44,
+  grey: #777777,
+  brand: rgb(91%, 35%, 5%),
+  calm: hsl(210, 60%, 45%),
+  halfOrange: opacity(orange, 50%)
+}
+
+export effects = tokens {
+  whiteAlpha7: #ffffff12,
+  shadow: rgba(0, 0, 0, 0.25)
+}

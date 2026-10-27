@@ -1,0 +1,177 @@
+>@variant
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+>export hover = frame : base {}
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^ source.elyx entity.name.type.source.elyx
+#                           ^ source.elyx
+#                            ^ source.elyx punctuation.section.braces.begin.elyx
+#                             ^ source.elyx punctuation.section.braces.end.elyx
+>@context(theme="dark")
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#        ^ source.elyx punctuation.section.parens.begin.elyx
+#         ^^^^^ source.elyx variable.parameter.function.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                ^^^^ source.elyx string.quoted.double.elyx
+#                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                     ^ source.elyx punctuation.section.parens.end.elyx
+>file {}
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>@context(theme=dark)
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#        ^ source.elyx punctuation.section.parens.begin.elyx
+#         ^^^^^ source.elyx variable.parameter.function.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^^^^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.section.parens.end.elyx
+>file {}
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>@with-context(theme="dark")
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#             ^ source.elyx punctuation.section.parens.begin.elyx
+#              ^^^^^ source.elyx variable.parameter.function.elyx
+#                   ^ source.elyx punctuation.separator.assignment.elyx
+#                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                     ^^^^ source.elyx string.quoted.double.elyx
+#                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                          ^ source.elyx punctuation.section.parens.end.elyx
+>one = frame : base {}
+#^^^ source.elyx variable.other.definition.elyx
+#   ^ source.elyx
+#    ^ source.elyx punctuation.separator.assignment.elyx
+#     ^ source.elyx
+#      ^^^^^ source.elyx storage.type.kind.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx entity.name.type.source.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+#                    ^ source.elyx punctuation.section.braces.end.elyx
+>@with-context
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+>two = frame : base {}
+#^^^ source.elyx variable.other.definition.elyx
+#   ^ source.elyx
+#    ^ source.elyx punctuation.separator.assignment.elyx
+#     ^ source.elyx
+#      ^^^^^ source.elyx storage.type.kind.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx entity.name.type.source.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+#                    ^ source.elyx punctuation.section.braces.end.elyx
+>@with-context()
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#             ^ source.elyx punctuation.section.parens.begin.elyx
+#              ^ source.elyx punctuation.section.parens.end.elyx
+>three = frame : base {}
+#^^^^^ source.elyx variable.other.definition.elyx
+#     ^ source.elyx
+#      ^ source.elyx punctuation.separator.assignment.elyx
+#       ^ source.elyx
+#        ^^^^^ source.elyx storage.type.kind.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^^^^ source.elyx entity.name.type.source.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.section.braces.begin.elyx
+#                      ^ source.elyx punctuation.section.braces.end.elyx
+>@with-variant(nav.sidebarItemActive)
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#             ^ source.elyx punctuation.section.parens.begin.elyx
+#              ^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.accessor.elyx
+#                  ^^^^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.section.parens.end.elyx
+>four = frame : base {}
+#^^^^ source.elyx variable.other.definition.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.separator.assignment.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx storage.type.kind.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx entity.name.type.source.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+#                     ^ source.elyx punctuation.section.braces.end.elyx
+>@use-variant(nav.sidebarItemActive)
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#            ^ source.elyx punctuation.section.parens.begin.elyx
+#             ^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.section.parens.end.elyx
+>five = frame : base {}
+#^^^^ source.elyx variable.other.definition.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.separator.assignment.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx storage.type.kind.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx entity.name.type.source.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+#                     ^ source.elyx punctuation.section.braces.end.elyx
+>@with-context(theme=::theme.dark, locale="en")
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#             ^ source.elyx punctuation.section.parens.begin.elyx
+#              ^^^^^ source.elyx variable.parameter.function.elyx
+#                   ^ source.elyx punctuation.separator.assignment.elyx
+#                    ^^ source.elyx punctuation.separator.root.elyx
+#                      ^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.accessor.elyx
+#                            ^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.comma.elyx
+#                                 ^ source.elyx
+#                                  ^^^^^^ source.elyx variable.parameter.function.elyx
+#                                        ^ source.elyx punctuation.separator.assignment.elyx
+#                                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                          ^^ source.elyx string.quoted.double.elyx
+#                                            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                             ^ source.elyx punctuation.section.parens.end.elyx
+>six = frame : base {}
+#^^^ source.elyx variable.other.definition.elyx
+#   ^ source.elyx
+#    ^ source.elyx punctuation.separator.assignment.elyx
+#     ^ source.elyx
+#      ^^^^^ source.elyx storage.type.kind.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx entity.name.type.source.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+#                    ^ source.elyx punctuation.section.braces.end.elyx
+>

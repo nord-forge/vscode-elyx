@@ -1,0 +1,43 @@
+# TextMate scopes
+
+The grammar uses these 39 scopes. Themes choose their colours.
+
+- `comment.line.double-slash.elyx`
+- `constant.character.escape.elyx`
+- `constant.language.atom.elyx`
+- `constant.numeric.elyx`
+- `constant.other.color.rgb-value.hex.elyx`
+- `entity.name.function.decorator.elyx`
+- `entity.name.tag.elyx`
+- `entity.name.type.source.elyx`
+- `invalid.illegal.escape.elyx`
+- `keyword.control.import.elyx`
+- `keyword.control.reserved.elyx`
+- `keyword.operator.arithmetic.elyx`
+- `keyword.operator.quote.elyx`
+- `keyword.other.unit.elyx`
+- `punctuation.definition.annotation.elyx`
+- `punctuation.definition.comment.elyx`
+- `punctuation.definition.string.begin.elyx`
+- `punctuation.definition.string.end.elyx`
+- `punctuation.section.braces.begin.elyx`
+- `punctuation.section.braces.end.elyx`
+- `punctuation.section.brackets.begin.elyx`
+- `punctuation.section.brackets.end.elyx`
+- `punctuation.section.parens.begin.elyx`
+- `punctuation.section.parens.end.elyx`
+- `punctuation.separator.accessor.elyx`
+- `punctuation.separator.assignment.elyx`
+- `punctuation.separator.colon.elyx`
+- `punctuation.separator.comma.elyx`
+- `punctuation.separator.root.elyx`
+- `source.elyx`
+- `storage.modifier.elyx`
+- `storage.type.kind.elyx`
+- `string.quoted.double.elyx`
+- `support.function.elyx`
+- `support.type.property-name.elyx`
+- `variable.language.file.elyx`
+- `variable.other.definition.elyx`
+- `variable.other.elyx`
+- `variable.parameter.function.elyx`

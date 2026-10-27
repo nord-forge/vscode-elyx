@@ -1,0 +1,5 @@
+// Only line comments exist; /* is part of this line comment.
+export values = tokens {
+  url: "https://example.test/a//b", // trailing comment
+  value: 12 // another trailing comment
+}

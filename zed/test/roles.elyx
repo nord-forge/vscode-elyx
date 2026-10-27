@@ -1,0 +1,7 @@
+file {}
+file = frame {children: child, child = frame {}}
+@context(children=frame)
+copy = frame : base.frame {
+  children {contents: .children}
+  values: {children: .true, frame: .false}
+}

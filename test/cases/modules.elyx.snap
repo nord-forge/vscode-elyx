@@ -1,0 +1,57 @@
+>use "public/fonts/Druk-Bold-Web.woff2"
+#^^^ source.elyx keyword.control.import.elyx
+#   ^ source.elyx
+#    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>import "design/tokens/colors.elyx" as colors
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                 ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                  ^ source.elyx
+#                                   ^^ source.elyx keyword.control.import.elyx
+#                                     ^ source.elyx
+#                                      ^^^^^^ source.elyx variable.other.elyx
+>priv local = tokens { value: colors.palette.blue }
+#^^^^ source.elyx storage.modifier.elyx
+#    ^ source.elyx
+#     ^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+#                     ^ source.elyx
+#                      ^^^^^ source.elyx support.type.property-name.elyx
+#                           ^ source.elyx punctuation.separator.colon.elyx
+#                            ^ source.elyx
+#                             ^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                    ^^^^^^^ source.elyx variable.other.elyx
+#                                           ^ source.elyx punctuation.separator.accessor.elyx
+#                                            ^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx punctuation.section.braces.end.elyx
+>export public-name = tokens { value: local.value }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.assignment.elyx
+#                    ^ source.elyx
+#                     ^^^^^^ source.elyx storage.type.kind.elyx
+#                           ^ source.elyx
+#                            ^ source.elyx punctuation.section.braces.begin.elyx
+#                             ^ source.elyx
+#                              ^^^^^ source.elyx support.type.property-name.elyx
+#                                   ^ source.elyx punctuation.separator.colon.elyx
+#                                    ^ source.elyx
+#                                     ^^^^^ source.elyx variable.other.elyx
+#                                          ^ source.elyx punctuation.separator.accessor.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx punctuation.section.braces.end.elyx
+>

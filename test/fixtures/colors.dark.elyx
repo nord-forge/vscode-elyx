@@ -1,0 +1,30 @@
+import "./colors.elyx" as colors
+
+// Night mode for the trail screens: a pine-black page, stone text and
+// translucent white borders. The map overlay cards stay light.
+@context(theme="dark")
+file {}
+
+export darkTheme = tokens : colors.theme {
+  page: colors.palette.pineNight,
+  surface: #16221c,
+  surfaceRaised: #1d2b24,
+  text: colors.palette.sand,
+  textMuted: colors.palette.pebble,
+  heading: colors.palette.fernPale,
+  link: colors.palette.sky,
+  accent: colors.palette.fern,
+  border: #ffffff26,
+  divider: #ffffff1a,
+  cardTop: #cfe3c21a,
+  cardBottom: #ffffff05,
+  cardShadow: #00000040,
+  footer: colors.palette.pineNight,
+  footerText: colors.palette.pebble,
+  footerMuted: #a39e9299,
+  footerActive: colors.palette.white,
+  field: #ffffff12,
+  fieldBorder: #ffffff33,
+  focus: #9fc9de66,
+  codeSurface: #101a15
+}

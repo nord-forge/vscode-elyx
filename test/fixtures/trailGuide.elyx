@@ -1,0 +1,341 @@
+import "./colors.elyx" as colors
+import "./foundations.elyx" as scale
+import "./text.elyx" as typography
+import "./components.elyx" as ui
+import "./backgrounds.elyx" as backgrounds
+
+// The trail guide for the Ridge Loop at 1440px: header, breadcrumbs, a
+// chapter sidebar, the article and an "on this page" list. Paragraphs with
+// inline links are plain text layers so their subranges survive.
+export trailGuideScreen = frame {
+  title: "Trail guide: Ridge Loop",
+  caption: "A daylight guide page with a GPX snippet and a packing list.",
+  meta: {route: "/guides/ridge-loop"},
+  left: 0px,
+  top: 0px,
+  width: 1440px,
+  layout: {direction: .column, align-items: .center},
+  fill: colors.theme.page,
+  children: [backdrop, headerBar, crumbs, columns, footer],
+
+  backdrop = frame : backgrounds.contourBackdrop {
+    left: 120px,
+    top: 0px,
+    ignore-stack: .true
+  }
+
+  headerBar = frame {
+    width: 100%,
+    layout: {direction: .column, align-items: .center},
+    padding: [scale.space.x6, 0px, scale.space.x8],
+    children: header
+  }
+
+  header = frame : ui.appHeader {
+    navigation {
+      mainNav {
+        @with-variant(ui.navLinkActive)
+        guides {}
+      }
+    }
+  }
+
+  crumbs = frame {
+    width: 1200px,
+    layout: {direction: .row, align-items: .center, item-gap: scale.space.x2},
+    children: [crumbGuides, crumbDivider, crumbRegion, crumbDivider2, crumbCurrent]
+  }
+
+  crumbGuides = text : typography.small {
+    contents: "Guides",
+    fill[0].color: colors.theme.link
+  }
+
+  crumbDivider = text : typography.small {
+    contents: "/",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  crumbRegion = text : typography.small {
+    contents: "Hollin Fells",
+    fill[0].color: colors.theme.link
+  }
+
+  crumbDivider2 = text : typography.small {
+    contents: "/",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  crumbCurrent = text : typography.small {
+    contents: "Ridge Loop"
+  }
+
+  // Sidebar 280, article 720, contents 152, with 24px gaps.
+  columns = frame {
+    width: 1200px,
+    layout: {item-gap: scale.space.x6},
+    padding: [scale.space.x10, scale.space.x0, scale.space.x24],
+    children: [sidebar, article, aside]
+  }
+
+  sidebar = frame {
+    width: 280px,
+    layout: {direction: .column, item-gap: scale.space.x1},
+    children: [sidebarTitle, chapterOverview, chapterRoute, chapterHuts, chapterSafety]
+  }
+
+  sidebarTitle = text : typography.eyebrow {
+    contents: "CHAPTERS"
+  }
+
+  chapterOverview = frame : ui.dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Overview"
+    }
+  }
+
+  @with-variant(ui.dropdownItemActive)
+  chapterRoute = frame : ui.dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "The route"
+    }
+  }
+
+  chapterHuts = frame : ui.dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Huts and water"
+    }
+  }
+
+  chapterSafety = frame : ui.dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Safety"
+    }
+  }
+
+  article = frame {
+    width: 720px,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [
+      titleBlock,
+      summary,
+      routeHeading,
+      routeText,
+      gpxBlock,
+      waterHeading,
+      waterText,
+      packingHeading,
+      packingList,
+      warningBlock,
+      nextLink
+    ]
+  }
+
+  titleBlock = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x3},
+    children: [eyebrow, pageTitle, badges]
+  }
+
+  eyebrow = text : typography.eyebrow {
+    contents: "HOLLIN FELLS · LOOP"
+  }
+
+  pageTitle = text : typography.display {
+    contents: "Ridge Loop"
+  }
+
+  badges = frame {
+    layout: {item-gap: scale.space.x2},
+    children: [difficulty, season]
+  }
+
+  difficulty = frame : ui.difficultyBadgeModerate {}
+
+  season = frame : ui.difficultyBadge {
+    fill[0].color: colors.effects.inkAlpha10,
+
+    dot {
+      fill[0].color: colors.palette.sun
+    }
+
+    label {
+      contents: "June to September",
+      fill[0].color: colors.theme.text
+    }
+  }
+
+  summary = text : typography.lead {
+    width: 100%,
+    contents: "A full day over three tops, with a hut at the halfway point and a long, easy descent beside the beck."
+  }
+
+  routeHeading = text : typography.heading {
+    contents: "The route"
+  }
+
+  routeText = text {
+    width: 100%,
+    fill: colors.theme.text,
+    subrange: {range: [92, 113], underline: .single, fill: colors.theme.link},
+    contents: "Leave the car park by the gate and follow the beck upstream for two kilometres. The full track is in the GPX file below; the first waymark is on the stile.",
+    font-size: 18,
+    font-family: "Inter",
+    font-style: "Medium",
+    line-height: 1.6
+  }
+
+  // The GPX snippet: a code surface with a mono label and the first track
+  // points of the route.
+  gpxBlock = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x2},
+    fill: colors.theme.codeSurface,
+    border: {color: colors.theme.border, width: 1px},
+    corner-radius: scale.radius.lg,
+    padding: [scale.space.x4, scale.space.x5],
+    children: [gpxLabel, gpxCode]
+  }
+
+  gpxLabel = text : typography.eyebrow {
+    contents: "RIDGE-LOOP.GPX"
+  }
+
+  gpxCode = text : typography.code {
+    width: 100%,
+    contents: "<trk>\n  <name>Ridge Loop</name>\n  <trkseg>\n    <trkpt lat=\"61.5204\" lon=\"8.2107\"><ele>412</ele></trkpt>\n    <trkpt lat=\"61.5219\" lon=\"8.2133\"><ele>436</ele></trkpt>\n  </trkseg>\n</trk>",
+    subrange: [
+      {range: [0, 5], fill: colors.syntax.tag},
+      {range: [8, 14], fill: colors.syntax.tag}
+    ]
+  }
+
+  waterHeading = text : typography.heading {
+    contents: "Huts and water"
+  }
+
+  waterText = text : typography.prose {
+    width: 100%,
+    contents: "Ferncombe Hut sits at the halfway point and sells soup until four. The spring behind it runs all summer; the tarn does not, so fill up at the hut."
+  }
+
+  packingHeading = text : typography.subheading {
+    contents: "Packing list"
+  }
+
+  packingList = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x2},
+    padding-left: scale.space.x4,
+    children: [packWater, packLayers, packMap, packFood]
+  }
+
+  packWater = text : typography.prose {
+    contents: "· Two litres of water, or a filter for the spring"
+  }
+
+  packLayers = text : typography.prose {
+    contents: "· A warm layer and a waterproof, even in July"
+  }
+
+  packMap = text : typography.prose {
+    contents: "· The map, offline: \"Download for offline use\" in the app"
+  }
+
+  packFood = text : typography.prose {
+    contents: "· Lunch; the hut kitchen closes at four"
+  }
+
+  warningBlock = frame {
+    width: 100%,
+    layout: {align-items: .left, item-gap: scale.space.x3},
+    fill: colors.weather.warningTint,
+    border: {color: colors.weather.warning, width: 1px, sides: [.left]},
+    corner-radius: [0px, 8px, 8px, 0px],
+    padding: scale.space.x4,
+    children: [warningTitle, warningText]
+  }
+
+  warningTitle = text : typography.bodyStrong {
+    contents: "Exposed section",
+    fill[0].color: colors.weather.warning
+  }
+
+  warningText = text : typography.body {
+    width: 560px,
+    contents: "The ridge between the second and third tops has no shelter. In wind above 50 km/h, take the valley path from the hut instead."
+  }
+
+  nextLink = frame {
+    width: 100%,
+    layout: {justify-content: .end, align-items: .center, item-gap: scale.space.x2},
+    padding-top: scale.space.x8,
+    children: [nextLabel, nextTitle]
+  }
+
+  nextLabel = text : typography.small {
+    contents: "Next chapter",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  nextTitle = text : typography.link {
+    contents: "Huts and water"
+  }
+
+  aside = frame {
+    width: 152px,
+    layout: {direction: .column, item-gap: scale.space.x2},
+    children: [asideTitle, tocRoute, tocWater, tocPacking, tocSafety]
+  }
+
+  asideTitle = text : typography.eyebrow {
+    contents: "ON THIS PAGE"
+  }
+
+  tocRoute = text : typography.small {
+    contents: "The route",
+    font-style: "Bold"
+  }
+
+  tocWater = text : typography.small {
+    contents: "Huts and water",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  tocPacking = text : typography.small {
+    contents: "Packing list",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  tocSafety = text : typography.small {
+    contents: "Safety",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  footer = frame : ui.appFooter {}
+}
+
+// The same guide with the GPX block collapsed, as it shows on a first visit.
+@variant
+export trailGuideCollapsed = frame : trailGuideScreen {
+  title: "Trail guide, snippet collapsed",
+  caption: "The GPX block shows only its label until opened.",
+  left: 1600px,
+  top: 0px,
+
+  columns {
+    article {
+      gpxBlock {
+        overrides: [remove(trailGuideScreen.gpxCode)]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+// Spacing in pixels. `huge` is larger than the card and gets scaled.
+export space = tokens {
+  x1: 4,
+  x3: 12,
+  x6: 24,
+  huge: 400
+}

@@ -1,0 +1,17 @@
+{
+  "languages": [
+    {
+      "id": "elyx",
+      "aliases": ["Elyx"],
+      "extensions": [".elyx"],
+      "configuration": "./language-configuration.json"
+    }
+  ],
+  "grammars": [
+    {
+      "language": "elyx",
+      "scopeName": "source.elyx",
+      "path": "./syntaxes/elyx.tmLanguage.json"
+    }
+  ]
+}

@@ -1,0 +1,748 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Elyx",
+  "scopeName": "source.elyx",
+  "fileTypes": [
+    "elyx"
+  ],
+  "patterns": [
+    {
+      "include": "#entries"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "begin": "//",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.elyx"
+            }
+          },
+          "end": "$",
+          "name": "comment.line.double-slash.elyx"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.elyx"
+            }
+          },
+          "end": "(\")|$",
+          "endCaptures": {
+            "1": {
+              "name": "punctuation.definition.string.end.elyx"
+            }
+          },
+          "name": "string.quoted.double.elyx",
+          "patterns": [
+            {
+              "match": "\\\\[nrt\"\\\\]",
+              "name": "constant.character.escape.elyx"
+            },
+            {
+              "match": "\\\\.",
+              "name": "invalid.illegal.escape.elyx"
+            }
+          ]
+        }
+      ]
+    },
+    "annotations": {
+      "patterns": [
+        {
+          "begin": "(@)([A-Za-z_-][A-Za-z0-9_-]*)",
+          "beginCaptures": {
+            "0": {
+              "name": "entity.name.function.decorator.elyx"
+            },
+            "1": {
+              "name": "punctuation.definition.annotation.elyx"
+            }
+          },
+          "end": "(?=\\S)(?!//|\\()",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "begin": "\\(",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.parens.begin.elyx"
+                }
+              },
+              "end": "\\)",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.parens.end.elyx"
+                }
+              },
+              "patterns": [
+                {
+                  "include": "#comments"
+                },
+                {
+                  "include": "#strings"
+                },
+                {
+                  "include": "#named-argument"
+                },
+                {
+                  "include": "#qualified-symbols"
+                },
+                {
+                  "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+                  "name": "variable.other.elyx"
+                },
+                {
+                  "include": "#separators"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "property": {
+      "begin": "(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*(?=:))",
+      "end": "(?=:(?!:))",
+      "applyEndPatternLast": false,
+      "patterns": [
+        {
+          "match": "::",
+          "name": "punctuation.separator.root.elyx"
+        },
+        {
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.begin.elyx"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\d+",
+              "name": "constant.numeric.elyx"
+            }
+          ]
+        },
+        {
+          "match": "\\.",
+          "name": "punctuation.separator.accessor.elyx"
+        },
+        {
+          "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+          "name": "support.type.property-name.elyx"
+        }
+      ]
+    },
+    "override": {
+      "begin": "(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*(?=\\{))",
+      "end": "(?=\\{)",
+      "applyEndPatternLast": false,
+      "patterns": [
+        {
+          "match": "::",
+          "name": "punctuation.separator.root.elyx"
+        },
+        {
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.begin.elyx"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "match": "\\d+",
+              "name": "constant.numeric.elyx"
+            }
+          ]
+        },
+        {
+          "match": "\\.",
+          "name": "punctuation.separator.accessor.elyx"
+        },
+        {
+          "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+          "name": "entity.name.tag.elyx"
+        }
+      ]
+    },
+    "declaration-name": {
+      "patterns": [
+        {
+          "match": "[A-Za-z_-][A-Za-z0-9_-]*(?=[ \\t]*=)",
+          "name": "variable.other.definition.elyx"
+        }
+      ]
+    },
+    "declaration-body": {
+      "begin": "=",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.separator.assignment.elyx"
+        }
+      },
+      "end": "(?=[{},])",
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#kind"
+        },
+        {
+          "begin": ":",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.separator.colon.elyx"
+            }
+          },
+          "end": "(?=[{},])",
+          "patterns": [
+            {
+              "include": "#comments"
+            },
+            {
+              "match": "::",
+              "name": "punctuation.separator.root.elyx"
+            },
+            {
+              "begin": "\\[",
+              "beginCaptures": {
+                "0": {
+                  "name": "punctuation.section.brackets.begin.elyx"
+                }
+              },
+              "end": "\\]",
+              "endCaptures": {
+                "0": {
+                  "name": "punctuation.section.brackets.end.elyx"
+                }
+              },
+              "patterns": [
+                {
+                  "match": "\\d+",
+                  "name": "constant.numeric.elyx"
+                }
+              ]
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.accessor.elyx"
+            },
+            {
+              "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+              "name": "entity.name.type.source.elyx"
+            }
+          ]
+        }
+      ]
+    },
+    "file": {
+      "patterns": [
+        {
+          "match": "\\bfile\\b(?=[ \\t]*\\{)",
+          "name": "variable.language.file.elyx"
+        }
+      ]
+    },
+    "kind": {
+      "patterns": [
+        {
+          "match": "(?<![A-Za-z0-9_.-])(?:frame|boolean|tokens|text|shape|asset|icon)(?![A-Za-z0-9_-])",
+          "name": "storage.type.kind.elyx"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "match": "(?<![A-Za-z0-9_.-])(?:import|use|as)(?![A-Za-z0-9_-])",
+          "name": "keyword.control.import.elyx"
+        },
+        {
+          "match": "(?<![A-Za-z0-9_.-])(?:export|priv)(?![A-Za-z0-9_-])",
+          "name": "storage.modifier.elyx"
+        },
+        {
+          "match": "(?<![A-Za-z0-9_.-])(?:board|component|group|__board__|__document__|__file__|__canvas__|let|const|fn|this|self|children|where|type|trait|super|struct|static|ref|mod|loop|in|data|async|await|if|when|then|else|match|case|not|and|or|try|catch|rescue|finally|throw|return)(?![A-Za-z0-9_-])",
+          "name": "keyword.control.reserved.elyx"
+        },
+        {
+          "include": "#kind"
+        }
+      ]
+    },
+    "colors": {
+      "patterns": [
+        {
+          "match": "#(?:[0-9A-Fa-f]{8}|[0-9A-Fa-f]{6}|[0-9A-Fa-f]{4}|[0-9A-Fa-f]{3})(?![A-Za-z0-9_-])",
+          "name": "constant.other.color.rgb-value.hex.elyx"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "match": "(?<![A-Za-z0-9_.-])([+-]?\\d+(?:\\.\\d+)?)(%|[A-Za-z_-][A-Za-z0-9_-]*)(?![A-Za-z0-9_-])",
+          "name": "constant.numeric.elyx",
+          "captures": {
+            "1": {
+              "name": "constant.numeric.elyx"
+            },
+            "2": {
+              "name": "keyword.other.unit.elyx"
+            }
+          }
+        },
+        {
+          "match": "(?<![A-Za-z0-9_.-])[+-]?\\d+(?:\\.\\d+)?(?![A-Za-z0-9_.-])",
+          "name": "constant.numeric.elyx"
+        }
+      ]
+    },
+    "atoms": {
+      "patterns": [
+        {
+          "match": "(?<![A-Za-z0-9_.-])\\.[A-Za-z_-][A-Za-z0-9_-]*",
+          "name": "constant.language.atom.elyx"
+        }
+      ]
+    },
+    "qualified-symbols": {
+      "patterns": [
+        {
+          "begin": "(::)(?=[A-Za-z_-][A-Za-z0-9_-]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "punctuation.separator.root.elyx"
+            }
+          },
+          "end": "(?=$|[^A-Za-z0-9_.-])",
+          "patterns": [
+            {
+              "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+              "name": "variable.other.elyx"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.accessor.elyx"
+            }
+          ]
+        },
+        {
+          "begin": "([A-Za-z_-][A-Za-z0-9_-]*)(?=\\.[A-Za-z_-][A-Za-z0-9_-]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "variable.other.elyx"
+            }
+          },
+          "end": "(?=$|[^A-Za-z0-9_.-])",
+          "patterns": [
+            {
+              "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+              "name": "variable.other.elyx"
+            },
+            {
+              "match": "\\.",
+              "name": "punctuation.separator.accessor.elyx"
+            }
+          ]
+        }
+      ]
+    },
+    "named-argument": {
+      "patterns": [
+        {
+          "match": "[A-Za-z_-][A-Za-z0-9_-]*(?=[ \\t]*=)",
+          "name": "variable.parameter.function.elyx"
+        }
+      ]
+    },
+    "calls": {
+      "patterns": [
+        {
+          "begin": "([A-Za-z_-][A-Za-z0-9_-]*)([ \\t]*)(\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "support.function.elyx"
+            },
+            "3": {
+              "name": "punctuation.section.parens.begin.elyx"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.parens.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#named-argument"
+            },
+            {
+              "include": "#expression"
+            }
+          ]
+        }
+      ]
+    },
+    "groups": {
+      "patterns": [
+        {
+          "begin": "\\(",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.parens.begin.elyx"
+            }
+          },
+          "end": "\\)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.parens.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#expression"
+            }
+          ]
+        }
+      ]
+    },
+    "lists": {
+      "patterns": [
+        {
+          "begin": "\\[",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.begin.elyx"
+            }
+          },
+          "end": "\\]",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.brackets.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#expression"
+            }
+          ]
+        }
+      ]
+    },
+    "blocks": {
+      "patterns": [
+        {
+          "begin": "\\{",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.braces.begin.elyx"
+            }
+          },
+          "end": "\\}",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.braces.end.elyx"
+            }
+          },
+          "patterns": [
+            {
+              "include": "#block-entries"
+            }
+          ]
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "match": "'",
+          "name": "keyword.operator.quote.elyx"
+        },
+        {
+          "match": "(?<=\\s)[+*/-](?!/)",
+          "name": "keyword.operator.arithmetic.elyx"
+        }
+      ]
+    },
+    "separators": {
+      "patterns": [
+        {
+          "match": ":",
+          "name": "punctuation.separator.colon.elyx"
+        },
+        {
+          "match": "=",
+          "name": "punctuation.separator.assignment.elyx"
+        },
+        {
+          "match": ",",
+          "name": "punctuation.separator.comma.elyx"
+        }
+      ]
+    },
+    "expression": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#separators"
+        },
+        {
+          "include": "#expression-number"
+        },
+        {
+          "include": "#expression-hyphen-qualified"
+        },
+        {
+          "include": "#expression-hyphen-name"
+        },
+        {
+          "include": "#expression-value"
+        }
+      ]
+    },
+    "entries": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#annotations"
+        },
+        {
+          "include": "#property"
+        },
+        {
+          "include": "#file"
+        },
+        {
+          "include": "#override"
+        },
+        {
+          "include": "#declaration-name"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#declaration-body"
+        },
+        {
+          "include": "#blocks"
+        },
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "block-entries": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#annotations"
+        },
+        {
+          "include": "#property"
+        },
+        {
+          "include": "#override"
+        },
+        {
+          "include": "#declaration-name"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#declaration-body"
+        },
+        {
+          "include": "#blocks"
+        },
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "expression-number": {
+      "begin": "(?<![A-Za-z0-9_.-])([+-]?\\d+(?:\\.\\d+)?)(%|[A-Za-z_-][A-Za-z0-9_-]*)?(?![A-Za-z0-9_.-])",
+      "beginCaptures": {
+        "1": {
+          "name": "constant.numeric.elyx"
+        },
+        "2": {
+          "name": "keyword.other.unit.elyx"
+        }
+      },
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#expression-tail"
+        }
+      ]
+    },
+    "expression-hyphen-name": {
+      "begin": "-(?:[A-Za-z_-][A-Za-z0-9_-]*)?",
+      "beginCaptures": {
+        "0": {
+          "name": "variable.other.elyx"
+        }
+      },
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#expression-tail"
+        }
+      ]
+    },
+    "unsigned-numbers": {
+      "patterns": [
+        {
+          "match": "(?<![A-Za-z0-9_.])(\\d+(?:\\.\\d+)?)(%|[A-Za-z_-][A-Za-z0-9_-]*)?(?![A-Za-z0-9_.-])",
+          "captures": {
+            "1": {
+              "name": "constant.numeric.elyx"
+            },
+            "2": {
+              "name": "keyword.other.unit.elyx"
+            }
+          }
+        }
+      ]
+    },
+    "expression-operators": {
+      "begin": "(?:[+*/](?!/)|-)",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.operator.arithmetic.elyx"
+        }
+      },
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "quote": {
+      "begin": "'",
+      "beginCaptures": {
+        "0": {
+          "name": "keyword.operator.quote.elyx"
+        }
+      },
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#expression"
+        }
+      ]
+    },
+    "expression-tail": {
+      "patterns": [
+        {
+          "include": "#comments"
+        },
+        {
+          "include": "#strings"
+        },
+        {
+          "include": "#colors"
+        },
+        {
+          "include": "#expression-operators"
+        },
+        {
+          "include": "#unsigned-numbers"
+        },
+        {
+          "include": "#qualified-symbols"
+        },
+        {
+          "include": "#atoms"
+        },
+        {
+          "include": "#keywords"
+        },
+        {
+          "include": "#calls"
+        },
+        {
+          "include": "#quote"
+        },
+        {
+          "include": "#lists"
+        },
+        {
+          "include": "#blocks"
+        },
+        {
+          "include": "#groups"
+        },
+        {
+          "include": "#separators"
+        },
+        {
+          "match": "[A-Za-z_-][A-Za-z0-9_-]*",
+          "name": "variable.other.elyx"
+        }
+      ]
+    },
+    "expression-value": {
+      "begin": "(?=[^\\s,:=)\\]}])",
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#expression-tail"
+        }
+      ]
+    },
+    "expression-hyphen-qualified": {
+      "begin": "(?=-[A-Za-z0-9_-]*\\.[A-Za-z_-])",
+      "end": "(?=[@,:=)\\]}])|(?=(?:::)?[A-Za-z_-][A-Za-z0-9_-]*(?:\\.[A-Za-z_-][A-Za-z0-9_-]*|\\[\\d+\\])*[ \\t]*[:={])",
+      "patterns": [
+        {
+          "include": "#qualified-symbols"
+        },
+        {
+          "include": "#expression-tail"
+        }
+      ]
+    }
+  }
+}

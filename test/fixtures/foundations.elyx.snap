@@ -1,0 +1,539 @@
+>// Brambleway foundations: the spacing scale, corner radii, layout widths and
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// the type scale. Colours live in colors.elyx because they vary by theme;
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// nothing in here does.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>file {}
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>
+>// One unit is 4px. `x4` is the default gap between controls.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export space = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  x0: 0,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  x1: 4,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  x2: 8,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  x2-5: 10,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  x3: 12,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x4: 16,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x5: 20,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x6: 24,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x8: 32,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x10: 40,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x12: 48,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x16: 64,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x20: 80,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x24: 96,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x32: 128
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^ source.elyx constant.numeric.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>export radius = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>  none: 0,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  sm: 2,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  base: 4,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  md: 6,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  lg: 8,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^ source.elyx constant.numeric.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  xl: 12,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  card: 16,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  sheet: [16, 16, 0, 0],
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.brackets.begin.elyx
+#          ^^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+#             ^ source.elyx
+#              ^^ source.elyx constant.numeric.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx constant.numeric.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx constant.numeric.elyx
+#                      ^ source.elyx punctuation.section.brackets.end.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  tag: [2, 8, 8, 2],
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^ source.elyx punctuation.section.brackets.begin.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+#          ^ source.elyx
+#           ^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+#             ^ source.elyx
+#              ^ source.elyx constant.numeric.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+#                ^ source.elyx
+#                 ^ source.elyx constant.numeric.elyx
+#                  ^ source.elyx punctuation.section.brackets.end.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  field: md,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^ source.elyx variable.other.elyx
+#           ^ source.elyx punctuation.separator.comma.elyx
+>  pill: 9999
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^ source.elyx constant.numeric.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// Content widths at the 1440px desktop breakpoint.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export layout = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>  page: 1440,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>  content: 1200,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^ source.elyx constant.numeric.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  article: 720,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  sidebar: 280,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  card: 368,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^ source.elyx constant.numeric.elyx
+#           ^ source.elyx punctuation.separator.comma.elyx
+>  map: 760,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  dialog: 480
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^ source.elyx constant.numeric.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>export fonts = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  body: "Inter",
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#         ^^^^^ source.elyx string.quoted.double.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  display: "Fraunces",
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#            ^^^^^^^^ source.elyx string.quoted.double.elyx
+#                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  mono: "JetBrains Mono"
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#         ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>export fontSize = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^ source.elyx variable.other.definition.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.separator.assignment.elyx
+#                 ^ source.elyx
+#                  ^^^^^^ source.elyx storage.type.kind.elyx
+#                        ^ source.elyx
+#                         ^ source.elyx punctuation.section.braces.begin.elyx
+>  xs: 12,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  sm: 14,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  base: 16,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  lg: 18,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  xl: 20,
+#^^ source.elyx
+#  ^^ source.elyx support.type.property-name.elyx
+#    ^ source.elyx punctuation.separator.colon.elyx
+#     ^ source.elyx
+#      ^^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.separator.comma.elyx
+>  x2l: 24,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x3l: 32,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  x4l: 44,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  display: 64,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^ source.elyx constant.numeric.elyx
+#             ^ source.elyx punctuation.separator.comma.elyx
+>  hero: 96,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  stat: 72
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^ source.elyx constant.numeric.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>export lineHeight = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.assignment.elyx
+#                   ^ source.elyx
+#                    ^^^^^^ source.elyx storage.type.kind.elyx
+#                          ^ source.elyx
+#                           ^ source.elyx punctuation.section.braces.begin.elyx
+>  none: 1,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  tight: 1.1,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>  snug: 1.25,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>  normal: 1.4,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^ source.elyx constant.numeric.elyx
+#             ^ source.elyx punctuation.separator.comma.elyx
+>  relaxed: 1.6,
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  loose: 1.75
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^ source.elyx constant.numeric.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// Letter spacing is a percentage of the font size.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export letterSpacing = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.assignment.elyx
+#                      ^ source.elyx
+#                       ^^^^^^ source.elyx storage.type.kind.elyx
+#                             ^ source.elyx
+#                              ^ source.elyx punctuation.section.braces.begin.elyx
+>  tight: -2%,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^ source.elyx constant.numeric.elyx
+#           ^ source.elyx keyword.other.unit.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>  normal: 0%,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^ source.elyx constant.numeric.elyx
+#           ^ source.elyx keyword.other.unit.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>  wide: 4%,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^ source.elyx keyword.other.unit.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  wider: 8%
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx keyword.other.unit.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

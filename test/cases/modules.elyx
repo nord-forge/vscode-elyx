@@ -1,0 +1,4 @@
+use "public/fonts/Druk-Bold-Web.woff2"
+import "design/tokens/colors.elyx" as colors
+priv local = tokens { value: colors.palette.blue }
+export public-name = tokens { value: local.value }

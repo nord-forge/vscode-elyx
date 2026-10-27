@@ -1,0 +1,66 @@
+>file { draw-connections: .true }
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^^^^ source.elyx constant.language.atom.elyx
+#                              ^ source.elyx
+#                               ^ source.elyx punctuation.section.braces.end.elyx
+>file = frame { title: "file" }
+#^^^^ source.elyx variable.other.definition.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.separator.assignment.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx storage.type.kind.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.braces.begin.elyx
+#              ^ source.elyx
+#               ^^^^^ source.elyx support.type.property-name.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                       ^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                            ^ source.elyx
+#                             ^ source.elyx punctuation.section.braces.end.elyx
+>export demo = frame { children: file, file: file }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                              ^ source.elyx punctuation.separator.colon.elyx
+#                               ^ source.elyx
+#                                ^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                     ^ source.elyx
+#                                      ^^^^ source.elyx support.type.property-name.elyx
+#                                          ^ source.elyx punctuation.separator.colon.elyx
+#                                           ^ source.elyx
+#                                            ^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx punctuation.section.braces.end.elyx
+>file
+#^^^^ source.elyx variable.other.elyx
+>// metadata permits whitespace and comments before its block
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>{ draw-connections: .false }
+#^ source.elyx punctuation.section.braces.begin.elyx
+# ^ source.elyx
+#  ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^ source.elyx constant.language.atom.elyx
+#                          ^ source.elyx
+#                           ^ source.elyx punctuation.section.braces.end.elyx
+>

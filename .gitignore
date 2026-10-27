@@ -1,0 +1,7 @@
+node_modules/
+*.vsix
+artifacts/
+.DS_Store
+test/output/
+.package/
+test/manual/.vscode/

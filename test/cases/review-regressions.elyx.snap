@@ -1,0 +1,592 @@
+>export values = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>  leading-hyphen: -name,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  single-hyphen: -,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  repeated-hyphen: --name,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  names: [-name, -name, --],
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.brackets.begin.elyx
+#          ^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+#                ^ source.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^ source.elyx variable.other.elyx
+#                          ^ source.elyx punctuation.section.brackets.end.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+>  arguments: custom(-name, -name),
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^^ source.elyx support.function.elyx
+#                   ^ source.elyx punctuation.section.parens.begin.elyx
+#                    ^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+#                          ^ source.elyx
+#                           ^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.section.parens.end.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+>  group: ( -name ),
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.parens.begin.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.parens.end.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  addition: (1 +2),
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.parens.begin.elyx
+#             ^ source.elyx constant.numeric.elyx
+#              ^ source.elyx
+#               ^ source.elyx keyword.operator.arithmetic.elyx
+#                ^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx punctuation.section.parens.end.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  subtraction: (1 -2),
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.section.parens.begin.elyx
+#                ^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx keyword.operator.arithmetic.elyx
+#                   ^ source.elyx constant.numeric.elyx
+#                    ^ source.elyx punctuation.section.parens.end.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  symbolicPlus: (foo +2),
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx keyword.operator.arithmetic.elyx
+#                      ^ source.elyx constant.numeric.elyx
+#                       ^ source.elyx punctuation.section.parens.end.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>  symbolicMinus: (foo -2),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.parens.begin.elyx
+#                  ^^^ source.elyx variable.other.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx keyword.operator.arithmetic.elyx
+#                       ^ source.elyx constant.numeric.elyx
+#                        ^ source.elyx punctuation.section.parens.end.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  symbolicOperand: (foo -bar),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.parens.begin.elyx
+#                    ^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx keyword.operator.arithmetic.elyx
+#                         ^^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.section.parens.end.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+>  groupedPlus: ((1) +2),
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.section.parens.begin.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^ source.elyx constant.numeric.elyx
+#                  ^ source.elyx punctuation.section.parens.end.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx keyword.operator.arithmetic.elyx
+#                     ^ source.elyx constant.numeric.elyx
+#                      ^ source.elyx punctuation.section.parens.end.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+>  symbolicPlusOperand: (foo +bar),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.parens.begin.elyx
+#                        ^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx
+#                            ^ source.elyx keyword.operator.arithmetic.elyx
+#                             ^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.section.parens.end.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+>  multipliedNegative: (1 *-2),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.parens.begin.elyx
+#                       ^ source.elyx constant.numeric.elyx
+#                        ^ source.elyx
+#                         ^ source.elyx keyword.operator.arithmetic.elyx
+#                          ^^ source.elyx constant.numeric.elyx
+#                            ^ source.elyx punctuation.section.parens.end.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+>  addedNegative: (1 + -2),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.parens.begin.elyx
+#                  ^ source.elyx constant.numeric.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx keyword.operator.arithmetic.elyx
+#                     ^ source.elyx
+#                      ^^ source.elyx constant.numeric.elyx
+#                        ^ source.elyx punctuation.section.parens.end.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  subtractedNegative: (1 - -2),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.parens.begin.elyx
+#                       ^ source.elyx constant.numeric.elyx
+#                        ^ source.elyx
+#                         ^ source.elyx keyword.operator.arithmetic.elyx
+#                          ^ source.elyx
+#                           ^^ source.elyx constant.numeric.elyx
+#                             ^ source.elyx punctuation.section.parens.end.elyx
+#                              ^ source.elyx punctuation.separator.comma.elyx
+>  negativeLength: (1 + -0.5px),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.section.parens.begin.elyx
+#                   ^ source.elyx constant.numeric.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx keyword.operator.arithmetic.elyx
+#                      ^ source.elyx
+#                       ^^^^ source.elyx constant.numeric.elyx
+#                           ^^ source.elyx keyword.other.unit.elyx
+#                             ^ source.elyx punctuation.section.parens.end.elyx
+#                              ^ source.elyx punctuation.separator.comma.elyx
+>  negativeNamedOperand: (foo + -bar),
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.parens.begin.elyx
+#                         ^^^ source.elyx variable.other.elyx
+#                            ^ source.elyx
+#                             ^ source.elyx keyword.operator.arithmetic.elyx
+#                              ^ source.elyx
+#                               ^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.section.parens.end.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+>  hyphenPath: -foo.bar,
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>  bareHyphenPath: -.value,
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.separator.accessor.elyx
+#                    ^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  hyphenPathList: [-foo.bar, -foo.bar],
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.section.brackets.begin.elyx
+#                   ^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.accessor.elyx
+#                        ^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+#                            ^ source.elyx
+#                             ^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^ source.elyx variable.other.elyx
+#                                     ^ source.elyx punctuation.section.brackets.end.elyx
+#                                      ^ source.elyx punctuation.separator.comma.elyx
+>  signed: [-2, +2],
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.brackets.begin.elyx
+#           ^^ source.elyx constant.numeric.elyx
+#             ^ source.elyx punctuation.separator.comma.elyx
+#              ^ source.elyx
+#               ^^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx punctuation.section.brackets.end.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>  newline-addition: (1
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.parens.begin.elyx
+#                     ^ source.elyx constant.numeric.elyx
+>+ 2),
+#^ source.elyx keyword.operator.arithmetic.elyx
+# ^ source.elyx
+#  ^ source.elyx constant.numeric.elyx
+#   ^ source.elyx punctuation.section.parens.end.elyx
+#    ^ source.elyx punctuation.separator.comma.elyx
+>  newline-subtraction: (1
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.parens.begin.elyx
+#                        ^ source.elyx constant.numeric.elyx
+>- 2),
+#^ source.elyx keyword.operator.arithmetic.elyx
+# ^ source.elyx
+#  ^ source.elyx constant.numeric.elyx
+#   ^ source.elyx punctuation.section.parens.end.elyx
+#    ^ source.elyx punctuation.separator.comma.elyx
+>  newline-multiplication: (1
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                        ^ source.elyx punctuation.separator.colon.elyx
+#                         ^ source.elyx
+#                          ^ source.elyx punctuation.section.parens.begin.elyx
+#                           ^ source.elyx constant.numeric.elyx
+>* 2),
+#^ source.elyx keyword.operator.arithmetic.elyx
+# ^ source.elyx
+#  ^ source.elyx constant.numeric.elyx
+#   ^ source.elyx punctuation.section.parens.end.elyx
+#    ^ source.elyx punctuation.separator.comma.elyx
+>  newline-division: (1
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.parens.begin.elyx
+#                     ^ source.elyx constant.numeric.elyx
+>/ 2),
+#^ source.elyx keyword.operator.arithmetic.elyx
+# ^ source.elyx
+#  ^ source.elyx constant.numeric.elyx
+#   ^ source.elyx punctuation.section.parens.end.elyx
+#    ^ source.elyx punctuation.separator.comma.elyx
+>  map: { key: { nested: [stop(0%, #fff), { color: .transparent }] } },
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^ source.elyx punctuation.section.braces.begin.elyx
+#        ^ source.elyx
+#         ^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.braces.begin.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.brackets.begin.elyx
+#                         ^^^^ source.elyx support.function.elyx
+#                             ^ source.elyx punctuation.section.parens.begin.elyx
+#                              ^ source.elyx constant.numeric.elyx
+#                               ^ source.elyx keyword.other.unit.elyx
+#                                ^ source.elyx punctuation.separator.comma.elyx
+#                                 ^ source.elyx
+#                                  ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                                      ^ source.elyx punctuation.section.parens.end.elyx
+#                                       ^ source.elyx punctuation.separator.comma.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx support.type.property-name.elyx
+#                                                ^ source.elyx punctuation.separator.colon.elyx
+#                                                 ^ source.elyx
+#                                                  ^^^^^^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                              ^ source.elyx
+#                                                               ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                                 ^ source.elyx
+#                                                                  ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                   ^ source.elyx
+#                                                                    ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                     ^ source.elyx punctuation.separator.comma.elyx
+>  file-call: file(file, file = file)
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^ source.elyx support.function.elyx
+#                 ^ source.elyx punctuation.section.parens.begin.elyx
+#                  ^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^^^ source.elyx variable.parameter.function.elyx
+#                            ^ source.elyx
+#                             ^ source.elyx punctuation.separator.assignment.elyx
+#                              ^ source.elyx
+#                               ^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.section.parens.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>export base = frame {}
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+#                     ^ source.elyx punctuation.section.braces.end.elyx
+>export instance = frame : base {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^ source.elyx variable.other.definition.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.separator.assignment.elyx
+#                 ^ source.elyx
+#                  ^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.separator.colon.elyx
+#                         ^ source.elyx
+#                          ^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx
+#                               ^ source.elyx punctuation.section.braces.begin.elyx
+>  file {},
+#^^ source.elyx
+#  ^^^^ source.elyx entity.name.tag.elyx
+#      ^ source.elyx
+#       ^ source.elyx punctuation.section.braces.begin.elyx
+#        ^ source.elyx punctuation.section.braces.end.elyx
+#         ^ source.elyx punctuation.separator.comma.elyx
+>  children {},
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx entity.name.tag.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.section.braces.begin.elyx
+#            ^ source.elyx punctuation.section.braces.end.elyx
+#             ^ source.elyx punctuation.separator.comma.elyx
+>  frame {},
+#^^ source.elyx
+#  ^^^^^ source.elyx entity.name.tag.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.section.braces.begin.elyx
+#         ^ source.elyx punctuation.section.braces.end.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  import {},
+#^^ source.elyx
+#  ^^^^^^ source.elyx entity.name.tag.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.braces.begin.elyx
+#          ^ source.elyx punctuation.section.braces.end.elyx
+#           ^ source.elyx punctuation.separator.comma.elyx
+>  if {},
+#^^ source.elyx
+#  ^^ source.elyx entity.name.tag.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+#       ^ source.elyx punctuation.separator.comma.elyx
+>  ::children {},
+#^^ source.elyx
+#  ^^ source.elyx punctuation.separator.root.elyx
+#    ^^^^^^^^ source.elyx entity.name.tag.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.braces.begin.elyx
+#              ^ source.elyx punctuation.section.braces.end.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  label.children {},
+#^^ source.elyx
+#  ^^^^^ source.elyx entity.name.tag.elyx
+#       ^ source.elyx punctuation.separator.accessor.elyx
+#        ^^^^^^^^ source.elyx entity.name.tag.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.braces.begin.elyx
+#                  ^ source.elyx punctuation.section.braces.end.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  ::fill[0].frame[2].color: #fff
+#^^ source.elyx
+#  ^^ source.elyx punctuation.separator.root.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.section.brackets.begin.elyx
+#                  ^ source.elyx constant.numeric.elyx
+#                   ^ source.elyx punctuation.section.brackets.end.elyx
+#                    ^ source.elyx punctuation.separator.accessor.elyx
+#                     ^^^^^ source.elyx support.type.property-name.elyx
+#                          ^ source.elyx punctuation.separator.colon.elyx
+#                           ^ source.elyx
+#                            ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>file { draw-connections: .true }
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^^^^ source.elyx constant.language.atom.elyx
+#                              ^ source.elyx
+#                               ^ source.elyx punctuation.section.braces.end.elyx
+>file = frame { file: file }
+#^^^^ source.elyx variable.other.definition.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.separator.assignment.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx storage.type.kind.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.braces.begin.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx support.type.property-name.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx
+#                          ^ source.elyx punctuation.section.braces.end.elyx
+>@context(if=frame, theme=::theme.if, locale="✓")
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#        ^ source.elyx punctuation.section.parens.begin.elyx
+#         ^^ source.elyx variable.parameter.function.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^^^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+#                  ^ source.elyx
+#                   ^^^^^ source.elyx variable.parameter.function.elyx
+#                        ^ source.elyx punctuation.separator.assignment.elyx
+#                         ^^ source.elyx punctuation.separator.root.elyx
+#                           ^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                    ^ source.elyx
+#                                     ^^^^^^ source.elyx variable.parameter.function.elyx
+#                                           ^ source.elyx punctuation.separator.assignment.elyx
+#                                            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                             ^ source.elyx string.quoted.double.elyx
+#                                              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                               ^ source.elyx punctuation.section.parens.end.elyx
+>export sourced = frame : theme.frame {}
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.braces.begin.elyx
+#                                      ^ source.elyx punctuation.section.braces.end.elyx
+>import "colors.elyx" as colors
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                   ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                    ^ source.elyx
+#                     ^^ source.elyx keyword.control.import.elyx
+#                       ^ source.elyx
+#                        ^^^^^^ source.elyx variable.other.elyx
+>// annotation after import alias must leave expression state
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>@context(theme="dark")
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#        ^ source.elyx punctuation.section.parens.begin.elyx
+#         ^^^^^ source.elyx variable.parameter.function.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                ^^^^ source.elyx string.quoted.double.elyx
+#                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                     ^ source.elyx punctuation.section.parens.end.elyx
+>file { draw-connections: .true }
+#^^^^ source.elyx variable.language.file.elyx
+#    ^ source.elyx
+#     ^ source.elyx punctuation.section.braces.begin.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^^^^ source.elyx constant.language.atom.elyx
+#                              ^ source.elyx
+#                               ^ source.elyx punctuation.section.braces.end.elyx
+>@variant
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+>export following = frame : base {}
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.assignment.elyx
+#                  ^ source.elyx
+#                   ^^^^^ source.elyx storage.type.kind.elyx
+#                        ^ source.elyx
+#                         ^ source.elyx punctuation.separator.colon.elyx
+#                          ^ source.elyx
+#                           ^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx
+#                                ^ source.elyx punctuation.section.braces.begin.elyx
+#                                 ^ source.elyx punctuation.section.braces.end.elyx
+>

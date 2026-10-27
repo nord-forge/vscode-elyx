@@ -1,0 +1,24 @@
+export fontSize = tokens {
+  body: 16,
+  hero: 72
+}
+
+export lineHeight = tokens {
+  normal: 1.5
+}
+
+export letterSpacing = tokens {
+  wide: 2%
+}
+
+export fonts = tokens {
+  body: "Menlo",
+  display: "Georgia"
+}
+
+// `.book` is not a built-in weight name. Add it with elyx.tokenPreviews.fontWeights.
+export fontWeight = tokens {
+  regular: .regular,
+  bold: 700,
+  book: .book
+}

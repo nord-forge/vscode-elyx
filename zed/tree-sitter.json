@@ -1,0 +1,16 @@
+{
+  "grammars": [{
+    "name": "elyx",
+    "camelcase": "Elyx",
+    "scope": "source.elyx",
+    "path": ".",
+    "file-types": ["elyx"],
+    "highlights": ["languages/elyx/highlights.scm"]
+  }],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Elyx design language grammar",
+    "authors": [{"name": "Nick Bevers"}]
+  }
+}

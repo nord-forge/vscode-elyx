@@ -1,0 +1,79 @@
+>export button = frame {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  fill[0].color: #fff,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.section.brackets.begin.elyx
+#       ^ source.elyx constant.numeric.elyx
+#        ^ source.elyx punctuation.section.brackets.end.elyx
+#         ^ source.elyx punctuation.separator.accessor.elyx
+#          ^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+>  label = text : typography.base { contents: "Work with us" }
+#^^ source.elyx
+#  ^^^^^ source.elyx variable.other.definition.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.separator.assignment.elyx
+#         ^ source.elyx
+#          ^^^^ source.elyx storage.type.kind.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                           ^ source.elyx punctuation.separator.accessor.elyx
+#                            ^^^^ source.elyx entity.name.type.source.elyx
+#                                ^ source.elyx
+#                                 ^ source.elyx punctuation.section.braces.begin.elyx
+#                                  ^ source.elyx
+#                                   ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                           ^ source.elyx punctuation.separator.colon.elyx
+#                                            ^ source.elyx
+#                                             ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                              ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                           ^ source.elyx
+#                                                            ^ source.elyx punctuation.section.braces.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>export hover = frame : button {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^^ source.elyx entity.name.type.source.elyx
+#                             ^ source.elyx
+#                              ^ source.elyx punctuation.section.braces.begin.elyx
+>  label { contents: "Hover" }
+#^^ source.elyx
+#  ^^^^^ source.elyx entity.name.tag.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.section.braces.begin.elyx
+#         ^ source.elyx
+#          ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                     ^^^^^ source.elyx string.quoted.double.elyx
+#                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                           ^ source.elyx
+#                            ^ source.elyx punctuation.section.braces.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

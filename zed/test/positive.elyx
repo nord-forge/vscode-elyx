@@ -1,0 +1,54 @@
+// Modules and contextual file names
+use "font.woff2"
+import "colors.elyx" as colors
+@context(theme="dark")
+file {draw-connections: .true}
+export file = tokens {hex3: #abc, hex4: #abcd, hex6: #abcdef, hex8: #abcdef08}
+export palette = tokens : colors.base {root: ::colors.palette}
+@variant
+@with-context()
+@with-variant(nav.active)
+@use-variant(::nav.active)
+@context(theme=dark, locale="nl")
+export button = frame {
+  title: "Unicode ✓ › and escapes \n \r \t \" \\",
+  contents: "// remains a string",
+  left: -12px, top: +3pt, angle: 180deg, opacity: 0.5,
+  children: label,
+  layout: {direction: .space-between, item-gap: 8px},
+  padding: [8px, 50%, -1, +3, .nil],
+  fill: {linear-gradient: {angle: 180deg, stops: [stop(0%, #fff), stop(100%, .transparent)]}},
+  quoted: '::colors.palette,
+  calculation: (2 + 3) * 4 / 2 - 1,
+  label = text : typography.base {
+    contents: "Hello",
+    fill[0].color: colors.palette.brand-blue
+  },
+  shape1 = shape {fill: #fff},
+  image1 = asset {source: "image.png"},
+  legacy = icon {name: "home"},
+  union1 = boolean {children: shape1}
+}
+export hover = frame : button {
+  shadow[1].inner-shadow.blur-radius: 8px,
+  overrides: [insert(badge, after = .nil), remove(label), move(badge, after = label), set(label, "contents", "Hi"), unset("fill"), target(a, b)],
+  @with-context(theme=dark)
+  label {contents: "Hover"},
+  badge = frame {width: 8px}
+}
+export label = text : button.label {
+  sublayer {contents: "Nested"}
+}
+export mask = boolean : button {label {contents: "Mask"}}
+file = frame {children: child, child = frame {}}
+copy = frame : file {children: file}
+raw = tokens {
+  children: .children,
+  arbitrary: 2children,
+  properties: {children: .true, frame: .false},
+  reference: colors.children,
+  call: rgb(1,
+    2, 3),
+  commented-arithmetic: 2 // comment before arithmetic
+    + 3
+}

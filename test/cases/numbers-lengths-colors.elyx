@@ -1,0 +1,5 @@
+export values = tokens {
+  negative: -12, positive: +3, fraction: 0.5, integer: 16,
+  lengths: [16px, 50%, 180deg, 12pt, 2widgets, -0.5px, +3pt],
+  colors: [#abc, #abcd, #2f6f8f, #ffffff08]
+}

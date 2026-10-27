@@ -1,0 +1,3954 @@
+import "./colors.elyx" as colors
+import "./colors.dark.elyx" as colorsdark
+import "./foundations.elyx" as scale
+import "./text.elyx" as typography
+import "./components.elyx" as ui
+import "./backgrounds.elyx" as backgrounds
+import "./trailGuide.elyx" as guide
+import "./nightHike.elyx" as night
+
+// The Brambleway design system at a glance. Every token and component sits
+// on a labelled card: its name, then what it is and where it is used. The
+// two screens sit below the overview with arrows between them, and the
+// night board to the right renders the whole overview with theme=dark.
+file {
+  draw-connections: .true
+}
+
+overview = frame {
+  left: 0px,
+  top: 0px,
+  width: 1440px,
+  layout: {direction: .column, item-gap: scale.space.x24},
+  fill: colors.theme.page,
+  padding: [scale.space.x24, scale.space.x16, scale.space.x32],
+  children: [
+    intro,
+    colourSection,
+    typeSection,
+    scaleSection,
+    componentSection,
+    backgroundSection
+  ],
+
+  intro = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [introTitle, introText]
+  }
+
+  introTitle = text : typography.heroTitle {
+    contents: "BRAMBLEWAY\nDESIGN SYSTEM",
+    fill[0].color: colors.palette.pine
+  }
+
+  introText = text : typography.lead {
+    width: 820px,
+    contents: "Tokens, type, components and screens for a trail planner with hut bookings. Daylight by default, with a theme=dark context for the night routes."
+  }
+
+  colourSection = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [
+      colourHeading,
+      paletteTitle,
+      paletteGrid,
+      trailTitle,
+      trailGrid,
+      themeTitle,
+      themeGrid,
+      nightTitle,
+      nightGrid,
+      mapTitle,
+      mapGrid,
+      weatherTitle,
+      weatherGrid,
+      syntaxTitle,
+      syntaxGrid,
+      effectsTitle,
+      effectsGrid
+    ]
+  }
+
+  colourHeading = frame : ui.sectionHeading {
+    width: 100%,
+
+    intro {
+      contents: "Every colour token, with its name and the value it was authored with. Translucent values show the page through the chip."
+    }
+  }
+
+  paletteTitle = text : typography.eyebrow {
+    contents: "PALETTE",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Fixed colours. Everything else refers to these.
+  paletteGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      paletteMoss,
+      paletteFern,
+      paletteFernPale,
+      palettePine,
+      palettePineNight,
+      paletteBark,
+      paletteClay,
+      paletteSand,
+      paletteSandLight,
+      paletteStone,
+      palettePebble,
+      paletteSlate,
+      paletteSlateLight,
+      paletteInk,
+      paletteLake,
+      paletteLakeDeep,
+      paletteSky,
+      paletteBerry,
+      paletteEmber,
+      paletteSun,
+      paletteWhite
+    ]
+  }
+
+  paletteMoss = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.moss
+    }
+
+    name {
+      contents: "moss"
+    }
+
+    value {
+      contents: "#4f7d4a"
+    }
+  }
+
+  paletteFern = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.fern
+    }
+
+    name {
+      contents: "fern"
+    }
+
+    value {
+      contents: "#7fae6a"
+    }
+  }
+
+  paletteFernPale = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.fernPale
+    }
+
+    name {
+      contents: "fernPale"
+    }
+
+    value {
+      contents: "#cfe3c2"
+    }
+  }
+
+  palettePine = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.pine
+    }
+
+    name {
+      contents: "pine"
+    }
+
+    value {
+      contents: "#1f3b2d"
+    }
+  }
+
+  palettePineNight = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.pineNight
+    }
+
+    name {
+      contents: "pineNight"
+    }
+
+    value {
+      contents: "#0e1612"
+    }
+  }
+
+  paletteBark = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.bark
+    }
+
+    name {
+      contents: "bark"
+    }
+
+    value {
+      contents: "#6b4f3a"
+    }
+  }
+
+  paletteClay = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.clay
+    }
+
+    name {
+      contents: "clay"
+    }
+
+    value {
+      contents: "#c4693d"
+    }
+  }
+
+  paletteSand = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.sand
+    }
+
+    name {
+      contents: "sand"
+    }
+
+    value {
+      contents: "#efe9dc"
+    }
+  }
+
+  paletteSandLight = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.sandLight
+    }
+
+    name {
+      contents: "sandLight"
+    }
+
+    value {
+      contents: "#f8f5ee"
+    }
+  }
+
+  paletteStone = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.stone
+    }
+
+    name {
+      contents: "stone"
+    }
+
+    value {
+      contents: "#d8d2c4"
+    }
+  }
+
+  palettePebble = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.pebble
+    }
+
+    name {
+      contents: "pebble"
+    }
+
+    value {
+      contents: "#a39e92"
+    }
+  }
+
+  paletteSlate = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.slate
+    }
+
+    name {
+      contents: "slate"
+    }
+
+    value {
+      contents: "#4a5560"
+    }
+  }
+
+  paletteSlateLight = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.slateLight
+    }
+
+    name {
+      contents: "slateLight"
+    }
+
+    value {
+      contents: "#6f7a84"
+    }
+  }
+
+  paletteInk = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.ink
+    }
+
+    name {
+      contents: "ink"
+    }
+
+    value {
+      contents: "#1b2328"
+    }
+  }
+
+  paletteLake = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.lake
+    }
+
+    name {
+      contents: "lake"
+    }
+
+    value {
+      contents: "#2f6f8f"
+    }
+  }
+
+  paletteLakeDeep = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.lakeDeep
+    }
+
+    name {
+      contents: "lakeDeep"
+    }
+
+    value {
+      contents: "#1d4b63"
+    }
+  }
+
+  paletteSky = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.sky
+    }
+
+    name {
+      contents: "sky"
+    }
+
+    value {
+      contents: "#9fc9de"
+    }
+  }
+
+  paletteBerry = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.berry
+    }
+
+    name {
+      contents: "berry"
+    }
+
+    value {
+      contents: "#9c3d5b"
+    }
+  }
+
+  paletteEmber = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.ember
+    }
+
+    name {
+      contents: "ember"
+    }
+
+    value {
+      contents: "#d9502b"
+    }
+  }
+
+  paletteSun = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.sun
+    }
+
+    name {
+      contents: "sun"
+    }
+
+    value {
+      contents: "#f2b632"
+    }
+  }
+
+  paletteWhite = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.palette.white
+    }
+
+    name {
+      contents: "white"
+    }
+
+    value {
+      contents: ".white"
+    }
+  }
+
+  trailTitle = text : typography.eyebrow {
+    contents: "WAYMARKS",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Difficulty colours on the map and the badges, with their tints.
+  trailGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      trailEasy,
+      trailModerate,
+      trailHard,
+      trailAlpine,
+      trailClosed,
+      trailEasyTint,
+      trailModerateTint,
+      trailHardTint,
+      trailAlpineTint
+    ]
+  }
+
+  trailEasy = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.easy
+    }
+
+    name {
+      contents: "easy"
+    }
+
+    value {
+      contents: "#3f9b5a"
+    }
+  }
+
+  trailModerate = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.moderate
+    }
+
+    name {
+      contents: "moderate"
+    }
+
+    value {
+      contents: "#2f6f8f"
+    }
+  }
+
+  trailHard = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.hard
+    }
+
+    name {
+      contents: "hard"
+    }
+
+    value {
+      contents: "#c4693d"
+    }
+  }
+
+  trailAlpine = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.alpine
+    }
+
+    name {
+      contents: "alpine"
+    }
+
+    value {
+      contents: "#1b2328"
+    }
+  }
+
+  trailClosed = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.closed
+    }
+
+    name {
+      contents: "closed"
+    }
+
+    value {
+      contents: "#9c3d5b"
+    }
+  }
+
+  trailEasyTint = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.easyTint
+    }
+
+    name {
+      contents: "easyTint"
+    }
+
+    value {
+      contents: "#3f9b5a26"
+    }
+  }
+
+  trailModerateTint = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.moderateTint
+    }
+
+    name {
+      contents: "moderateTint"
+    }
+
+    value {
+      contents: "#2f6f8f26"
+    }
+  }
+
+  trailHardTint = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.hardTint
+    }
+
+    name {
+      contents: "hardTint"
+    }
+
+    value {
+      contents: "#c4693d26"
+    }
+  }
+
+  trailAlpineTint = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.trail.alpineTint
+    }
+
+    name {
+      contents: "alpineTint"
+    }
+
+    value {
+      contents: "#1b232826"
+    }
+  }
+
+  themeTitle = text : typography.eyebrow {
+    contents: "THEME ROLES",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Roles that flip with theme=dark. Values shown are the daylight ones.
+  themeGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      themePage,
+      themeSurface,
+      themeSurfaceRaised,
+      themeText,
+      themeTextMuted,
+      themeHeading,
+      themeLink,
+      themeAccent,
+      themeBorder,
+      themeDivider,
+      themeCardTop,
+      themeCardBottom,
+      themeCardShadow,
+      themeFooter,
+      themeFooterText,
+      themeFooterMuted,
+      themeFooterActive,
+      themeField,
+      themeFieldBorder,
+      themeFocus,
+      themeCodeSurface,
+      themeMapOverlay
+    ]
+  }
+
+  themePage = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.page
+    }
+
+    name {
+      contents: "page"
+    }
+
+    value {
+      contents: "palette.sand"
+    }
+  }
+
+  themeSurface = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.surface
+    }
+
+    name {
+      contents: "surface"
+    }
+
+    value {
+      contents: "palette.white"
+    }
+  }
+
+  themeSurfaceRaised = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.surfaceRaised
+    }
+
+    name {
+      contents: "surfaceRaised"
+    }
+
+    value {
+      contents: "palette.sandLight"
+    }
+  }
+
+  themeText = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.text
+    }
+
+    name {
+      contents: "text"
+    }
+
+    value {
+      contents: "palette.ink"
+    }
+  }
+
+  themeTextMuted = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.textMuted
+    }
+
+    name {
+      contents: "textMuted"
+    }
+
+    value {
+      contents: "palette.slateLight"
+    }
+  }
+
+  themeHeading = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.heading
+    }
+
+    name {
+      contents: "heading"
+    }
+
+    value {
+      contents: "palette.pine"
+    }
+  }
+
+  themeLink = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.link
+    }
+
+    name {
+      contents: "link"
+    }
+
+    value {
+      contents: "palette.lake"
+    }
+  }
+
+  themeAccent = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.accent
+    }
+
+    name {
+      contents: "accent"
+    }
+
+    value {
+      contents: "palette.moss"
+    }
+  }
+
+  themeBorder = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.border
+    }
+
+    name {
+      contents: "border"
+    }
+
+    value {
+      contents: "#1b23281f"
+    }
+  }
+
+  themeDivider = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.divider
+    }
+
+    name {
+      contents: "divider"
+    }
+
+    value {
+      contents: "palette.stone"
+    }
+  }
+
+  themeCardTop = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.cardTop
+    }
+
+    name {
+      contents: "cardTop"
+    }
+
+    value {
+      contents: "#ffffffb3"
+    }
+  }
+
+  themeCardBottom = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.cardBottom
+    }
+
+    name {
+      contents: "cardBottom"
+    }
+
+    value {
+      contents: "#f8f5ee00"
+    }
+  }
+
+  themeCardShadow = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.cardShadow
+    }
+
+    name {
+      contents: "cardShadow"
+    }
+
+    value {
+      contents: ".transparent"
+    }
+  }
+
+  themeFooter = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.footer
+    }
+
+    name {
+      contents: "footer"
+    }
+
+    value {
+      contents: "palette.pine"
+    }
+  }
+
+  themeFooterText = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.footerText
+    }
+
+    name {
+      contents: "footerText"
+    }
+
+    value {
+      contents: "palette.stone"
+    }
+  }
+
+  themeFooterMuted = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.footerMuted
+    }
+
+    name {
+      contents: "footerMuted"
+    }
+
+    value {
+      contents: "opacity(palette.stone, 60%)"
+    }
+  }
+
+  themeFooterActive = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.footerActive
+    }
+
+    name {
+      contents: "footerActive"
+    }
+
+    value {
+      contents: "palette.white"
+    }
+  }
+
+  themeField = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.field
+    }
+
+    name {
+      contents: "field"
+    }
+
+    value {
+      contents: "palette.white"
+    }
+  }
+
+  themeFieldBorder = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.fieldBorder
+    }
+
+    name {
+      contents: "fieldBorder"
+    }
+
+    value {
+      contents: "opacity(palette.slate, 30%)"
+    }
+  }
+
+  themeFocus = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.focus
+    }
+
+    name {
+      contents: "focus"
+    }
+
+    value {
+      contents: "opacity(palette.lake, 40%)"
+    }
+  }
+
+  themeCodeSurface = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.codeSurface
+    }
+
+    name {
+      contents: "codeSurface"
+    }
+
+    value {
+      contents: "palette.sandLight"
+    }
+  }
+
+  themeMapOverlay = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.theme.mapOverlay
+    }
+
+    name {
+      contents: "mapOverlay"
+    }
+
+    value {
+      contents: "palette.white"
+    }
+  }
+
+  nightTitle = text : typography.eyebrow {
+    contents: "NIGHT ROLES",
+    fill[0].color: colors.theme.heading
+  }
+
+  // The same roles as authored in colors.dark.elyx.
+  nightGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      nightPage,
+      nightSurface,
+      nightSurfaceRaised,
+      nightText,
+      nightTextMuted,
+      nightHeading,
+      nightLink,
+      nightAccent,
+      nightBorder,
+      nightDivider,
+      nightCardTop,
+      nightCardBottom,
+      nightCardShadow,
+      nightFooter,
+      nightFooterText,
+      nightFooterMuted,
+      nightFooterActive,
+      nightField,
+      nightFieldBorder,
+      nightFocus,
+      nightCodeSurface
+    ]
+  }
+
+  nightPage = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.page
+    }
+
+    name {
+      contents: "page"
+    }
+
+    value {
+      contents: "colors.palette.pineNight"
+    }
+  }
+
+  nightSurface = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.surface
+    }
+
+    name {
+      contents: "surface"
+    }
+
+    value {
+      contents: "#16221c"
+    }
+  }
+
+  nightSurfaceRaised = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.surfaceRaised
+    }
+
+    name {
+      contents: "surfaceRaised"
+    }
+
+    value {
+      contents: "#1d2b24"
+    }
+  }
+
+  nightText = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.text
+    }
+
+    name {
+      contents: "text"
+    }
+
+    value {
+      contents: "colors.palette.sand"
+    }
+  }
+
+  nightTextMuted = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.textMuted
+    }
+
+    name {
+      contents: "textMuted"
+    }
+
+    value {
+      contents: "colors.palette.pebble"
+    }
+  }
+
+  nightHeading = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.heading
+    }
+
+    name {
+      contents: "heading"
+    }
+
+    value {
+      contents: "colors.palette.fernPale"
+    }
+  }
+
+  nightLink = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.link
+    }
+
+    name {
+      contents: "link"
+    }
+
+    value {
+      contents: "colors.palette.sky"
+    }
+  }
+
+  nightAccent = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.accent
+    }
+
+    name {
+      contents: "accent"
+    }
+
+    value {
+      contents: "colors.palette.fern"
+    }
+  }
+
+  nightBorder = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.border
+    }
+
+    name {
+      contents: "border"
+    }
+
+    value {
+      contents: "#ffffff26"
+    }
+  }
+
+  nightDivider = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.divider
+    }
+
+    name {
+      contents: "divider"
+    }
+
+    value {
+      contents: "#ffffff1a"
+    }
+  }
+
+  nightCardTop = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.cardTop
+    }
+
+    name {
+      contents: "cardTop"
+    }
+
+    value {
+      contents: "#cfe3c21a"
+    }
+  }
+
+  nightCardBottom = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.cardBottom
+    }
+
+    name {
+      contents: "cardBottom"
+    }
+
+    value {
+      contents: "#ffffff05"
+    }
+  }
+
+  nightCardShadow = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.cardShadow
+    }
+
+    name {
+      contents: "cardShadow"
+    }
+
+    value {
+      contents: "#00000040"
+    }
+  }
+
+  nightFooter = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.footer
+    }
+
+    name {
+      contents: "footer"
+    }
+
+    value {
+      contents: "colors.palette.pineNight"
+    }
+  }
+
+  nightFooterText = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.footerText
+    }
+
+    name {
+      contents: "footerText"
+    }
+
+    value {
+      contents: "colors.palette.pebble"
+    }
+  }
+
+  nightFooterMuted = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.footerMuted
+    }
+
+    name {
+      contents: "footerMuted"
+    }
+
+    value {
+      contents: "#a39e9299"
+    }
+  }
+
+  nightFooterActive = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.footerActive
+    }
+
+    name {
+      contents: "footerActive"
+    }
+
+    value {
+      contents: "colors.palette.white"
+    }
+  }
+
+  nightField = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.field
+    }
+
+    name {
+      contents: "field"
+    }
+
+    value {
+      contents: "#ffffff12"
+    }
+  }
+
+  nightFieldBorder = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.fieldBorder
+    }
+
+    name {
+      contents: "fieldBorder"
+    }
+
+    value {
+      contents: "#ffffff33"
+    }
+  }
+
+  nightFocus = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.focus
+    }
+
+    name {
+      contents: "focus"
+    }
+
+    value {
+      contents: "#9fc9de66"
+    }
+  }
+
+  nightCodeSurface = frame : ui.swatch {
+    chip {
+      fill[0].color: colorsdark.darkTheme.codeSurface
+    }
+
+    name {
+      contents: "codeSurface"
+    }
+
+    value {
+      contents: "#101a15"
+    }
+  }
+
+  mapTitle = text : typography.eyebrow {
+    contents: "MAP",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Terrain fills, contour lines and markers.
+  mapGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      mapMeadow,
+      mapForest,
+      mapScree,
+      mapGlacier,
+      mapWater,
+      mapWaterEdge,
+      mapContour,
+      mapContourMajor,
+      mapRoute,
+      mapRouteHalo,
+      mapHut,
+      mapSummit
+    ]
+  }
+
+  mapMeadow = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.meadow
+    }
+
+    name {
+      contents: "meadow"
+    }
+
+    value {
+      contents: "#e4ecd3"
+    }
+  }
+
+  mapForest = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.forest
+    }
+
+    name {
+      contents: "forest"
+    }
+
+    value {
+      contents: "rgba(79, 125, 74, 0.35)"
+    }
+  }
+
+  mapScree = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.scree
+    }
+
+    name {
+      contents: "scree"
+    }
+
+    value {
+      contents: "#d3cbbd"
+    }
+  }
+
+  mapGlacier = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.glacier
+    }
+
+    name {
+      contents: "glacier"
+    }
+
+    value {
+      contents: "rgb(88%, 94%, 97%)"
+    }
+  }
+
+  mapWater = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.water
+    }
+
+    name {
+      contents: "water"
+    }
+
+    value {
+      contents: "hsl(200deg, 45%, 62%)"
+    }
+  }
+
+  mapWaterEdge = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.waterEdge
+    }
+
+    name {
+      contents: "waterEdge"
+    }
+
+    value {
+      contents: "hsl(200, 40%, 45%, 0.8)"
+    }
+  }
+
+  mapContour = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.contour
+    }
+
+    name {
+      contents: "contour"
+    }
+
+    value {
+      contents: "#6b4f3a59"
+    }
+  }
+
+  mapContourMajor = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.contourMajor
+    }
+
+    name {
+      contents: "contourMajor"
+    }
+
+    value {
+      contents: "#6b4f3a99"
+    }
+  }
+
+  mapRoute = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.route
+    }
+
+    name {
+      contents: "route"
+    }
+
+    value {
+      contents: "palette.ember"
+    }
+  }
+
+  mapRouteHalo = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.routeHalo
+    }
+
+    name {
+      contents: "routeHalo"
+    }
+
+    value {
+      contents: "#ffffffd9"
+    }
+  }
+
+  mapHut = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.hut
+    }
+
+    name {
+      contents: "hut"
+    }
+
+    value {
+      contents: "palette.berry"
+    }
+  }
+
+  mapSummit = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.map.summit
+    }
+
+    name {
+      contents: "summit"
+    }
+
+    value {
+      contents: "palette.ink"
+    }
+  }
+
+  weatherTitle = text : typography.eyebrow {
+    contents: "WEATHER",
+    fill[0].color: colors.theme.heading
+  }
+
+  // The forecast strip and its warning state.
+  weatherGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      weatherClear,
+      weatherCloud,
+      weatherRain,
+      weatherSnow,
+      weatherStorm,
+      weatherWarning,
+      weatherWarningTint
+    ]
+  }
+
+  weatherClear = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.clear
+    }
+
+    name {
+      contents: "clear"
+    }
+
+    value {
+      contents: "#f2b632"
+    }
+  }
+
+  weatherCloud = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.cloud
+    }
+
+    name {
+      contents: "cloud"
+    }
+
+    value {
+      contents: "#a39e92"
+    }
+  }
+
+  weatherRain = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.rain
+    }
+
+    name {
+      contents: "rain"
+    }
+
+    value {
+      contents: "#2f6f8f"
+    }
+  }
+
+  weatherSnow = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.snow
+    }
+
+    name {
+      contents: "snow"
+    }
+
+    value {
+      contents: "#e8f1f5"
+    }
+  }
+
+  weatherStorm = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.storm
+    }
+
+    name {
+      contents: "storm"
+    }
+
+    value {
+      contents: "#4a5560"
+    }
+  }
+
+  weatherWarning = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.warning
+    }
+
+    name {
+      contents: "warning"
+    }
+
+    value {
+      contents: "#d9502b"
+    }
+  }
+
+  weatherWarningTint = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.weather.warningTint
+    }
+
+    name {
+      contents: "warningTint"
+    }
+
+    value {
+      contents: "#d9502b1a"
+    }
+  }
+
+  syntaxTitle = text : typography.eyebrow {
+    contents: "CODE",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Colours inside the GPX and route snippets.
+  syntaxGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      syntaxText,
+      syntaxTag,
+      syntaxAttribute,
+      syntaxValue,
+      syntaxComment
+    ]
+  }
+
+  syntaxText = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.syntax.text
+    }
+
+    name {
+      contents: "text"
+    }
+
+    value {
+      contents: ".black"
+    }
+  }
+
+  syntaxTag = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.syntax.tag
+    }
+
+    name {
+      contents: "tag"
+    }
+
+    value {
+      contents: "#1d4b63"
+    }
+  }
+
+  syntaxAttribute = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.syntax.attribute
+    }
+
+    name {
+      contents: "attribute"
+    }
+
+    value {
+      contents: "#6b4f3a"
+    }
+  }
+
+  syntaxValue = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.syntax.value
+    }
+
+    name {
+      contents: "value"
+    }
+
+    value {
+      contents: "#3f9b5a"
+    }
+  }
+
+  syntaxComment = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.syntax.comment
+    }
+
+    name {
+      contents: "comment"
+    }
+
+    value {
+      contents: "#8a8578"
+    }
+  }
+
+  effectsTitle = text : typography.eyebrow {
+    contents: "EFFECTS",
+    fill[0].color: colors.theme.heading
+  }
+
+  // Shadows, scrims and the translucent whites used on dark surfaces.
+  effectsGrid = frame {
+    width: 100%,
+    layout: {
+      item-gap: scale.space.x6,
+      wrap: .true,
+      line-gap: scale.space.x6
+    },
+    children: [
+      effectsShadowSoft,
+      effectsShadowCard,
+      effectsShadowLifted,
+      effectsRing,
+      effectsScrim,
+      effectsWhiteAlpha80,
+      effectsWhiteAlpha50,
+      effectsWhiteAlpha20,
+      effectsWhiteAlpha10,
+      effectsWhiteAlpha7,
+      effectsWhiteAlpha3,
+      effectsInkAlpha60,
+      effectsInkAlpha10,
+      effectsTransparentInk,
+      effectsMossAlpha15,
+      effectsEmberGlow
+    ]
+  }
+
+  effectsShadowSoft = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.shadowSoft
+    }
+
+    name {
+      contents: "shadowSoft"
+    }
+
+    value {
+      contents: "#1b232814"
+    }
+  }
+
+  effectsShadowCard = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.shadowCard
+    }
+
+    name {
+      contents: "shadowCard"
+    }
+
+    value {
+      contents: "#1b23281f"
+    }
+  }
+
+  effectsShadowLifted = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.shadowLifted
+    }
+
+    name {
+      contents: "shadowLifted"
+    }
+
+    value {
+      contents: "#1b232833"
+    }
+  }
+
+  effectsRing = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.ring
+    }
+
+    name {
+      contents: "ring"
+    }
+
+    value {
+      contents: "#1b23280d"
+    }
+  }
+
+  effectsScrim = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.scrim
+    }
+
+    name {
+      contents: "scrim"
+    }
+
+    value {
+      contents: "#0e161299"
+    }
+  }
+
+  effectsWhiteAlpha80 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha80
+    }
+
+    name {
+      contents: "whiteAlpha80"
+    }
+
+    value {
+      contents: "#ffffffcc"
+    }
+  }
+
+  effectsWhiteAlpha50 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha50
+    }
+
+    name {
+      contents: "whiteAlpha50"
+    }
+
+    value {
+      contents: "#ffffff80"
+    }
+  }
+
+  effectsWhiteAlpha20 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha20
+    }
+
+    name {
+      contents: "whiteAlpha20"
+    }
+
+    value {
+      contents: "#ffffff33"
+    }
+  }
+
+  effectsWhiteAlpha10 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha10
+    }
+
+    name {
+      contents: "whiteAlpha10"
+    }
+
+    value {
+      contents: "#ffffff1a"
+    }
+  }
+
+  effectsWhiteAlpha7 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha7
+    }
+
+    name {
+      contents: "whiteAlpha7"
+    }
+
+    value {
+      contents: "#ffffff12"
+    }
+  }
+
+  effectsWhiteAlpha3 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.whiteAlpha3
+    }
+
+    name {
+      contents: "whiteAlpha3"
+    }
+
+    value {
+      contents: "#ffffff08"
+    }
+  }
+
+  effectsInkAlpha60 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.inkAlpha60
+    }
+
+    name {
+      contents: "inkAlpha60"
+    }
+
+    value {
+      contents: "#1b232899"
+    }
+  }
+
+  effectsInkAlpha10 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.inkAlpha10
+    }
+
+    name {
+      contents: "inkAlpha10"
+    }
+
+    value {
+      contents: "#1b23281a"
+    }
+  }
+
+  effectsTransparentInk = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.transparentInk
+    }
+
+    name {
+      contents: "transparentInk"
+    }
+
+    value {
+      contents: "#1b232800"
+    }
+  }
+
+  effectsMossAlpha15 = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.mossAlpha15
+    }
+
+    name {
+      contents: "mossAlpha15"
+    }
+
+    value {
+      contents: "#4f7d4a26"
+    }
+  }
+
+  effectsEmberGlow = frame : ui.swatch {
+    chip {
+      fill[0].color: colors.effects.emberGlow
+    }
+
+    name {
+      contents: "emberGlow"
+    }
+
+    value {
+      contents: "#d9502b66"
+    }
+  }
+
+  typeSection = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [typeHeading, typeGrid]
+  }
+
+  typeHeading = frame : ui.sectionHeading {
+    width: 100%,
+
+    heading {
+      contents: "Type"
+    }
+
+    intro {
+      contents: "Every text style in text.elyx. Each one derives from Body and only declares what differs."
+    }
+  }
+
+  typeGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      typeBody,
+      typeProse,
+      typeBodyStrong,
+      typeLead,
+      typeBase,
+      typeSmall,
+      typeMuted,
+      typeCaption,
+      typeEyebrow,
+      typeHeading,
+      typeSubheading,
+      typeLink,
+      typeCode,
+      typeDisplay,
+      typeHeroTitle,
+      typeCardTitle,
+      typeStatValue,
+      typeStatLabel,
+      typeMapLabel,
+      typeErrorText,
+      typeButtonLabel
+    ]
+  }
+
+  typeBody = frame : ui.specimen {
+    label {
+      contents: "Body"
+    }
+
+    note {
+      contents: "Default text: Inter Medium 16 on 1.4. Every style derives from it."
+    }
+
+    stage {
+      overrides: [
+        insert(typeBodyExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeBodyExample = text : typography.body {
+    left: 0px,
+    top: 0px
+  }
+
+  typeProse = frame : ui.specimen {
+    width: 760px,
+
+    label {
+      contents: "Prose"
+    }
+
+    note {
+      contents: "Guide paragraphs: 18 on 1.6."
+    }
+
+    stage {
+      overrides: [
+        insert(typeProseExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeProseExample = text : typography.prose {
+    left: 0px,
+    top: 0px
+  }
+
+  typeBodyStrong = frame : ui.specimen {
+    label {
+      contents: "Body bold"
+    }
+
+    note {
+      contents: "Bold body text for labels and small headings."
+    }
+
+    stage {
+      overrides: [
+        insert(typeBodyStrongExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeBodyStrongExample = text : typography.bodyStrong {
+    left: 0px,
+    top: 0px
+  }
+
+  typeLead = frame : ui.specimen {
+    width: 760px,
+
+    label {
+      contents: "Lead"
+    }
+
+    note {
+      contents: "Hero subtitles and card intros: 24 on 32."
+    }
+
+    stage {
+      overrides: [
+        insert(typeLeadExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeLeadExample = text : typography.lead {
+    left: 0px,
+    top: 0px
+  }
+
+  typeBase = frame : ui.specimen {
+    label {
+      contents: "Base"
+    }
+
+    note {
+      contents: "16px text: navigation, buttons and list rows."
+    }
+
+    stage {
+      overrides: [
+        insert(typeBaseExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeBaseExample = text : typography.base {
+    left: 0px,
+    top: 0px
+  }
+
+  typeSmall = frame : ui.specimen {
+    label {
+      contents: "Small"
+    }
+
+    note {
+      contents: "14px text: metadata, table cells and footers."
+    }
+
+    stage {
+      overrides: [
+        insert(typeSmallExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeSmallExample = text : typography.small {
+    left: 0px,
+    top: 0px
+  }
+
+  typeMuted = frame : ui.specimen {
+    label {
+      contents: "Muted"
+    }
+
+    note {
+      contents: "14px in the muted theme colour, for hints and asides."
+    }
+
+    stage {
+      overrides: [
+        insert(typeMutedExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeMutedExample = text : typography.muted {
+    left: 0px,
+    top: 0px
+  }
+
+  typeCaption = frame : ui.specimen {
+    label {
+      contents: "Caption"
+    }
+
+    note {
+      contents: "12px text: map labels, badges and error messages."
+    }
+
+    stage {
+      overrides: [
+        insert(typeCaptionExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeCaptionExample = text : typography.caption {
+    left: 0px,
+    top: 0px
+  }
+
+  typeEyebrow = frame : ui.specimen {
+    label {
+      contents: "Eyebrow"
+    }
+
+    note {
+      contents: "Uppercase bold 12px with wide tracking."
+    }
+
+    stage {
+      overrides: [
+        insert(typeEyebrowExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeEyebrowExample = text : typography.eyebrow {
+    left: 0px,
+    top: 0px
+  }
+
+  typeHeading = frame : ui.specimen {
+    label {
+      contents: "Heading (h2)"
+    }
+
+    note {
+      contents: "32px Fraunces for section headings."
+    }
+
+    stage {
+      overrides: [
+        insert(typeHeadingExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeHeadingExample = text : typography.heading {
+    left: 0px,
+    top: 0px
+  }
+
+  typeSubheading = frame : ui.specimen {
+    label {
+      contents: "Subheading (h3)"
+    }
+
+    note {
+      contents: "20px bold for subsections inside a guide."
+    }
+
+    stage {
+      overrides: [
+        insert(typeSubheadingExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeSubheadingExample = text : typography.subheading {
+    left: 0px,
+    top: 0px
+  }
+
+  typeLink = frame : ui.specimen {
+    label {
+      contents: "Link"
+    }
+
+    note {
+      contents: "Underlined link in the theme link colour."
+    }
+
+    stage {
+      overrides: [
+        insert(typeLinkExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeLinkExample = text : typography.link {
+    left: 0px,
+    top: 0px
+  }
+
+  typeCode = frame : ui.specimen {
+    label {
+      contents: "Code"
+    }
+
+    note {
+      contents: "Mono 14 on 1.75, inside code blocks."
+    }
+
+    stage {
+      overrides: [
+        insert(typeCodeExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeCodeExample = text : typography.code {
+    left: 0px,
+    top: 0px
+  }
+
+  typeDisplay = frame : ui.specimen {
+    width: 760px,
+
+    label {
+      contents: "Display"
+    }
+
+    note {
+      contents: "Fraunces 64: screen titles."
+    }
+
+    stage {
+      overrides: [
+        insert(typeDisplayExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeDisplayExample = text : typography.display {
+    left: 0px,
+    top: 0px
+  }
+
+  typeHeroTitle = frame : ui.specimen {
+    width: 760px,
+
+    label {
+      contents: "Hero title"
+    }
+
+    note {
+      contents: "Fraunces 96 on 1: the landing hero."
+    }
+
+    stage {
+      overrides: [
+        insert(typeHeroTitleExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeHeroTitleExample = text : typography.heroTitle {
+    left: 0px,
+    top: 0px
+  }
+
+  typeCardTitle = frame : ui.specimen {
+    label {
+      contents: "Card title"
+    }
+
+    note {
+      contents: "Fraunces 24: trail and hut cards."
+    }
+
+    stage {
+      overrides: [
+        insert(typeCardTitleExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeCardTitleExample = text : typography.cardTitle {
+    left: 0px,
+    top: 0px
+  }
+
+  typeStatValue = frame : ui.specimen {
+    width: 760px,
+
+    label {
+      contents: "Statistic value"
+    }
+
+    note {
+      contents: "Fraunces 72: distance, ascent and time on the trail page."
+    }
+
+    stage {
+      overrides: [
+        insert(typeStatValueExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeStatValueExample = text : typography.statValue {
+    left: 0px,
+    top: 0px
+  }
+
+  typeStatLabel = frame : ui.specimen {
+    label {
+      contents: "Statistic label"
+    }
+
+    note {
+      contents: "Uppercase 12px under a statistic."
+    }
+
+    stage {
+      overrides: [
+        insert(typeStatLabelExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeStatLabelExample = text : typography.statLabel {
+    left: 0px,
+    top: 0px
+  }
+
+  typeMapLabel = frame : ui.specimen {
+    label {
+      contents: "Map label"
+    }
+
+    note {
+      contents: "White 12px bold with a dark halo, on the map."
+    }
+
+    stage {
+      overrides: [
+        insert(typeMapLabelExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeMapLabelExample = text : typography.mapLabel {
+    left: 0px,
+    top: 0px
+  }
+
+  typeErrorText = frame : ui.specimen {
+    label {
+      contents: "Error text"
+    }
+
+    note {
+      contents: "12px in ember, under a field that failed validation."
+    }
+
+    stage {
+      overrides: [
+        insert(typeErrorTextExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeErrorTextExample = text : typography.errorText {
+    left: 0px,
+    top: 0px
+  }
+
+  typeButtonLabel = frame : ui.specimen {
+    label {
+      contents: "Button label"
+    }
+
+    note {
+      contents: "16px bold, centred, on primary and ghost buttons."
+    }
+
+    stage {
+      overrides: [
+        insert(typeButtonLabelExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  typeButtonLabelExample = text : typography.buttonLabel {
+    left: 0px,
+    top: 0px
+  }
+
+  scaleSection = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [
+      scaleHeading,
+      spaceTitle,
+      spaceList,
+      radiusTitle,
+      radiusGrid,
+      sizeTitle,
+      sizeList,
+      leadingTitle,
+      leadingList,
+      trackingTitle,
+      trackingList
+    ]
+  }
+
+  scaleHeading = frame : ui.sectionHeading {
+    width: 100%,
+
+    heading {
+      contents: "Space, radius and type scale"
+    }
+
+    intro {
+      contents: "The numbers in foundations.elyx. One spacing unit is 4px; letter spacing is a percentage of the font size."
+    }
+  }
+
+  spaceTitle = text : typography.eyebrow {
+    contents: "SPACING"
+  }
+
+  spaceList = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x3},
+    children: [
+      spaceX0,
+      spaceX1,
+      spaceX2,
+      spaceX2h5,
+      spaceX3,
+      spaceX4,
+      spaceX5,
+      spaceX6,
+      spaceX8,
+      spaceX10,
+      spaceX12,
+      spaceX16,
+      spaceX20,
+      spaceX24,
+      spaceX32
+    ]
+  }
+
+  spaceX0 = frame : ui.spaceBar {
+    name {
+      contents: "x0 · 0"
+    }
+
+    bar {
+      width: scale.space.x0
+    }
+  }
+
+  spaceX1 = frame : ui.spaceBar {
+    name {
+      contents: "x1 · 4"
+    }
+
+    bar {
+      width: scale.space.x1
+    }
+  }
+
+  spaceX2 = frame : ui.spaceBar {
+    name {
+      contents: "x2 · 8"
+    }
+
+    bar {
+      width: scale.space.x2
+    }
+  }
+
+  spaceX2h5 = frame : ui.spaceBar {
+    name {
+      contents: "x2-5 · 10"
+    }
+
+    bar {
+      width: scale.space.x2-5
+    }
+  }
+
+  spaceX3 = frame : ui.spaceBar {
+    name {
+      contents: "x3 · 12"
+    }
+
+    bar {
+      width: scale.space.x3
+    }
+  }
+
+  spaceX4 = frame : ui.spaceBar {
+    name {
+      contents: "x4 · 16"
+    }
+
+    bar {
+      width: scale.space.x4
+    }
+  }
+
+  spaceX5 = frame : ui.spaceBar {
+    name {
+      contents: "x5 · 20"
+    }
+
+    bar {
+      width: scale.space.x5
+    }
+  }
+
+  spaceX6 = frame : ui.spaceBar {
+    name {
+      contents: "x6 · 24"
+    }
+
+    bar {
+      width: scale.space.x6
+    }
+  }
+
+  spaceX8 = frame : ui.spaceBar {
+    name {
+      contents: "x8 · 32"
+    }
+
+    bar {
+      width: scale.space.x8
+    }
+  }
+
+  spaceX10 = frame : ui.spaceBar {
+    name {
+      contents: "x10 · 40"
+    }
+
+    bar {
+      width: scale.space.x10
+    }
+  }
+
+  spaceX12 = frame : ui.spaceBar {
+    name {
+      contents: "x12 · 48"
+    }
+
+    bar {
+      width: scale.space.x12
+    }
+  }
+
+  spaceX16 = frame : ui.spaceBar {
+    name {
+      contents: "x16 · 64"
+    }
+
+    bar {
+      width: scale.space.x16
+    }
+  }
+
+  spaceX20 = frame : ui.spaceBar {
+    name {
+      contents: "x20 · 80"
+    }
+
+    bar {
+      width: scale.space.x20
+    }
+  }
+
+  spaceX24 = frame : ui.spaceBar {
+    name {
+      contents: "x24 · 96"
+    }
+
+    bar {
+      width: scale.space.x24
+    }
+  }
+
+  spaceX32 = frame : ui.spaceBar {
+    name {
+      contents: "x32 · 128"
+    }
+
+    bar {
+      width: scale.space.x32
+    }
+  }
+
+  radiusTitle = text : typography.eyebrow {
+    contents: "CORNER RADIUS"
+  }
+
+  radiusGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      radiusNone,
+      radiusSm,
+      radiusBase,
+      radiusMd,
+      radiusLg,
+      radiusXl,
+      radiusCard,
+      radiusSheet,
+      radiusTag,
+      radiusField,
+      radiusPill
+    ]
+  }
+
+  radiusNone = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.none
+    }
+
+    name {
+      contents: "none · 0"
+    }
+  }
+
+  radiusSm = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.sm
+    }
+
+    name {
+      contents: "sm · 2"
+    }
+  }
+
+  radiusBase = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.base
+    }
+
+    name {
+      contents: "base · 4"
+    }
+  }
+
+  radiusMd = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.md
+    }
+
+    name {
+      contents: "md · 6"
+    }
+  }
+
+  radiusLg = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.lg
+    }
+
+    name {
+      contents: "lg · 8"
+    }
+  }
+
+  radiusXl = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.xl
+    }
+
+    name {
+      contents: "xl · 12"
+    }
+  }
+
+  radiusCard = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.card
+    }
+
+    name {
+      contents: "card · 16"
+    }
+  }
+
+  radiusSheet = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.sheet
+    }
+
+    name {
+      contents: "sheet · [16, 16, 0, 0]"
+    }
+  }
+
+  radiusTag = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.tag
+    }
+
+    name {
+      contents: "tag · [2, 8, 8, 2]"
+    }
+  }
+
+  radiusField = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.field
+    }
+
+    name {
+      contents: "field · md"
+    }
+  }
+
+  radiusPill = frame : ui.radiusChip {
+    shapeSample {
+      corner-radius: scale.radius.pill
+    }
+
+    name {
+      contents: "pill · 9999"
+    }
+  }
+
+  sizeTitle = text : typography.eyebrow {
+    contents: "FONT SIZE"
+  }
+
+  sizeList = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x4},
+    children: [
+      sizeXs,
+      sizeSm,
+      sizeBase,
+      sizeLg,
+      sizeXl,
+      sizeX2l,
+      sizeX3l,
+      sizeX4l,
+      sizeDisplay,
+      sizeHero,
+      sizeStat
+    ]
+  }
+
+  sizeXs = text : typography.body {
+    contents: "xs · 12px · Over the stile and up the beck",
+    font-size: scale.fontSize.xs,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeSm = text : typography.body {
+    contents: "sm · 14px · Over the stile and up the beck",
+    font-size: scale.fontSize.sm,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeBase = text : typography.body {
+    contents: "base · 16px · Over the stile and up the beck",
+    font-size: scale.fontSize.base,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeLg = text : typography.body {
+    contents: "lg · 18px · Over the stile and up the beck",
+    font-size: scale.fontSize.lg,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeXl = text : typography.body {
+    contents: "xl · 20px · Over the stile and up the beck",
+    font-size: scale.fontSize.xl,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeX2l = text : typography.body {
+    contents: "x2l · 24px · Over the stile and up the beck",
+    font-size: scale.fontSize.x2l,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeX3l = text : typography.body {
+    contents: "x3l · 32px · Over the stile and up the beck",
+    font-size: scale.fontSize.x3l,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeX4l = text : typography.body {
+    contents: "x4l · 44px · Over the stile and up the beck",
+    font-size: scale.fontSize.x4l,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeDisplay = text : typography.body {
+    contents: "display · 64px · Over the stile and up the beck",
+    font-size: scale.fontSize.display,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeHero = text : typography.body {
+    contents: "hero · 96px · Over the stile and up the beck",
+    font-size: scale.fontSize.hero,
+    line-height: scale.lineHeight.snug
+  }
+
+  sizeStat = text : typography.body {
+    contents: "stat · 72px · Over the stile and up the beck",
+    font-size: scale.fontSize.stat,
+    line-height: scale.lineHeight.snug
+  }
+
+  leadingTitle = text : typography.eyebrow {
+    contents: "LINE HEIGHT"
+  }
+
+  leadingList = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      leadingNone,
+      leadingTight,
+      leadingSnug,
+      leadingNormal,
+      leadingRelaxed,
+      leadingLoose
+    ]
+  }
+
+  leadingNone = text : typography.body {
+    width: 240px,
+    contents: "none · 1\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.none
+  }
+
+  leadingTight = text : typography.body {
+    width: 240px,
+    contents: "tight · 1.1\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.tight
+  }
+
+  leadingSnug = text : typography.body {
+    width: 240px,
+    contents: "snug · 1.25\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.snug
+  }
+
+  leadingNormal = text : typography.body {
+    width: 240px,
+    contents: "normal · 1.4\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.normal
+  }
+
+  leadingRelaxed = text : typography.body {
+    width: 240px,
+    contents: "relaxed · 1.6\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.relaxed
+  }
+
+  leadingLoose = text : typography.body {
+    width: 240px,
+    contents: "loose · 1.75\nTwo lines show\nthe leading.",
+    line-height: scale.lineHeight.loose
+  }
+
+  trackingTitle = text : typography.eyebrow {
+    contents: "LETTER SPACING"
+  }
+
+  trackingList = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x3},
+    children: [
+      trackingTight,
+      trackingNormal,
+      trackingWide,
+      trackingWider
+    ]
+  }
+
+  trackingTight = text : typography.eyebrow {
+    contents: "TIGHT · -2% · HOLLIN FELLS",
+    letter-spacing: scale.letterSpacing.tight
+  }
+
+  trackingNormal = text : typography.eyebrow {
+    contents: "NORMAL · 0% · HOLLIN FELLS",
+    letter-spacing: scale.letterSpacing.normal
+  }
+
+  trackingWide = text : typography.eyebrow {
+    contents: "WIDE · 4% · HOLLIN FELLS",
+    letter-spacing: scale.letterSpacing.wide
+  }
+
+  trackingWider = text : typography.eyebrow {
+    contents: "WIDER · 8% · HOLLIN FELLS",
+    letter-spacing: scale.letterSpacing.wider
+  }
+
+  componentSection = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [
+      componentHeading,
+      buttonsTitle,
+      buttonsGrid,
+      navigationTitle,
+      navigationGrid,
+      badgesTitle,
+      badgesGrid,
+      fieldsTitle,
+      fieldsGrid,
+      cardsTitle,
+      cardsGrid,
+      chromeTitle,
+      chromeGrid
+    ]
+  }
+
+  componentHeading = frame : ui.sectionHeading {
+    width: 100%,
+
+    heading {
+      contents: "Components"
+    }
+
+    intro {
+      contents: "Every exported component in components.elyx, with its variants next to it."
+    }
+  }
+
+  buttonsTitle = text : typography.eyebrow {
+    contents: "BUTTONS"
+  }
+
+  buttonsGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      specPrimaryButton,
+      specPrimaryButtonHover,
+      specGhostButton,
+      specGhostButtonHover
+    ]
+  }
+
+  specPrimaryButton = frame : ui.specimen {
+    label {
+      contents: "Primary button"
+    }
+
+    note {
+      contents: "Moss fill with a white label. One per screen."
+    }
+
+    stage {
+      overrides: [
+        insert(specPrimaryButtonExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specPrimaryButtonExample = frame : ui.primaryButton {
+    left: 0px,
+    top: 0px
+  }
+
+  specPrimaryButtonHover = frame : ui.specimen {
+    label {
+      contents: "Primary button, hover"
+    }
+
+    note {
+      contents: "A shade darker, with a soft shadow."
+    }
+
+    stage {
+      overrides: [
+        insert(specPrimaryButtonHoverExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specPrimaryButtonHoverExample = frame : ui.primaryButtonHover {
+    left: 0px,
+    top: 0px
+  }
+
+  specGhostButton = frame : ui.specimen {
+    label {
+      contents: "Ghost button"
+    }
+
+    note {
+      contents: "Secondary actions: a border and no fill."
+    }
+
+    stage {
+      overrides: [
+        insert(specGhostButtonExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specGhostButtonExample = frame : ui.ghostButton {
+    left: 0px,
+    top: 0px
+  }
+
+  specGhostButtonHover = frame : ui.specimen {
+    label {
+      contents: "Ghost button, hover"
+    }
+
+    note {
+      contents: "The border darkens and a tint fills the button."
+    }
+
+    stage {
+      overrides: [
+        insert(specGhostButtonHoverExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specGhostButtonHoverExample = frame : ui.ghostButtonHover {
+    left: 0px,
+    top: 0px
+  }
+
+  navigationTitle = text : typography.eyebrow {
+    contents: "NAVIGATION"
+  }
+
+  navigationGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      specNavLink,
+      specNavLinkActive,
+      specDropdownTrigger,
+      specDropdownTriggerActive,
+      specDropdownTriggerOpen,
+      specDropdownItem,
+      specDropdownItemHover,
+      specDropdownItemActive
+    ]
+  }
+
+  specNavLink = frame : ui.specimen {
+    label {
+      contents: "Navigation link"
+    }
+
+    note {
+      contents: "Header navigation: 16px in the muted colour."
+    }
+
+    stage {
+      overrides: [
+        insert(specNavLinkExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specNavLinkExample = text : ui.navLink {
+    left: 0px,
+    top: 0px
+  }
+
+  specNavLinkActive = frame : ui.specimen {
+    label {
+      contents: "Navigation link, active"
+    }
+
+    note {
+      contents: "The current section: full text colour and bold."
+    }
+
+    stage {
+      overrides: [
+        insert(specNavLinkActiveExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specNavLinkActiveExample = text : ui.navLinkActive {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownTrigger = frame : ui.specimen {
+    label {
+      contents: "Dropdown trigger"
+    }
+
+    note {
+      contents: "A navigation link with a chevron that opens a menu."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownTriggerExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownTriggerExample = frame : ui.dropdownTrigger {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownTriggerActive = frame : ui.specimen {
+    label {
+      contents: "Dropdown trigger, active"
+    }
+
+    note {
+      contents: "The current section."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownTriggerActiveExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownTriggerActiveExample = frame : ui.dropdownTriggerActive {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownTriggerOpen = frame : ui.specimen {
+    label {
+      contents: "Dropdown trigger, open"
+    }
+
+    note {
+      contents: "The chevron flips while the menu is open."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownTriggerOpenExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownTriggerOpenExample = frame : ui.dropdownTriggerOpen {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownItem = frame : ui.specimen {
+    label {
+      contents: "Dropdown item"
+    }
+
+    note {
+      contents: "One row in a dropdown menu."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownItemExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownItemExample = frame : ui.dropdownItem {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownItemHover = frame : ui.specimen {
+    label {
+      contents: "Dropdown item, hover"
+    }
+
+    note {
+      contents: "A tinted row under the pointer."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownItemHoverExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownItemHoverExample = frame : ui.dropdownItemHover {
+    left: 0px,
+    top: 0px
+  }
+
+  specDropdownItemActive = frame : ui.specimen {
+    label {
+      contents: "Dropdown item, active"
+    }
+
+    note {
+      contents: "The current page, in bold."
+    }
+
+    stage {
+      overrides: [
+        insert(specDropdownItemActiveExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDropdownItemActiveExample = frame : ui.dropdownItemActive {
+    left: 0px,
+    top: 0px
+  }
+
+  badgesTitle = text : typography.eyebrow {
+    contents: "BADGES AND CHIPS"
+  }
+
+  badgesGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      specDifficultyBadge,
+      specDifficultyBadgeModerate,
+      specDifficultyBadgeHard,
+      specDifficultyBadgeAlpine,
+      specWeatherChip,
+      specWeatherChipWarning
+    ]
+  }
+
+  specDifficultyBadge = frame : ui.specimen {
+    label {
+      contents: "Difficulty badge"
+    }
+
+    note {
+      contents: "The waymark colour and its name. Easy by default."
+    }
+
+    stage {
+      overrides: [
+        insert(specDifficultyBadgeExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDifficultyBadgeExample = frame : ui.difficultyBadge {
+    left: 0px,
+    top: 0px
+  }
+
+  specDifficultyBadgeModerate = frame : ui.specimen {
+    label {
+      contents: "Difficulty badge, moderate"
+    }
+
+    stage {
+      overrides: [
+        insert(specDifficultyBadgeModerateExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDifficultyBadgeModerateExample = frame : ui.difficultyBadgeModerate {
+    left: 0px,
+    top: 0px
+  }
+
+  specDifficultyBadgeHard = frame : ui.specimen {
+    label {
+      contents: "Difficulty badge, hard"
+    }
+
+    stage {
+      overrides: [
+        insert(specDifficultyBadgeHardExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDifficultyBadgeHardExample = frame : ui.difficultyBadgeHard {
+    left: 0px,
+    top: 0px
+  }
+
+  specDifficultyBadgeAlpine = frame : ui.specimen {
+    label {
+      contents: "Difficulty badge, alpine"
+    }
+
+    stage {
+      overrides: [
+        insert(specDifficultyBadgeAlpineExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specDifficultyBadgeAlpineExample = frame : ui.difficultyBadgeAlpine {
+    left: 0px,
+    top: 0px
+  }
+
+  specWeatherChip = frame : ui.specimen {
+    label {
+      contents: "Weather chip"
+    }
+
+    note {
+      contents: "One day of the forecast strip."
+    }
+
+    stage {
+      overrides: [
+        insert(specWeatherChipExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specWeatherChipExample = frame : ui.weatherChip {
+    left: 0px,
+    top: 0px
+  }
+
+  specWeatherChipWarning = frame : ui.specimen {
+    label {
+      contents: "Weather chip, warning"
+    }
+
+    note {
+      contents: "A storm warning: ember tint and border."
+    }
+
+    stage {
+      overrides: [
+        insert(specWeatherChipWarningExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specWeatherChipWarningExample = frame : ui.weatherChipWarning {
+    left: 0px,
+    top: 0px
+  }
+
+  fieldsTitle = text : typography.eyebrow {
+    contents: "FIELDS"
+  }
+
+  fieldsGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [specSearchField, specSearchFieldFocus, specSearchFieldError]
+  }
+
+  specSearchField = frame : ui.specimen {
+    label {
+      contents: "Trail search"
+    }
+
+    note {
+      contents: "Search input with the Find button inside."
+    }
+
+    stage {
+      overrides: [
+        insert(specSearchFieldExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specSearchFieldExample = frame : ui.searchField {
+    left: 0px,
+    top: 0px
+  }
+
+  specSearchFieldFocus = frame : ui.specimen {
+    label {
+      contents: "Trail search, focus"
+    }
+
+    note {
+      contents: "A lake-blue ring while the field has focus."
+    }
+
+    stage {
+      overrides: [
+        insert(specSearchFieldFocusExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specSearchFieldFocusExample = frame : ui.searchFieldFocus {
+    left: 0px,
+    top: 0px
+  }
+
+  specSearchFieldError = frame : ui.specimen {
+    label {
+      contents: "Trail search, error"
+    }
+
+    note {
+      contents: "Validation message under the input."
+    }
+
+    stage {
+      overrides: [
+        insert(specSearchFieldErrorExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specSearchFieldErrorExample = frame : ui.searchFieldError {
+    left: 0px,
+    top: 0px
+  }
+
+  cardsTitle = text : typography.eyebrow {
+    contents: "CARDS"
+  }
+
+  cardsGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      specTrailCard,
+      specTrailCardHover,
+      specStatTile,
+      specAvatar
+    ]
+  }
+
+  specTrailCard = frame : ui.specimen {
+    label {
+      contents: "Trail card"
+    }
+
+    note {
+      contents: "A route in the results list: photo band, name, badges and stats."
+    }
+
+    stage {
+      overrides: [
+        insert(specTrailCardExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specTrailCardExample = frame : ui.trailCard {
+    left: 0px,
+    top: 0px
+  }
+
+  specTrailCardHover = frame : ui.specimen {
+    label {
+      contents: "Trail card, hover"
+    }
+
+    note {
+      contents: "Lifted with a deeper shadow."
+    }
+
+    stage {
+      overrides: [
+        insert(specTrailCardHoverExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specTrailCardHoverExample = frame : ui.trailCardHover {
+    left: 0px,
+    top: 0px
+  }
+
+  specStatTile = frame : ui.specimen {
+    label {
+      contents: "Statistic"
+    }
+
+    note {
+      contents: "A big number with a label under it."
+    }
+
+    stage {
+      overrides: [
+        insert(specStatTileExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specStatTileExample = frame : ui.statTile {
+    left: 0px,
+    top: 0px
+  }
+
+  specAvatar = frame : ui.specimen {
+    label {
+      contents: "Avatar"
+    }
+
+    note {
+      contents: "A round initial for the ranger who last checked a route."
+    }
+
+    stage {
+      overrides: [
+        insert(specAvatarExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specAvatarExample = frame : ui.avatar {
+    left: 0px,
+    top: 0px
+  }
+
+  chromeTitle = text : typography.eyebrow {
+    contents: "HEADER AND FOOTER"
+  }
+
+  chromeGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      specAppHeader,
+      specHutMenu,
+      specAppHeaderRoutes,
+      specAppHeaderMenuOpen,
+      specAppFooter
+    ]
+  }
+
+  specAppHeader = frame : ui.specimen {
+    width: 100%,
+
+    label {
+      contents: "App header"
+    }
+
+    note {
+      contents: "Logo, main navigation, the account avatar and the booking button."
+    }
+
+    stage {
+      overrides: [
+        insert(specAppHeaderExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specAppHeaderExample = frame : ui.appHeader {
+    left: 0px,
+    top: 0px
+  }
+
+  specHutMenu = frame : ui.specimen {
+    label {
+      contents: "Huts menu"
+    }
+
+    note {
+      contents: "The dropdown under 'Huts' in the header."
+    }
+
+    stage {
+      overrides: [
+        insert(specHutMenuExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specHutMenuExample = frame : ui.hutMenu {
+    left: 0px,
+    top: 0px
+  }
+
+  specAppHeaderRoutes = frame : ui.specimen {
+    width: 100%,
+
+    label {
+      contents: "App header, routes section"
+    }
+
+    note {
+      contents: "'Routes' highlighted."
+    }
+
+    stage {
+      overrides: [
+        insert(specAppHeaderRoutesExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specAppHeaderRoutesExample = frame : ui.appHeaderRoutes {
+    left: 0px,
+    top: 0px
+  }
+
+  specAppHeaderMenuOpen = frame : ui.specimen {
+    width: 100%,
+
+    label {
+      contents: "App header, huts menu open"
+    }
+
+    note {
+      contents: "Hovering 'Huts' opens the menu."
+    }
+
+    stage {
+      overrides: [
+        insert(specAppHeaderMenuOpenExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specAppHeaderMenuOpenExample = frame : ui.appHeaderMenuOpen {
+    left: 0px,
+    top: 0px
+  }
+
+  specAppFooter = frame : ui.specimen {
+    width: 100%,
+
+    label {
+      contents: "App footer"
+    }
+
+    note {
+      contents: "Pine footer with the legal line and app links."
+    }
+
+    stage {
+      overrides: [
+        insert(specAppFooterExample, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  specAppFooterExample = frame : ui.appFooter {
+    left: 0px,
+    top: 0px
+  }
+
+  backgroundSection = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [backgroundHeading, backgroundGrid]
+  }
+
+  backgroundHeading = frame : ui.sectionHeading {
+    width: 100%,
+
+    heading {
+      contents: "Backgrounds"
+    }
+
+    intro {
+      contents: "Decorative layers, cropped to a 320px window. Screens place them behind content with ignore-stack."
+    }
+  }
+
+  backgroundGrid = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6, wrap: .true, line-gap: scale.space.x6},
+    children: [
+      backdropContourBackdrop,
+      backdropContourBackdropEmber,
+      backdropHeroBackground,
+      backdropSummitGlow,
+      backdropMapTile
+    ]
+  }
+
+  backdropContourBackdrop = frame : ui.specimen {
+    label {
+      contents: "Contour backdrop, moss"
+    }
+
+    note {
+      contents: "Glow and fading contour grid behind the route planner."
+    }
+
+    stage {
+      overrides: [
+        insert(backdropContourBackdropCrop, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  backdropContourBackdropCrop = frame {
+    width: 100%,
+    height: 320px,
+    corner-radius: scale.radius.lg,
+    children: backdropContourBackdropExample
+  }
+
+  backdropContourBackdropExample = frame : backgrounds.contourBackdrop {
+    left: 0px,
+    top: 0px
+  }
+
+  backdropContourBackdropEmber = frame : ui.specimen {
+    label {
+      contents: "Contour backdrop, ember"
+    }
+
+    note {
+      contents: "Mirrored ember glow for the night screens."
+    }
+
+    stage {
+      overrides: [
+        insert(backdropContourBackdropEmberCrop, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  backdropContourBackdropEmberCrop = frame {
+    width: 100%,
+    height: 320px,
+    corner-radius: scale.radius.lg,
+    children: backdropContourBackdropEmberExample
+  }
+
+  backdropContourBackdropEmberExample = frame : backgrounds.contourBackdropEmber {
+    left: 0px,
+    top: 0px
+  }
+
+  backdropHeroBackground = frame : ui.specimen {
+    label {
+      contents: "Hero sky"
+    }
+
+    note {
+      contents: "Dusk gradient behind the landing hero, fading to the page colour."
+    }
+
+    stage {
+      overrides: [
+        insert(backdropHeroBackgroundCrop, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  backdropHeroBackgroundCrop = frame {
+    width: 100%,
+    height: 320px,
+    corner-radius: scale.radius.lg,
+    children: backdropHeroBackgroundExample
+  }
+
+  backdropHeroBackgroundExample = frame : backgrounds.heroBackground {
+    left: 0px,
+    top: 0px
+  }
+
+  backdropSummitGlow = frame : ui.specimen {
+    label {
+      contents: "Summit glow"
+    }
+
+    note {
+      contents: "Blurred warm glow behind a trail title."
+    }
+
+    stage {
+      overrides: [
+        insert(backdropSummitGlowCrop, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  backdropSummitGlowCrop = frame {
+    width: 100%,
+    height: 320px,
+    corner-radius: scale.radius.lg,
+    children: backdropSummitGlowExample
+  }
+
+  backdropSummitGlowExample = frame : backgrounds.summitGlow {
+    left: 0px,
+    top: 0px
+  }
+
+  backdropMapTile = frame : ui.specimen {
+    label {
+      contents: "Map tile"
+    }
+
+    note {
+      contents: "Terrain colours for the static map preview."
+    }
+
+    stage {
+      overrides: [
+        insert(backdropMapTileCrop, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  backdropMapTileCrop = frame {
+    width: 100%,
+    height: 320px,
+    corner-radius: scale.radius.lg,
+    children: backdropMapTileExample
+  }
+
+  backdropMapTileExample = frame : backgrounds.mapTile {
+    left: 0px,
+    top: 0px
+  }
+}
+
+// The night board: the whole overview again, rendered with theme=dark.
+@context(theme="dark")
+nightOverview = frame : overview {
+  left: 1600px,
+  top: 0px,
+  fill[0].color: colorsdark.darkTheme.page
+}
+
+// The screens, one row below the overview. Arrows are links inside a page
+// that go to another screen on this board.
+guideBoard = frame : guide.trailGuideScreen {
+  left: 0px,
+  top: 16000px,
+
+  columns {
+    article {
+      nextLink {
+        connections[0].target: collapsedBoard,
+        connections[0].label: "Next chapter"
+      }
+    }
+
+    sidebar {
+      chapterSafety {
+        connections[0].target: nightBoard,
+        connections[0].label: "Night route"
+      }
+    }
+  }
+}
+
+collapsedBoard = frame : guide.trailGuideCollapsed {
+  left: 1600px,
+  top: 16000px
+}
+
+// The night screen is a contextual variant, so it renders with theme=dark
+// on this daylight board.
+@context(theme="dark")
+nightBoard = frame : night.nightHikeScreen {
+  left: 3200px,
+  top: 16000px,
+
+  body {
+    hero {
+      heroActions {
+        saveRoute {
+          connections[0].target: guideBoard,
+          connections[0].label: "Read the guide"
+        }
+      }
+    }
+  }
+}

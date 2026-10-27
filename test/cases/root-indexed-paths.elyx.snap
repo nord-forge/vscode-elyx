@@ -1,0 +1,44 @@
+>export values = frame {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  shadow[1].inner-shadow.blur-radius: 8px,
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                    ^ source.elyx punctuation.separator.colon.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx constant.numeric.elyx
+#                                       ^^ source.elyx keyword.other.unit.elyx
+#                                         ^ source.elyx punctuation.separator.comma.elyx
+>  ::fill[0].color: colors.palette.royalBlue
+#^^ source.elyx
+#  ^^ source.elyx punctuation.separator.root.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^^^^^^ source.elyx variable.other.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

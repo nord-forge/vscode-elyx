@@ -1,0 +1,125 @@
+import "./colors.dark.elyx" as dark
+
+// Brambleway colours. Brambleway is a trail planner with hut bookings, so the
+// palette leans on moss, bark and lake water. `palette` holds the fixed
+// colours. `theme` holds the roles that flip between the daylight screens
+// and the night screens; colors.dark.elyx overrides them.
+file {}
+
+export palette = tokens {
+  moss: #4f7d4a,
+  fern: #7fae6a,
+  fernPale: #cfe3c2,
+  pine: #1f3b2d,
+  pineNight: #0e1612,
+  bark: #6b4f3a,
+  clay: #c4693d,
+  sand: #efe9dc,
+  sandLight: #f8f5ee,
+  stone: #d8d2c4,
+  pebble: #a39e92,
+  slate: #4a5560,
+  slateLight: #6f7a84,
+  ink: #1b2328,
+  lake: #2f6f8f,
+  lakeDeep: #1d4b63,
+  sky: #9fc9de,
+  berry: #9c3d5b,
+  ember: #d9502b,
+  sun: #f2b632,
+  white: .white
+}
+
+// Waymark colours on the trail map and on the difficulty badges.
+export trail = tokens {
+  easy: #3f9b5a,
+  moderate: #2f6f8f,
+  hard: #c4693d,
+  alpine: #1b2328,
+  closed: #9c3d5b,
+  easyTint: #3f9b5a26,
+  moderateTint: #2f6f8f26,
+  hardTint: #c4693d26,
+  alpineTint: #1b232826
+}
+
+@variants(dark.darkTheme)
+export theme = tokens {
+  page: palette.sand,
+  surface: palette.white,
+  surfaceRaised: palette.sandLight,
+  text: palette.ink,
+  textMuted: palette.slateLight,
+  heading: palette.pine,
+  link: palette.lake,
+  accent: palette.moss,
+  border: #1b23281f,
+  divider: palette.stone,
+  cardTop: #ffffffb3,
+  cardBottom: #f8f5ee00,
+  cardShadow: .transparent,
+  footer: palette.pine,
+  footerText: palette.stone,
+  footerMuted: opacity(palette.stone, 60%),
+  footerActive: palette.white,
+  field: palette.white,
+  fieldBorder: opacity(palette.slate, 30%),
+  focus: opacity(palette.lake, 40%),
+  codeSurface: palette.sandLight,
+  mapOverlay: palette.white
+}
+
+// The trail map: terrain fills, contour lines and markers.
+export map = tokens {
+  meadow: #e4ecd3,
+  forest: rgba(79, 125, 74, 0.35),
+  scree: #d3cbbd,
+  glacier: rgb(88%, 94%, 97%),
+  water: hsl(200deg, 45%, 62%),
+  waterEdge: hsl(200, 40%, 45%, 0.8),
+  contour: #6b4f3a59,
+  contourMajor: #6b4f3a99,
+  route: palette.ember,
+  routeHalo: #ffffffd9,
+  hut: palette.berry,
+  summit: palette.ink
+}
+
+// Forecast strip on the trail page.
+export weather = tokens {
+  clear: #f2b632,
+  cloud: #a39e92,
+  rain: #2f6f8f,
+  snow: #e8f1f5,
+  storm: #4a5560,
+  warning: #d9502b,
+  warningTint: #d9502b1a
+}
+
+// Code samples in the guide: the GPX and route snippets.
+export syntax = tokens {
+  text: .black,
+  tag: #1d4b63,
+  attribute: #6b4f3a,
+  value: #3f9b5a,
+  comment: #8a8578
+}
+
+export effects = tokens {
+  shadowSoft: #1b232814,
+  shadowCard: #1b23281f,
+  shadowLifted: #1b232833,
+  ring: #1b23280d,
+  scrim: #0e161299,
+  whiteAlpha80: #ffffffcc,
+  whiteAlpha50: #ffffff80,
+  whiteAlpha20: #ffffff33,
+  whiteAlpha10: #ffffff1a,
+  whiteAlpha7: #ffffff12,
+  whiteAlpha3: #ffffff08,
+  inkAlpha60: #1b232899,
+  inkAlpha10: #1b23281a,
+  transparentInk: #1b232800,
+  mossAlpha15: #4f7d4a26,
+  emberGlow: #d9502b66
+}

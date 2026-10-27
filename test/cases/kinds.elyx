@@ -1,0 +1,7 @@
+f = frame {}
+b = boolean {}
+t = tokens {}
+tx = text {}
+s = shape {}
+a = asset {}
+i = icon {}

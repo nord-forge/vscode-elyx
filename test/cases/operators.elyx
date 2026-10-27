@@ -1,0 +1,1 @@
+export values = tokens { arithmetic: (16 + 3 - 2 * 4 / 2) }

@@ -1,0 +1,84 @@
+>export
+#^^^^^^ source.elyx storage.modifier.elyx
+>// modifiers can precede a name on a later line
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>multiline-name
+#^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+>// name and assignment may be separated
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>=
+#^ source.elyx punctuation.separator.assignment.elyx
+>// assignment and kind may be separated
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>frame
+#^^^^^ source.elyx storage.type.kind.elyx
+>// kind and instance colon may be separated
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>:
+#^ source.elyx punctuation.separator.colon.elyx
+>// colon and source may be separated
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>typography.base
+#^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#          ^ source.elyx punctuation.separator.accessor.elyx
+#           ^^^^ source.elyx entity.name.type.source.elyx
+>// source and opening block may be separated
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>{
+#^ source.elyx punctuation.section.braces.begin.elyx
+>  contents: "ready",
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#             ^^^^^ source.elyx string.quoted.double.elyx
+#                  ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                   ^ source.elyx punctuation.separator.comma.elyx
+>  child
+#^^ source.elyx
+#  ^^^^^ source.elyx variable.other.elyx
+>  // nested declaration
+#^^ source.elyx
+#  ^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#    ^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>  =
+#^^ source.elyx
+#  ^ source.elyx punctuation.separator.assignment.elyx
+>  text
+#^^ source.elyx
+#  ^^^^ source.elyx storage.type.kind.elyx
+>  :
+#^^ source.elyx
+#  ^ source.elyx punctuation.separator.colon.elyx
+>  typography.base
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#            ^ source.elyx punctuation.separator.accessor.elyx
+#             ^^^^ source.elyx entity.name.type.source.elyx
+>  {
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.begin.elyx
+>    fill[0].color: #fff
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

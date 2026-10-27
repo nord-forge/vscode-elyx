@@ -1,0 +1,41 @@
+>export palette = tokens { brandBlue: #2f6f8f }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.section.braces.begin.elyx
+#                         ^ source.elyx
+#                          ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                   ^ source.elyx punctuation.separator.colon.elyx
+#                                    ^ source.elyx
+#                                     ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                                            ^ source.elyx
+#                                             ^ source.elyx punctuation.section.braces.end.elyx
+>export darkTheme = tokens : colors.theme { page: #0e1612 }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.assignment.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx storage.type.kind.elyx
+#                         ^ source.elyx
+#                          ^ source.elyx punctuation.separator.colon.elyx
+#                           ^ source.elyx
+#                            ^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^ source.elyx entity.name.type.source.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+#                                          ^ source.elyx
+#                                           ^^^^ source.elyx support.type.property-name.elyx
+#                                               ^ source.elyx punctuation.separator.colon.elyx
+#                                                ^ source.elyx
+#                                                 ^^^^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                                                        ^ source.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+>

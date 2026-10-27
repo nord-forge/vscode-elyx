@@ -1,0 +1,21 @@
+>export values = tokens { quoted: 'colors.palette }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+#                        ^ source.elyx
+#                         ^^^^^^ source.elyx support.type.property-name.elyx
+#                               ^ source.elyx punctuation.separator.colon.elyx
+#                                ^ source.elyx
+#                                 ^ source.elyx keyword.operator.quote.elyx
+#                                  ^^^^^^ source.elyx variable.other.elyx
+#                                        ^ source.elyx punctuation.separator.accessor.elyx
+#                                         ^^^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx punctuation.section.braces.end.elyx
+>

@@ -1,0 +1,4 @@
+// Inside vendor/, so the default elyx.tokenExclude hides it.
+export old = tokens {
+  red: #c92a2a
+}

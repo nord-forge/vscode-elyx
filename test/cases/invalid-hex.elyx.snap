@@ -1,0 +1,25 @@
+>export values = tokens { invalid-colors: [#abcde, #abcdef0] }
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+#                        ^ source.elyx
+#                         ^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                       ^ source.elyx punctuation.separator.colon.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.brackets.begin.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.comma.elyx
+#                                                 ^ source.elyx
+#                                                  ^ source.elyx
+#                                                   ^^^^^^^ source.elyx variable.other.elyx
+#                                                          ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                           ^ source.elyx
+#                                                            ^ source.elyx punctuation.section.braces.end.elyx
+>

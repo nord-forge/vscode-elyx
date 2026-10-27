@@ -1,0 +1,5 @@
+export calls = tokens {
+  values: [point(1px, 2px), stop(0%, #fff), rgb(1, 2, 3), rgba(1, 2, 3, 0.5), hsl(0, 1, 1), oklch(1, 0, 0), opacity(#fff, 0.5)],
+  edits: [insert(badge, after = .nil), remove(child), move(child, after = sibling), set(target, "prop", value), unset("path"), target(a, b)],
+  custom: custom-function(named-arg = .true)
+}

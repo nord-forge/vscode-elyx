@@ -1,0 +1,182 @@
+>export calls = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  values: [point(1px, 2px), stop(0%, #fff), rgb(1, 2, 3), rgba(1, 2, 3, 0.5), hsl(0, 1, 1), oklch(1, 0, 0), opacity(#fff, 0.5)],
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.brackets.begin.elyx
+#           ^^^^^ source.elyx support.function.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^ source.elyx constant.numeric.elyx
+#                  ^^ source.elyx keyword.other.unit.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx constant.numeric.elyx
+#                       ^^ source.elyx keyword.other.unit.elyx
+#                         ^ source.elyx punctuation.section.parens.end.elyx
+#                          ^ source.elyx punctuation.separator.comma.elyx
+#                           ^ source.elyx
+#                            ^^^^ source.elyx support.function.elyx
+#                                ^ source.elyx punctuation.section.parens.begin.elyx
+#                                 ^ source.elyx constant.numeric.elyx
+#                                  ^ source.elyx keyword.other.unit.elyx
+#                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                    ^ source.elyx
+#                                     ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                                         ^ source.elyx punctuation.section.parens.end.elyx
+#                                          ^ source.elyx punctuation.separator.comma.elyx
+#                                           ^ source.elyx
+#                                            ^^^ source.elyx support.function.elyx
+#                                               ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                ^ source.elyx constant.numeric.elyx
+#                                                 ^ source.elyx punctuation.separator.comma.elyx
+#                                                  ^ source.elyx
+#                                                   ^ source.elyx constant.numeric.elyx
+#                                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                                     ^ source.elyx
+#                                                      ^ source.elyx constant.numeric.elyx
+#                                                       ^ source.elyx punctuation.section.parens.end.elyx
+#                                                        ^ source.elyx punctuation.separator.comma.elyx
+#                                                         ^ source.elyx
+#                                                          ^^^^ source.elyx support.function.elyx
+#                                                              ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                               ^ source.elyx constant.numeric.elyx
+#                                                                ^ source.elyx punctuation.separator.comma.elyx
+#                                                                 ^ source.elyx
+#                                                                  ^ source.elyx constant.numeric.elyx
+#                                                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                                                    ^ source.elyx
+#                                                                     ^ source.elyx constant.numeric.elyx
+#                                                                      ^ source.elyx punctuation.separator.comma.elyx
+#                                                                       ^ source.elyx
+#                                                                        ^^^ source.elyx constant.numeric.elyx
+#                                                                           ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                            ^ source.elyx punctuation.separator.comma.elyx
+#                                                                             ^ source.elyx
+#                                                                              ^^^ source.elyx support.function.elyx
+#                                                                                 ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                  ^ source.elyx constant.numeric.elyx
+#                                                                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                    ^ source.elyx
+#                                                                                     ^ source.elyx constant.numeric.elyx
+#                                                                                      ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                       ^ source.elyx
+#                                                                                        ^ source.elyx constant.numeric.elyx
+#                                                                                         ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                          ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                           ^ source.elyx
+#                                                                                            ^^^^^ source.elyx support.function.elyx
+#                                                                                                 ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                                  ^ source.elyx constant.numeric.elyx
+#                                                                                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                    ^ source.elyx
+#                                                                                                     ^ source.elyx constant.numeric.elyx
+#                                                                                                      ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                       ^ source.elyx
+#                                                                                                        ^ source.elyx constant.numeric.elyx
+#                                                                                                         ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                                          ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                           ^ source.elyx
+#                                                                                                            ^^^^^^^ source.elyx support.function.elyx
+#                                                                                                                   ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                                                    ^^^^ source.elyx constant.other.color.rgb-value.hex.elyx
+#                                                                                                                        ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                                         ^ source.elyx
+#                                                                                                                          ^^^ source.elyx constant.numeric.elyx
+#                                                                                                                             ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                                                              ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                                                                                               ^ source.elyx punctuation.separator.comma.elyx
+>  edits: [insert(badge, after = .nil), remove(child), move(child, after = sibling), set(target, "prop", value), unset("path"), target(a, b)],
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.section.brackets.begin.elyx
+#          ^^^^^^ source.elyx support.function.elyx
+#                ^ source.elyx punctuation.section.parens.begin.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^^^^ source.elyx variable.parameter.function.elyx
+#                             ^ source.elyx
+#                              ^ source.elyx punctuation.separator.assignment.elyx
+#                               ^ source.elyx
+#                                ^^^^ source.elyx constant.language.atom.elyx
+#                                    ^ source.elyx punctuation.section.parens.end.elyx
+#                                     ^ source.elyx punctuation.separator.comma.elyx
+#                                      ^ source.elyx
+#                                       ^^^^^^ source.elyx support.function.elyx
+#                                             ^ source.elyx punctuation.section.parens.begin.elyx
+#                                              ^^^^^ source.elyx variable.other.elyx
+#                                                   ^ source.elyx punctuation.section.parens.end.elyx
+#                                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                                     ^ source.elyx
+#                                                      ^^^^ source.elyx support.function.elyx
+#                                                          ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                           ^^^^^ source.elyx variable.other.elyx
+#                                                                ^ source.elyx punctuation.separator.comma.elyx
+#                                                                 ^ source.elyx
+#                                                                  ^^^^^ source.elyx variable.parameter.function.elyx
+#                                                                       ^ source.elyx
+#                                                                        ^ source.elyx punctuation.separator.assignment.elyx
+#                                                                         ^ source.elyx
+#                                                                          ^^^^^^^ source.elyx variable.other.elyx
+#                                                                                 ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                  ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                   ^ source.elyx
+#                                                                                    ^^^ source.elyx support.function.elyx
+#                                                                                       ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                        ^^^^^^ source.elyx variable.other.elyx
+#                                                                                              ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                               ^ source.elyx
+#                                                                                                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                                                                                 ^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                                                                      ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                       ^ source.elyx
+#                                                                                                        ^^^^^ source.elyx variable.other.elyx
+#                                                                                                             ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                                              ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                               ^ source.elyx
+#                                                                                                                ^^^^^ source.elyx support.function.elyx
+#                                                                                                                     ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                                                      ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                                                                                                       ^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                                                                                            ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                                                             ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                                              ^ source.elyx
+#                                                                                                                               ^^^^^^ source.elyx support.function.elyx
+#                                                                                                                                     ^ source.elyx punctuation.section.parens.begin.elyx
+#                                                                                                                                      ^ source.elyx variable.other.elyx
+#                                                                                                                                       ^ source.elyx punctuation.separator.comma.elyx
+#                                                                                                                                        ^ source.elyx
+#                                                                                                                                         ^ source.elyx variable.other.elyx
+#                                                                                                                                          ^ source.elyx punctuation.section.parens.end.elyx
+#                                                                                                                                           ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                                                                                                            ^ source.elyx punctuation.separator.comma.elyx
+>  custom: custom-function(named-arg = .true)
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^^^^^^^^^^ source.elyx support.function.elyx
+#                         ^ source.elyx punctuation.section.parens.begin.elyx
+#                          ^^^^^^^^^ source.elyx variable.parameter.function.elyx
+#                                   ^ source.elyx
+#                                    ^ source.elyx punctuation.separator.assignment.elyx
+#                                     ^ source.elyx
+#                                      ^^^^^ source.elyx constant.language.atom.elyx
+#                                           ^ source.elyx punctuation.section.parens.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

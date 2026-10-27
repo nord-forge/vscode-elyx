@@ -1,0 +1,5 @@
+// Names the extension does not know. Teach it with elyx.tokenPreviews.propertyNames.
+export grid = tokens {
+  gutter: 20,
+  rounding: 6
+}

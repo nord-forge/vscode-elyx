@@ -1,0 +1,14 @@
+{
+  "name": "tree-sitter-elyx",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Structural Elyx grammar and Zed companion extension",
+  "scripts": {
+    "generate": "node_modules/tree-sitter-cli/tree-sitter generate --abi 14",
+    "test": "bun scripts/test.ts",
+    "prepare:local": "bun scripts/prepare-local.ts"
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "0.25.10"
+  }
+}

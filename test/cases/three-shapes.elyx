@@ -1,0 +1,7 @@
+export button = frame {
+  fill[0].color: #fff,
+  label = text : typography.base { contents: "Work with us" }
+}
+export hover = frame : button {
+  label { contents: "Hover" }
+}

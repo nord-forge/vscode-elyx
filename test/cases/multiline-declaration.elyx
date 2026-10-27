@@ -1,0 +1,24 @@
+export
+// modifiers can precede a name on a later line
+multiline-name
+// name and assignment may be separated
+=
+// assignment and kind may be separated
+frame
+// kind and instance colon may be separated
+:
+// colon and source may be separated
+typography.base
+// source and opening block may be separated
+{
+  contents: "ready",
+  child
+  // nested declaration
+  =
+  text
+  :
+  typography.base
+  {
+    fill[0].color: #fff
+  }
+}

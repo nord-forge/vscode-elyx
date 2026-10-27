@@ -1,0 +1,2747 @@
+>import "./colors.elyx" as colors
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                      ^ source.elyx
+#                       ^^ source.elyx keyword.control.import.elyx
+#                         ^ source.elyx
+#                          ^^^^^^ source.elyx variable.other.elyx
+>import "./foundations.elyx" as scale
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                           ^ source.elyx
+#                            ^^ source.elyx keyword.control.import.elyx
+#                              ^ source.elyx
+#                               ^^^^^ source.elyx variable.other.elyx
+>import "./text.elyx" as typography
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                   ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                    ^ source.elyx
+#                     ^^ source.elyx keyword.control.import.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx variable.other.elyx
+>import "./components.elyx" as ui
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                          ^ source.elyx
+#                           ^^ source.elyx keyword.control.import.elyx
+#                             ^ source.elyx
+#                              ^^ source.elyx variable.other.elyx
+>import "./backgrounds.elyx" as backgrounds
+#^^^^^^ source.elyx keyword.control.import.elyx
+#      ^ source.elyx
+#       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#        ^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                           ^ source.elyx
+#                            ^^ source.elyx keyword.control.import.elyx
+#                              ^ source.elyx
+#                               ^^^^^^^^^^^ source.elyx variable.other.elyx
+>
+>// The trail guide for the Ridge Loop at 1440px: header, breadcrumbs, a
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// chapter sidebar, the article and an "on this page" list. Paragraphs with
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>// inline links are plain text layers so their subranges survive.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>export trailGuideScreen = frame {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.separator.assignment.elyx
+#                         ^ source.elyx
+#                          ^^^^^ source.elyx storage.type.kind.elyx
+#                               ^ source.elyx
+#                                ^ source.elyx punctuation.section.braces.begin.elyx
+>  title: "Trail guide: Ridge Loop",
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#          ^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                 ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                  ^ source.elyx punctuation.separator.comma.elyx
+>  caption: "A daylight guide page with a GPX snippet and a packing list.",
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                                         ^ source.elyx punctuation.separator.comma.elyx
+>  meta: {route: "/guides/ridge-loop"},
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.section.braces.begin.elyx
+#         ^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                   ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                    ^ source.elyx punctuation.section.braces.end.elyx
+#                                     ^ source.elyx punctuation.separator.comma.elyx
+>  left: 0px,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^ source.elyx constant.numeric.elyx
+#         ^^ source.elyx keyword.other.unit.elyx
+#           ^ source.elyx punctuation.separator.comma.elyx
+>  top: 0px,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^ source.elyx constant.numeric.elyx
+#        ^^ source.elyx keyword.other.unit.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>  width: 1440px,
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^^^^ source.elyx constant.numeric.elyx
+#             ^^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>  layout: {direction: .column, align-items: .center},
+#^^ source.elyx
+#  ^^^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+#           ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^ source.elyx constant.language.atom.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+#                              ^ source.elyx
+#                               ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                          ^ source.elyx punctuation.separator.colon.elyx
+#                                           ^ source.elyx
+#                                            ^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                   ^ source.elyx punctuation.section.braces.end.elyx
+#                                                    ^ source.elyx punctuation.separator.comma.elyx
+>  fill: colors.theme.page,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^^^ source.elyx variable.other.elyx
+#              ^ source.elyx punctuation.separator.accessor.elyx
+#               ^^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.accessor.elyx
+#                     ^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>  children: [backdrop, headerBar, crumbs, columns, footer],
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.brackets.begin.elyx
+#             ^^^^^^^^ source.elyx variable.other.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+#                      ^ source.elyx
+#                       ^^^^^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.comma.elyx
+#                                 ^ source.elyx
+#                                  ^^^^^^ source.elyx variable.other.elyx
+#                                        ^ source.elyx punctuation.separator.comma.elyx
+#                                         ^ source.elyx
+#                                          ^^^^^^^ source.elyx variable.other.elyx
+#                                                 ^ source.elyx punctuation.separator.comma.elyx
+#                                                  ^ source.elyx
+#                                                   ^^^^^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>
+>  backdrop = frame : backgrounds.contourBackdrop {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^^^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                                ^ source.elyx
+#                                                 ^ source.elyx punctuation.section.braces.begin.elyx
+>    left: 120px,
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^ source.elyx constant.numeric.elyx
+#             ^^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    top: 0px,
+#^^^^ source.elyx
+#    ^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^^ source.elyx keyword.other.unit.elyx
+#            ^ source.elyx punctuation.separator.comma.elyx
+>    ignore-stack: .true
+#^^^^ source.elyx
+#    ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^^^^^ source.elyx constant.language.atom.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  headerBar = frame {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, align-items: .center},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                            ^ source.elyx punctuation.separator.colon.elyx
+#                                             ^ source.elyx
+#                                              ^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                     ^ source.elyx punctuation.section.braces.end.elyx
+#                                                      ^ source.elyx punctuation.separator.comma.elyx
+>    padding: [scale.space.x6, 0px, scale.space.x8],
+#^^^^ source.elyx
+#    ^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.brackets.begin.elyx
+#              ^^^^^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.separator.accessor.elyx
+#                    ^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+#                             ^ source.elyx
+#                              ^ source.elyx constant.numeric.elyx
+#                               ^^ source.elyx keyword.other.unit.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+#                                  ^ source.elyx
+#                                   ^^^^^ source.elyx variable.other.elyx
+#                                        ^ source.elyx punctuation.separator.accessor.elyx
+#                                         ^^^^^ source.elyx variable.other.elyx
+#                                              ^ source.elyx punctuation.separator.accessor.elyx
+#                                               ^^ source.elyx variable.other.elyx
+#                                                 ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                  ^ source.elyx punctuation.separator.comma.elyx
+>    children: header
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  header = frame : ui.appHeader {
+#^^ source.elyx
+#  ^^^^^^ source.elyx variable.other.definition.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.separator.assignment.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^ source.elyx entity.name.type.source.elyx
+#                     ^ source.elyx punctuation.separator.accessor.elyx
+#                      ^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx
+#                                ^ source.elyx punctuation.section.braces.begin.elyx
+>    navigation {
+#^^^^ source.elyx
+#    ^^^^^^^^^^ source.elyx entity.name.tag.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.section.braces.begin.elyx
+>      mainNav {
+#^^^^^^ source.elyx
+#      ^^^^^^^ source.elyx entity.name.tag.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.braces.begin.elyx
+>        @with-variant(ui.navLinkActive)
+#^^^^^^^^ source.elyx
+#        ^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+#         ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#                     ^ source.elyx punctuation.section.parens.begin.elyx
+#                      ^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                      ^ source.elyx punctuation.section.parens.end.elyx
+>        guides {}
+#^^^^^^^^ source.elyx
+#        ^^^^^^ source.elyx entity.name.tag.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.section.braces.begin.elyx
+#                ^ source.elyx punctuation.section.braces.end.elyx
+>      }
+#^^^^^^ source.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbs = frame {
+#^^ source.elyx
+#  ^^^^^^ source.elyx variable.other.definition.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.separator.assignment.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 1200px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^ source.elyx constant.numeric.elyx
+#               ^^ source.elyx keyword.other.unit.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .row, align-items: .center, item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^ source.elyx constant.language.atom.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+#                             ^ source.elyx
+#                              ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                  ^ source.elyx punctuation.separator.comma.elyx
+#                                                   ^ source.elyx
+#                                                    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                                            ^ source.elyx punctuation.separator.colon.elyx
+#                                                             ^ source.elyx
+#                                                              ^^^^^ source.elyx variable.other.elyx
+#                                                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                    ^^^^^ source.elyx variable.other.elyx
+#                                                                         ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                          ^^ source.elyx variable.other.elyx
+#                                                                            ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                             ^ source.elyx punctuation.separator.comma.elyx
+>    children: [crumbGuides, crumbDivider, crumbRegion, crumbDivider2, crumbCurrent]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                          ^ source.elyx punctuation.separator.comma.elyx
+#                           ^ source.elyx
+#                            ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                        ^ source.elyx punctuation.separator.comma.elyx
+#                                         ^ source.elyx
+#                                          ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                     ^ source.elyx punctuation.separator.comma.elyx
+#                                                      ^ source.elyx
+#                                                       ^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                                                     ^ source.elyx
+#                                                                      ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                                                  ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbGuides = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^^ source.elyx entity.name.type.source.elyx
+#                                       ^ source.elyx
+#                                        ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Guides",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^ source.elyx string.quoted.double.elyx
+#                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.link
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbDivider = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^ source.elyx entity.name.type.source.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "/",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^ source.elyx string.quoted.double.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbRegion = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^^ source.elyx entity.name.type.source.elyx
+#                                       ^ source.elyx
+#                                        ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Hollin Fells",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.link
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbDivider2 = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.separator.assignment.elyx
+#                 ^ source.elyx
+#                  ^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                    ^^^^^ source.elyx entity.name.type.source.elyx
+#                                         ^ source.elyx
+#                                          ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "/",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^ source.elyx string.quoted.double.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  crumbCurrent = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^ source.elyx entity.name.type.source.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Ridge Loop"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  // Sidebar 280, article 720, contents 152, with 24px gaps.
+#^^ source.elyx
+#  ^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>  columns = frame {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 1200px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^^ source.elyx constant.numeric.elyx
+#               ^^ source.elyx keyword.other.unit.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {item-gap: scale.space.x6},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.separator.accessor.elyx
+#                             ^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^ source.elyx variable.other.elyx
+#                                     ^ source.elyx punctuation.section.braces.end.elyx
+#                                      ^ source.elyx punctuation.separator.comma.elyx
+>    padding: [scale.space.x10, scale.space.x0, scale.space.x24],
+#^^^^ source.elyx
+#    ^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.brackets.begin.elyx
+#              ^^^^^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.separator.accessor.elyx
+#                    ^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^ source.elyx variable.other.elyx
+#                             ^ source.elyx punctuation.separator.comma.elyx
+#                              ^ source.elyx
+#                               ^^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.accessor.elyx
+#                                     ^^^^^ source.elyx variable.other.elyx
+#                                          ^ source.elyx punctuation.separator.accessor.elyx
+#                                           ^^ source.elyx variable.other.elyx
+#                                             ^ source.elyx punctuation.separator.comma.elyx
+#                                              ^ source.elyx
+#                                               ^^^^^ source.elyx variable.other.elyx
+#                                                    ^ source.elyx punctuation.separator.accessor.elyx
+#                                                     ^^^^^ source.elyx variable.other.elyx
+#                                                          ^ source.elyx punctuation.separator.accessor.elyx
+#                                                           ^^^ source.elyx variable.other.elyx
+#                                                              ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                               ^ source.elyx punctuation.separator.comma.elyx
+>    children: [sidebar, article, aside]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^ source.elyx variable.other.elyx
+#                                      ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  sidebar = frame {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 280px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^^ source.elyx keyword.other.unit.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x1},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    children: [sidebarTitle, chapterOverview, chapterRoute, chapterHuts, chapterSafety]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+#                            ^ source.elyx
+#                             ^^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                            ^ source.elyx punctuation.separator.comma.elyx
+#                                             ^ source.elyx
+#                                              ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+#                                                           ^ source.elyx
+#                                                            ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                                       ^ source.elyx punctuation.separator.comma.elyx
+#                                                                        ^ source.elyx
+#                                                                         ^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                                                      ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  sidebarTitle = text : typography.eyebrow {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                          ^ source.elyx
+#                                           ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "CHAPTERS"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  chapterOverview = frame : ui.dropdownItem {
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.assignment.elyx
+#                   ^ source.elyx
+#                    ^^^^^ source.elyx storage.type.kind.elyx
+#                         ^ source.elyx
+#                          ^ source.elyx punctuation.separator.colon.elyx
+#                           ^ source.elyx
+#                            ^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                           ^ source.elyx
+#                                            ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>
+>    label {
+#^^^^ source.elyx
+#    ^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>      contents: "Overview"
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^^^ source.elyx string.quoted.double.elyx
+#                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  @with-variant(ui.dropdownItemActive)
+#^^ source.elyx
+#  ^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+#   ^^^^^^^^^^^^ source.elyx entity.name.function.decorator.elyx
+#               ^ source.elyx punctuation.section.parens.begin.elyx
+#                ^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^^^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                     ^ source.elyx punctuation.section.parens.end.elyx
+>  chapterRoute = frame : ui.dropdownItem {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.separator.colon.elyx
+#                        ^ source.elyx
+#                         ^^ source.elyx entity.name.type.source.elyx
+#                           ^ source.elyx punctuation.separator.accessor.elyx
+#                            ^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>
+>    label {
+#^^^^ source.elyx
+#    ^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>      contents: "The route"
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  chapterHuts = frame : ui.dropdownItem {
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^ source.elyx entity.name.type.source.elyx
+#                          ^ source.elyx punctuation.separator.accessor.elyx
+#                           ^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                       ^ source.elyx
+#                                        ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>
+>    label {
+#^^^^ source.elyx
+#    ^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>      contents: "Huts and water"
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                               ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  chapterSafety = frame : ui.dropdownItem {
+#^^ source.elyx
+#  ^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.separator.assignment.elyx
+#                 ^ source.elyx
+#                  ^^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.separator.colon.elyx
+#                         ^ source.elyx
+#                          ^^ source.elyx entity.name.type.source.elyx
+#                            ^ source.elyx punctuation.separator.accessor.elyx
+#                             ^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                         ^ source.elyx
+#                                          ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>
+>    label {
+#^^^^ source.elyx
+#    ^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>      contents: "Safety"
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  article = frame {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 720px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^^ source.elyx keyword.other.unit.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x6},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    children: [
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+>      titleBlock,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>      summary,
+#^^^^^^ source.elyx
+#      ^^^^^^^ source.elyx variable.other.elyx
+#             ^ source.elyx punctuation.separator.comma.elyx
+>      routeHeading,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>      routeText,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>      gpxBlock,
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx variable.other.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>      waterHeading,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>      waterText,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^ source.elyx variable.other.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>      packingHeading,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+>      packingList,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>      warningBlock,
+#^^^^^^ source.elyx
+#      ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.comma.elyx
+>      nextLink
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx variable.other.elyx
+>    ]
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  titleBlock = frame {
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x3},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    children: [eyebrow, pageTitle, badges]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+#                                  ^ source.elyx
+#                                   ^^^^^^ source.elyx variable.other.elyx
+#                                         ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  eyebrow = text : typography.eyebrow {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                             ^ source.elyx punctuation.separator.accessor.elyx
+#                              ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "HOLLIN FELLS · LOOP"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                  ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  pageTitle = text : typography.display {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                       ^ source.elyx
+#                                        ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Ridge Loop"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  badges = frame {
+#^^ source.elyx
+#  ^^^^^^ source.elyx variable.other.definition.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.separator.assignment.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.section.braces.begin.elyx
+>    layout: {item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.separator.accessor.elyx
+#                             ^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^ source.elyx variable.other.elyx
+#                                     ^ source.elyx punctuation.section.braces.end.elyx
+#                                      ^ source.elyx punctuation.separator.comma.elyx
+>    children: [difficulty, season]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+#                          ^ source.elyx
+#                           ^^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  difficulty = frame : ui.difficultyBadgeModerate {}
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^ source.elyx entity.name.type.source.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^^^^^^^^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                                 ^ source.elyx
+#                                                  ^ source.elyx punctuation.section.braces.begin.elyx
+#                                                   ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  season = frame : ui.difficultyBadge {
+#^^ source.elyx
+#  ^^^^^^ source.elyx variable.other.definition.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.separator.assignment.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^ source.elyx entity.name.type.source.elyx
+#                     ^ source.elyx punctuation.separator.accessor.elyx
+#                      ^^^^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    fill[0].color: colors.effects.inkAlpha10,
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^^^^^^^ source.elyx variable.other.elyx
+#                                            ^ source.elyx punctuation.separator.comma.elyx
+>
+>    dot {
+#^^^^ source.elyx
+#    ^^^ source.elyx entity.name.tag.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.section.braces.begin.elyx
+>      fill[0].color: colors.palette.sun
+#^^^^^^ source.elyx
+#      ^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.section.brackets.begin.elyx
+#           ^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.section.brackets.end.elyx
+#             ^ source.elyx punctuation.separator.accessor.elyx
+#              ^^^^^ source.elyx support.type.property-name.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.accessor.elyx
+#                            ^^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                    ^^^ source.elyx variable.other.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>
+>    label {
+#^^^^ source.elyx
+#    ^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>      contents: "June to September",
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                  ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                   ^ source.elyx punctuation.separator.comma.elyx
+>      fill[0].color: colors.theme.text
+#^^^^^^ source.elyx
+#      ^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.section.brackets.begin.elyx
+#           ^ source.elyx constant.numeric.elyx
+#            ^ source.elyx punctuation.section.brackets.end.elyx
+#             ^ source.elyx punctuation.separator.accessor.elyx
+#              ^^^^^ source.elyx support.type.property-name.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.accessor.elyx
+#                            ^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^ source.elyx variable.other.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  summary = text : typography.lead {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                             ^ source.elyx punctuation.separator.accessor.elyx
+#                              ^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx
+#                                   ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    contents: "A full day over three tops, with a hut at the halfway point and a long, easy descent beside the beck."
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  routeHeading = text : typography.heading {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                          ^ source.elyx
+#                                           ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "The route"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  routeText = text {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    fill: colors.theme.text,
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.accessor.elyx
+#                       ^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+>    subrange: {range: [92, 113], underline: .single, fill: colors.theme.link},
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.braces.begin.elyx
+#               ^^^^^ source.elyx support.type.property-name.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.brackets.begin.elyx
+#                       ^^ source.elyx constant.numeric.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+#                          ^ source.elyx
+#                           ^^^ source.elyx constant.numeric.elyx
+#                              ^ source.elyx punctuation.section.brackets.end.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                          ^ source.elyx punctuation.separator.colon.elyx
+#                                           ^ source.elyx
+#                                            ^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                                    ^ source.elyx
+#                                                     ^^^^ source.elyx support.type.property-name.elyx
+#                                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                                          ^ source.elyx
+#                                                           ^^^^^^ source.elyx variable.other.elyx
+#                                                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                  ^^^^^ source.elyx variable.other.elyx
+#                                                                       ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                        ^^^^ source.elyx variable.other.elyx
+#                                                                            ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                             ^ source.elyx punctuation.separator.comma.elyx
+>    contents: "Leave the car park by the gate and follow the beck upstream for two kilometres. The full track is in the GPX file below; the first waymark is on the stile.",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                                                                                                                                           ^ source.elyx punctuation.separator.comma.elyx
+>    font-size: 18,
+#^^^^ source.elyx
+#    ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#             ^ source.elyx punctuation.separator.colon.elyx
+#              ^ source.elyx
+#               ^^ source.elyx constant.numeric.elyx
+#                 ^ source.elyx punctuation.separator.comma.elyx
+>    font-family: "Inter",
+#^^^^ source.elyx
+#    ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                  ^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>    font-style: "Medium",
+#^^^^ source.elyx
+#    ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+>    line-height: 1.6
+#^^^^ source.elyx
+#    ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^^^ source.elyx constant.numeric.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  // The GPX snippet: a code surface with a mono label and the first track
+#^^ source.elyx
+#  ^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>  // points of the route.
+#^^ source.elyx
+#  ^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#    ^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>  gpxBlock = frame {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    fill: colors.theme.codeSurface,
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.accessor.elyx
+#                       ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.comma.elyx
+>    border: {color: colors.theme.border, width: 1px},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^ source.elyx variable.other.elyx
+#                          ^ source.elyx punctuation.separator.accessor.elyx
+#                           ^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^^^^^ source.elyx variable.other.elyx
+#                                       ^ source.elyx punctuation.separator.comma.elyx
+#                                        ^ source.elyx
+#                                         ^^^^^ source.elyx support.type.property-name.elyx
+#                                              ^ source.elyx punctuation.separator.colon.elyx
+#                                               ^ source.elyx
+#                                                ^ source.elyx constant.numeric.elyx
+#                                                 ^^ source.elyx keyword.other.unit.elyx
+#                                                   ^ source.elyx punctuation.section.braces.end.elyx
+#                                                    ^ source.elyx punctuation.separator.comma.elyx
+>    corner-radius: scale.radius.lg,
+#^^^^ source.elyx
+#    ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.comma.elyx
+>    padding: [scale.space.x4, scale.space.x5],
+#^^^^ source.elyx
+#    ^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.section.brackets.begin.elyx
+#              ^^^^^ source.elyx variable.other.elyx
+#                   ^ source.elyx punctuation.separator.accessor.elyx
+#                    ^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+#                             ^ source.elyx
+#                              ^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                    ^^^^^ source.elyx variable.other.elyx
+#                                         ^ source.elyx punctuation.separator.accessor.elyx
+#                                          ^^ source.elyx variable.other.elyx
+#                                            ^ source.elyx punctuation.section.brackets.end.elyx
+#                                             ^ source.elyx punctuation.separator.comma.elyx
+>    children: [gpxLabel, gpxCode]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+#                        ^ source.elyx
+#                         ^^^^^^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  gpxLabel = text : typography.eyebrow {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                      ^ source.elyx
+#                                       ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "RIDGE-LOOP.GPX"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                             ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  gpxCode = text : typography.code {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                             ^ source.elyx punctuation.separator.accessor.elyx
+#                              ^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx
+#                                   ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    contents: "<trk>\n  <name>Ridge Loop</name>\n  <trkseg>\n    <trkpt lat=\"61.5204\" lon=\"8.2107\"><ele>412</ele></trkpt>\n    <trkpt lat=\"61.5219\" lon=\"8.2133\"><ele>436</ele></trkpt>\n  </trkseg>\n</trk>",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^ source.elyx string.quoted.double.elyx
+#                    ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                      ^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                               ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                 ^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                           ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                             ^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                            ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                              ^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                     ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                       ^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                            ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                              ^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                    ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                             ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                               ^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                              ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                ^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                       ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                         ^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                              ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                                ^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                      ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                                               ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                                                                 ^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                                                            ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                                                                                                                                                              ^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                                                                    ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                                                                                                                                                                                     ^ source.elyx punctuation.separator.comma.elyx
+>    subrange: [
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+>      {range: [0, 5], fill: colors.syntax.tag},
+#^^^^^^ source.elyx
+#      ^ source.elyx punctuation.section.braces.begin.elyx
+#       ^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^ source.elyx constant.numeric.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx constant.numeric.elyx
+#                   ^ source.elyx punctuation.section.brackets.end.elyx
+#                    ^ source.elyx punctuation.separator.comma.elyx
+#                     ^ source.elyx
+#                      ^^^^ source.elyx support.type.property-name.elyx
+#                          ^ source.elyx punctuation.separator.colon.elyx
+#                           ^ source.elyx
+#                            ^^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^ source.elyx variable.other.elyx
+#                                         ^ source.elyx punctuation.separator.accessor.elyx
+#                                          ^^^ source.elyx variable.other.elyx
+#                                             ^ source.elyx punctuation.section.braces.end.elyx
+#                                              ^ source.elyx punctuation.separator.comma.elyx
+>      {range: [8, 14], fill: colors.syntax.tag}
+#^^^^^^ source.elyx
+#      ^ source.elyx punctuation.section.braces.begin.elyx
+#       ^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^ source.elyx constant.numeric.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+#                 ^ source.elyx
+#                  ^^ source.elyx constant.numeric.elyx
+#                    ^ source.elyx punctuation.section.brackets.end.elyx
+#                     ^ source.elyx punctuation.separator.comma.elyx
+#                      ^ source.elyx
+#                       ^^^^ source.elyx support.type.property-name.elyx
+#                           ^ source.elyx punctuation.separator.colon.elyx
+#                            ^ source.elyx
+#                             ^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.accessor.elyx
+#                                    ^^^^^^ source.elyx variable.other.elyx
+#                                          ^ source.elyx punctuation.separator.accessor.elyx
+#                                           ^^^ source.elyx variable.other.elyx
+#                                              ^ source.elyx punctuation.section.braces.end.elyx
+>    ]
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  waterHeading = text : typography.heading {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                          ^ source.elyx
+#                                           ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Huts and water"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                             ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  waterText = text : typography.prose {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    contents: "Ferncombe Hut sits at the halfway point and sells soup until four. The spring behind it runs all summer; the tarn does not, so fill up at the hut."
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                                                 ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packingHeading = text : typography.subheading {
+#^^ source.elyx
+#  ^^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.assignment.elyx
+#                  ^ source.elyx
+#                   ^^^^ source.elyx storage.type.kind.elyx
+#                       ^ source.elyx
+#                        ^ source.elyx punctuation.separator.colon.elyx
+#                         ^ source.elyx
+#                          ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx punctuation.separator.accessor.elyx
+#                                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                               ^ source.elyx
+#                                                ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Packing list"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packingList = frame {
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    padding-left: scale.space.x4,
+#^^^^ source.elyx
+#    ^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                ^ source.elyx punctuation.separator.colon.elyx
+#                 ^ source.elyx
+#                  ^^^^^ source.elyx variable.other.elyx
+#                       ^ source.elyx punctuation.separator.accessor.elyx
+#                        ^^^^^ source.elyx variable.other.elyx
+#                             ^ source.elyx punctuation.separator.accessor.elyx
+#                              ^^ source.elyx variable.other.elyx
+#                                ^ source.elyx punctuation.separator.comma.elyx
+>    children: [packWater, packLayers, packMap, packFood]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+#                         ^ source.elyx
+#                          ^^^^^^^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+#                                     ^ source.elyx
+#                                      ^^^^^^^ source.elyx variable.other.elyx
+#                                             ^ source.elyx punctuation.separator.comma.elyx
+#                                              ^ source.elyx
+#                                               ^^^^^^^^ source.elyx variable.other.elyx
+#                                                       ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packWater = text : typography.prose {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "· Two litres of water, or a filter for the spring"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packLayers = text : typography.prose {
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^^^^ source.elyx entity.name.type.source.elyx
+#                                      ^ source.elyx
+#                                       ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "· A warm layer and a waterproof, even in July"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packMap = text : typography.prose {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx variable.other.definition.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.separator.assignment.elyx
+#           ^ source.elyx
+#            ^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                             ^ source.elyx punctuation.separator.accessor.elyx
+#                              ^^^^^ source.elyx entity.name.type.source.elyx
+#                                   ^ source.elyx
+#                                    ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "· The map, offline: \"Download for offline use\" in the app"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                   ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                     ^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                             ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                               ^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                          ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  packFood = text : typography.prose {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "· Lunch; the hut kitchen closes at four"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                      ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  warningBlock = frame {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {align-items: .left, item-gap: scale.space.x3},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                        ^ source.elyx punctuation.separator.colon.elyx
+#                         ^ source.elyx
+#                          ^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    fill: colors.weather.warningTint,
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.separator.colon.elyx
+#         ^ source.elyx
+#          ^^^^^^ source.elyx variable.other.elyx
+#                ^ source.elyx punctuation.separator.accessor.elyx
+#                 ^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                    ^ source.elyx punctuation.separator.comma.elyx
+>    border: {color: colors.weather.warning, width: 1px, sides: [.left]},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^ source.elyx support.type.property-name.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^ source.elyx variable.other.elyx
+#                          ^ source.elyx punctuation.separator.accessor.elyx
+#                           ^^^^^^^ source.elyx variable.other.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^^ source.elyx variable.other.elyx
+#                                          ^ source.elyx punctuation.separator.comma.elyx
+#                                           ^ source.elyx
+#                                            ^^^^^ source.elyx support.type.property-name.elyx
+#                                                 ^ source.elyx punctuation.separator.colon.elyx
+#                                                  ^ source.elyx
+#                                                   ^ source.elyx constant.numeric.elyx
+#                                                    ^^ source.elyx keyword.other.unit.elyx
+#                                                      ^ source.elyx punctuation.separator.comma.elyx
+#                                                       ^ source.elyx
+#                                                        ^^^^^ source.elyx support.type.property-name.elyx
+#                                                             ^ source.elyx punctuation.separator.colon.elyx
+#                                                              ^ source.elyx
+#                                                               ^ source.elyx punctuation.section.brackets.begin.elyx
+#                                                                ^^^^^ source.elyx constant.language.atom.elyx
+#                                                                     ^ source.elyx punctuation.section.brackets.end.elyx
+#                                                                      ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                       ^ source.elyx punctuation.separator.comma.elyx
+>    corner-radius: [0px, 8px, 8px, 0px],
+#^^^^ source.elyx
+#    ^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.brackets.begin.elyx
+#                    ^ source.elyx constant.numeric.elyx
+#                     ^^ source.elyx keyword.other.unit.elyx
+#                       ^ source.elyx punctuation.separator.comma.elyx
+#                        ^ source.elyx
+#                         ^ source.elyx constant.numeric.elyx
+#                          ^^ source.elyx keyword.other.unit.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+#                             ^ source.elyx
+#                              ^ source.elyx constant.numeric.elyx
+#                               ^^ source.elyx keyword.other.unit.elyx
+#                                 ^ source.elyx punctuation.separator.comma.elyx
+#                                  ^ source.elyx
+#                                   ^ source.elyx constant.numeric.elyx
+#                                    ^^ source.elyx keyword.other.unit.elyx
+#                                      ^ source.elyx punctuation.section.brackets.end.elyx
+#                                       ^ source.elyx punctuation.separator.comma.elyx
+>    padding: scale.space.x4,
+#^^^^ source.elyx
+#    ^^^^^^^ source.elyx support.type.property-name.elyx
+#           ^ source.elyx punctuation.separator.colon.elyx
+#            ^ source.elyx
+#             ^^^^^ source.elyx variable.other.elyx
+#                  ^ source.elyx punctuation.separator.accessor.elyx
+#                   ^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.accessor.elyx
+#                         ^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+>    children: [warningTitle, warningText]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                           ^ source.elyx punctuation.separator.comma.elyx
+#                            ^ source.elyx
+#                             ^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                        ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  warningTitle = text : typography.bodyStrong {
+#^^ source.elyx
+#  ^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.separator.assignment.elyx
+#                ^ source.elyx
+#                 ^^^^ source.elyx storage.type.kind.elyx
+#                     ^ source.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                  ^ source.elyx punctuation.separator.accessor.elyx
+#                                   ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                             ^ source.elyx
+#                                              ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Exposed section",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.weather.warning
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^^^ source.elyx variable.other.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  warningText = text : typography.body {
+#^^ source.elyx
+#  ^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^ source.elyx storage.type.kind.elyx
+#                    ^ source.elyx
+#                     ^ source.elyx punctuation.separator.colon.elyx
+#                      ^ source.elyx
+#                       ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                 ^ source.elyx punctuation.separator.accessor.elyx
+#                                  ^^^^ source.elyx entity.name.type.source.elyx
+#                                      ^ source.elyx
+#                                       ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 560px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^^ source.elyx keyword.other.unit.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>    contents: "The ridge between the second and third tops has no shelter. In wind above 50 km/h, take the valley path from the hut instead."
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                                                                                                            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  nextLink = frame {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 100%,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^ source.elyx keyword.other.unit.elyx
+#               ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {justify-content: .end, align-items: .center, item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                            ^ source.elyx punctuation.separator.colon.elyx
+#                             ^ source.elyx
+#                              ^^^^ source.elyx constant.language.atom.elyx
+#                                  ^ source.elyx punctuation.separator.comma.elyx
+#                                   ^ source.elyx
+#                                    ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                               ^ source.elyx punctuation.separator.colon.elyx
+#                                                ^ source.elyx
+#                                                 ^^^^^^^ source.elyx constant.language.atom.elyx
+#                                                        ^ source.elyx punctuation.separator.comma.elyx
+#                                                         ^ source.elyx
+#                                                          ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                                                  ^ source.elyx punctuation.separator.colon.elyx
+#                                                                   ^ source.elyx
+#                                                                    ^^^^^ source.elyx variable.other.elyx
+#                                                                         ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                          ^^^^^ source.elyx variable.other.elyx
+#                                                                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                                                                ^^ source.elyx variable.other.elyx
+#                                                                                  ^ source.elyx punctuation.section.braces.end.elyx
+#                                                                                   ^ source.elyx punctuation.separator.comma.elyx
+>    padding-top: scale.space.x8,
+#^^^^ source.elyx
+#    ^^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#               ^ source.elyx punctuation.separator.colon.elyx
+#                ^ source.elyx
+#                 ^^^^^ source.elyx variable.other.elyx
+#                      ^ source.elyx punctuation.separator.accessor.elyx
+#                       ^^^^^ source.elyx variable.other.elyx
+#                            ^ source.elyx punctuation.separator.accessor.elyx
+#                             ^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+>    children: [nextLabel, nextTitle]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^ source.elyx variable.other.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+#                         ^ source.elyx
+#                          ^^^^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  nextLabel = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Next chapter",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  nextTitle = text : typography.link {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Huts and water"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                             ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  aside = frame {
+#^^ source.elyx
+#  ^^^^^ source.elyx variable.other.definition.elyx
+#       ^ source.elyx
+#        ^ source.elyx punctuation.separator.assignment.elyx
+#         ^ source.elyx
+#          ^^^^^ source.elyx storage.type.kind.elyx
+#               ^ source.elyx
+#                ^ source.elyx punctuation.section.braces.begin.elyx
+>    width: 152px,
+#^^^^ source.elyx
+#    ^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^^^ source.elyx constant.numeric.elyx
+#              ^^ source.elyx keyword.other.unit.elyx
+#                ^ source.elyx punctuation.separator.comma.elyx
+>    layout: {direction: .column, item-gap: scale.space.x2},
+#^^^^ source.elyx
+#    ^^^^^^ source.elyx support.type.property-name.elyx
+#          ^ source.elyx punctuation.separator.colon.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+#             ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                      ^ source.elyx punctuation.separator.colon.elyx
+#                       ^ source.elyx
+#                        ^^^^^^^ source.elyx constant.language.atom.elyx
+#                               ^ source.elyx punctuation.separator.comma.elyx
+#                                ^ source.elyx
+#                                 ^^^^^^^^ source.elyx support.type.property-name.elyx
+#                                         ^ source.elyx punctuation.separator.colon.elyx
+#                                          ^ source.elyx
+#                                           ^^^^^ source.elyx variable.other.elyx
+#                                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                                 ^^^^^ source.elyx variable.other.elyx
+#                                                      ^ source.elyx punctuation.separator.accessor.elyx
+#                                                       ^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.section.braces.end.elyx
+#                                                          ^ source.elyx punctuation.separator.comma.elyx
+>    children: [asideTitle, tocRoute, tocWater, tocPacking, tocSafety]
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.section.brackets.begin.elyx
+#               ^^^^^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+#                          ^ source.elyx
+#                           ^^^^^^^^ source.elyx variable.other.elyx
+#                                   ^ source.elyx punctuation.separator.comma.elyx
+#                                    ^ source.elyx
+#                                     ^^^^^^^^ source.elyx variable.other.elyx
+#                                             ^ source.elyx punctuation.separator.comma.elyx
+#                                              ^ source.elyx
+#                                               ^^^^^^^^^^ source.elyx variable.other.elyx
+#                                                         ^ source.elyx punctuation.separator.comma.elyx
+#                                                          ^ source.elyx
+#                                                           ^^^^^^^^^ source.elyx variable.other.elyx
+#                                                                    ^ source.elyx punctuation.section.brackets.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  asideTitle = text : typography.eyebrow {
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                        ^ source.elyx
+#                                         ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "ON THIS PAGE"
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  tocRoute = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "The route",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                         ^ source.elyx punctuation.separator.comma.elyx
+>    font-style: "Bold"
+#^^^^ source.elyx
+#    ^^^^^^^^^^ source.elyx support.type.property-name.elyx
+#              ^ source.elyx punctuation.separator.colon.elyx
+#               ^ source.elyx
+#                ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                 ^^^^ source.elyx string.quoted.double.elyx
+#                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  tocWater = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^ source.elyx variable.other.definition.elyx
+#          ^ source.elyx
+#           ^ source.elyx punctuation.separator.assignment.elyx
+#            ^ source.elyx
+#             ^^^^ source.elyx storage.type.kind.elyx
+#                 ^ source.elyx
+#                  ^ source.elyx punctuation.separator.colon.elyx
+#                   ^ source.elyx
+#                    ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                              ^ source.elyx punctuation.separator.accessor.elyx
+#                               ^^^^^ source.elyx entity.name.type.source.elyx
+#                                    ^ source.elyx
+#                                     ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Huts and water",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                             ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                              ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  tocPacking = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#            ^ source.elyx
+#             ^ source.elyx punctuation.separator.assignment.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx storage.type.kind.elyx
+#                   ^ source.elyx
+#                    ^ source.elyx punctuation.separator.colon.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                ^ source.elyx punctuation.separator.accessor.elyx
+#                                 ^^^^^ source.elyx entity.name.type.source.elyx
+#                                      ^ source.elyx
+#                                       ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Packing list",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                            ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  tocSafety = text : typography.small {
+#^^ source.elyx
+#  ^^^^^^^^^ source.elyx variable.other.definition.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.separator.assignment.elyx
+#             ^ source.elyx
+#              ^^^^ source.elyx storage.type.kind.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.separator.colon.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^ source.elyx entity.name.type.source.elyx
+#                                     ^ source.elyx
+#                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>    contents: "Safety",
+#^^^^ source.elyx
+#    ^^^^^^^^ source.elyx support.type.property-name.elyx
+#            ^ source.elyx punctuation.separator.colon.elyx
+#             ^ source.elyx
+#              ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#               ^^^^^^ source.elyx string.quoted.double.elyx
+#                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                      ^ source.elyx punctuation.separator.comma.elyx
+>    fill[0].color: colors.theme.textMuted
+#^^^^ source.elyx
+#    ^^^^ source.elyx support.type.property-name.elyx
+#        ^ source.elyx punctuation.section.brackets.begin.elyx
+#         ^ source.elyx constant.numeric.elyx
+#          ^ source.elyx punctuation.section.brackets.end.elyx
+#           ^ source.elyx punctuation.separator.accessor.elyx
+#            ^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^^^^^ source.elyx variable.other.elyx
+#                         ^ source.elyx punctuation.separator.accessor.elyx
+#                          ^^^^^ source.elyx variable.other.elyx
+#                               ^ source.elyx punctuation.separator.accessor.elyx
+#                                ^^^^^^^^^ source.elyx variable.other.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>
+>  footer = frame : ui.appFooter {}
+#^^ source.elyx
+#  ^^^^^^ source.elyx variable.other.definition.elyx
+#        ^ source.elyx
+#         ^ source.elyx punctuation.separator.assignment.elyx
+#          ^ source.elyx
+#           ^^^^^ source.elyx storage.type.kind.elyx
+#                ^ source.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^^ source.elyx entity.name.type.source.elyx
+#                     ^ source.elyx punctuation.separator.accessor.elyx
+#                      ^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                               ^ source.elyx
+#                                ^ source.elyx punctuation.section.braces.begin.elyx
+#                                 ^ source.elyx punctuation.section.braces.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>
+>// The same guide with the GPX block collapsed, as it shows on a first visit.
+#^^ source.elyx comment.line.double-slash.elyx punctuation.definition.comment.elyx
+#  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx comment.line.double-slash.elyx
+>@variant
+#^ source.elyx entity.name.function.decorator.elyx punctuation.definition.annotation.elyx
+# ^^^^^^^ source.elyx entity.name.function.decorator.elyx
+>export trailGuideCollapsed = frame : trailGuideScreen {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^^^^^^^^^^^^^^ source.elyx variable.other.definition.elyx
+#                          ^ source.elyx
+#                           ^ source.elyx punctuation.separator.assignment.elyx
+#                            ^ source.elyx
+#                             ^^^^^ source.elyx storage.type.kind.elyx
+#                                  ^ source.elyx
+#                                   ^ source.elyx punctuation.separator.colon.elyx
+#                                    ^ source.elyx
+#                                     ^^^^^^^^^^^^^^^^ source.elyx entity.name.type.source.elyx
+#                                                     ^ source.elyx
+#                                                      ^ source.elyx punctuation.section.braces.begin.elyx
+>  title: "Trail guide, snippet collapsed",
+#^^ source.elyx
+#  ^^^^^ source.elyx support.type.property-name.elyx
+#       ^ source.elyx punctuation.separator.colon.elyx
+#        ^ source.elyx
+#         ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                        ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                         ^ source.elyx punctuation.separator.comma.elyx
+>  caption: "The GPX block shows only its label until opened.",
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                                                            ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                                                             ^ source.elyx punctuation.separator.comma.elyx
+>  left: 1600px,
+#^^ source.elyx
+#  ^^^^ source.elyx support.type.property-name.elyx
+#      ^ source.elyx punctuation.separator.colon.elyx
+#       ^ source.elyx
+#        ^^^^ source.elyx constant.numeric.elyx
+#            ^^ source.elyx keyword.other.unit.elyx
+#              ^ source.elyx punctuation.separator.comma.elyx
+>  top: 0px,
+#^^ source.elyx
+#  ^^^ source.elyx support.type.property-name.elyx
+#     ^ source.elyx punctuation.separator.colon.elyx
+#      ^ source.elyx
+#       ^ source.elyx constant.numeric.elyx
+#        ^^ source.elyx keyword.other.unit.elyx
+#          ^ source.elyx punctuation.separator.comma.elyx
+>
+>  columns {
+#^^ source.elyx
+#  ^^^^^^^ source.elyx entity.name.tag.elyx
+#         ^ source.elyx
+#          ^ source.elyx punctuation.section.braces.begin.elyx
+>    article {
+#^^^^ source.elyx
+#    ^^^^^^^ source.elyx entity.name.tag.elyx
+#           ^ source.elyx
+#            ^ source.elyx punctuation.section.braces.begin.elyx
+>      gpxBlock {
+#^^^^^^ source.elyx
+#      ^^^^^^^^ source.elyx entity.name.tag.elyx
+#              ^ source.elyx
+#               ^ source.elyx punctuation.section.braces.begin.elyx
+>        overrides: [remove(trailGuideScreen.gpxCode)]
+#^^^^^^^^ source.elyx
+#        ^^^^^^^^^ source.elyx support.type.property-name.elyx
+#                 ^ source.elyx punctuation.separator.colon.elyx
+#                  ^ source.elyx
+#                   ^ source.elyx punctuation.section.brackets.begin.elyx
+#                    ^^^^^^ source.elyx support.function.elyx
+#                          ^ source.elyx punctuation.section.parens.begin.elyx
+#                           ^^^^^^^^^^^^^^^^ source.elyx variable.other.elyx
+#                                           ^ source.elyx punctuation.separator.accessor.elyx
+#                                            ^^^^^^^ source.elyx variable.other.elyx
+#                                                   ^ source.elyx punctuation.section.parens.end.elyx
+#                                                    ^ source.elyx punctuation.section.brackets.end.elyx
+>      }
+#^^^^^^ source.elyx
+#      ^ source.elyx punctuation.section.braces.end.elyx
+>    }
+#^^^^ source.elyx
+#    ^ source.elyx punctuation.section.braces.end.elyx
+>  }
+#^^ source.elyx
+#  ^ source.elyx punctuation.section.braces.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

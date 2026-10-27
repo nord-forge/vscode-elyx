@@ -1,0 +1,85 @@
+// Brambleway foundations: the spacing scale, corner radii, layout widths and
+// the type scale. Colours live in colors.elyx because they vary by theme;
+// nothing in here does.
+file {}
+
+// One unit is 4px. `x4` is the default gap between controls.
+export space = tokens {
+  x0: 0,
+  x1: 4,
+  x2: 8,
+  x2-5: 10,
+  x3: 12,
+  x4: 16,
+  x5: 20,
+  x6: 24,
+  x8: 32,
+  x10: 40,
+  x12: 48,
+  x16: 64,
+  x20: 80,
+  x24: 96,
+  x32: 128
+}
+
+export radius = tokens {
+  none: 0,
+  sm: 2,
+  base: 4,
+  md: 6,
+  lg: 8,
+  xl: 12,
+  card: 16,
+  sheet: [16, 16, 0, 0],
+  tag: [2, 8, 8, 2],
+  field: md,
+  pill: 9999
+}
+
+// Content widths at the 1440px desktop breakpoint.
+export layout = tokens {
+  page: 1440,
+  content: 1200,
+  article: 720,
+  sidebar: 280,
+  card: 368,
+  map: 760,
+  dialog: 480
+}
+
+export fonts = tokens {
+  body: "Inter",
+  display: "Fraunces",
+  mono: "JetBrains Mono"
+}
+
+export fontSize = tokens {
+  xs: 12,
+  sm: 14,
+  base: 16,
+  lg: 18,
+  xl: 20,
+  x2l: 24,
+  x3l: 32,
+  x4l: 44,
+  display: 64,
+  hero: 96,
+  stat: 72
+}
+
+export lineHeight = tokens {
+  none: 1,
+  tight: 1.1,
+  snug: 1.25,
+  normal: 1.4,
+  relaxed: 1.6,
+  loose: 1.75
+}
+
+// Letter spacing is a percentage of the font size.
+export letterSpacing = tokens {
+  tight: -2%,
+  normal: 0%,
+  wide: 4%,
+  wider: 8%
+}

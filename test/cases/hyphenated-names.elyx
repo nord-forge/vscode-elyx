@@ -1,0 +1,6 @@
+export brand-blue = tokens {
+  x2-5: -12,
+  refs: [brand-blue, x2-5],
+  _private: .true, -dash: .false,
+  more-refs: [_private, -dash]
+}

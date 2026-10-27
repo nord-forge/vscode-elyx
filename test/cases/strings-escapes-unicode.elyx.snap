@@ -1,0 +1,38 @@
+>export values = tokens {
+#^^^^^^ source.elyx storage.modifier.elyx
+#      ^ source.elyx
+#       ^^^^^^ source.elyx variable.other.definition.elyx
+#             ^ source.elyx
+#              ^ source.elyx punctuation.separator.assignment.elyx
+#               ^ source.elyx
+#                ^^^^^^ source.elyx storage.type.kind.elyx
+#                      ^ source.elyx
+#                       ^ source.elyx punctuation.section.braces.begin.elyx
+>  unicode: "› ✓ 😀 café", escapes: "line\nreturn\rtab\tquote\"slash\\"
+#^^ source.elyx
+#  ^^^^^^^ source.elyx support.type.property-name.elyx
+#         ^ source.elyx punctuation.separator.colon.elyx
+#          ^ source.elyx
+#           ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#            ^^^^^^^^^^^ source.elyx string.quoted.double.elyx
+#                       ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+#                        ^ source.elyx punctuation.separator.comma.elyx
+#                         ^ source.elyx
+#                          ^^^^^^^ source.elyx support.type.property-name.elyx
+#                                 ^ source.elyx punctuation.separator.colon.elyx
+#                                  ^ source.elyx
+#                                   ^ source.elyx string.quoted.double.elyx punctuation.definition.string.begin.elyx
+#                                    ^^^^ source.elyx string.quoted.double.elyx
+#                                        ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                          ^^^^^^ source.elyx string.quoted.double.elyx
+#                                                ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                  ^^^ source.elyx string.quoted.double.elyx
+#                                                     ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                       ^^^^^ source.elyx string.quoted.double.elyx
+#                                                            ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                              ^^^^^ source.elyx string.quoted.double.elyx
+#                                                                   ^^ source.elyx string.quoted.double.elyx constant.character.escape.elyx
+#                                                                     ^ source.elyx string.quoted.double.elyx punctuation.definition.string.end.elyx
+>}
+#^ source.elyx punctuation.section.braces.end.elyx
+>

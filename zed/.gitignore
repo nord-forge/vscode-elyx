@@ -1,0 +1,6 @@
+node_modules/
+extension.toml
+*.dylib
+*.so
+*.dll
+grammars/

@@ -1,0 +1,55 @@
+export values = tokens {
+  leading-hyphen: -name,
+  single-hyphen: -,
+  repeated-hyphen: --name,
+  names: [-name, -name, --],
+  arguments: custom(-name, -name),
+  group: ( -name ),
+  addition: (1 +2),
+  subtraction: (1 -2),
+  symbolicPlus: (foo +2),
+  symbolicMinus: (foo -2),
+  symbolicOperand: (foo -bar),
+  groupedPlus: ((1) +2),
+  symbolicPlusOperand: (foo +bar),
+  multipliedNegative: (1 *-2),
+  addedNegative: (1 + -2),
+  subtractedNegative: (1 - -2),
+  negativeLength: (1 + -0.5px),
+  negativeNamedOperand: (foo + -bar),
+  hyphenPath: -foo.bar,
+  bareHyphenPath: -.value,
+  hyphenPathList: [-foo.bar, -foo.bar],
+  signed: [-2, +2],
+  newline-addition: (1
++ 2),
+  newline-subtraction: (1
+- 2),
+  newline-multiplication: (1
+* 2),
+  newline-division: (1
+/ 2),
+  map: { key: { nested: [stop(0%, #fff), { color: .transparent }] } },
+  file-call: file(file, file = file)
+}
+export base = frame {}
+export instance = frame : base {
+  file {},
+  children {},
+  frame {},
+  import {},
+  if {},
+  ::children {},
+  label.children {},
+  ::fill[0].frame[2].color: #fff
+}
+file { draw-connections: .true }
+file = frame { file: file }
+@context(if=frame, theme=::theme.if, locale="✓")
+export sourced = frame : theme.frame {}
+import "colors.elyx" as colors
+// annotation after import alias must leave expression state
+@context(theme="dark")
+file { draw-connections: .true }
+@variant
+export following = frame : base {}

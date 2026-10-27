@@ -1,0 +1,16 @@
+# Ship only the manifest, documentation for users, and language assets.
+**/*
+!package.json
+!LICENSE
+!LICENSE.txt
+!CHANGELOG.md
+!language-configuration.json
+!syntaxes/
+!syntaxes/elyx.tmLanguage.json
+!src/
+!src/extension.js
+!src/tokens.js
+!src/previews.js
+!src/theme.js
+!src/accessibility.js
+!images/icon.png

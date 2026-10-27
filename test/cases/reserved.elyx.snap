@@ -1,0 +1,83 @@
+>board component group __board__ __document__ let const fn this self
+#^^^^^ source.elyx keyword.control.reserved.elyx
+#     ^ source.elyx
+#      ^^^^^^^^^ source.elyx keyword.control.reserved.elyx
+#               ^ source.elyx
+#                ^^^^^ source.elyx keyword.control.reserved.elyx
+#                     ^ source.elyx
+#                      ^^^^^^^^^ source.elyx keyword.control.reserved.elyx
+#                               ^ source.elyx
+#                                ^^^^^^^^^^^^ source.elyx keyword.control.reserved.elyx
+#                                            ^ source.elyx
+#                                             ^^^ source.elyx keyword.control.reserved.elyx
+#                                                ^ source.elyx
+#                                                 ^^^^^ source.elyx keyword.control.reserved.elyx
+#                                                      ^ source.elyx
+#                                                       ^^ source.elyx keyword.control.reserved.elyx
+#                                                         ^ source.elyx
+#                                                          ^^^^ source.elyx keyword.control.reserved.elyx
+#                                                              ^ source.elyx
+#                                                               ^^^^ source.elyx keyword.control.reserved.elyx
+>children where type trait super struct static ref mod loop in data
+#^^^^^^^^ source.elyx keyword.control.reserved.elyx
+#        ^ source.elyx
+#         ^^^^^ source.elyx keyword.control.reserved.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx keyword.control.reserved.elyx
+#                   ^ source.elyx
+#                    ^^^^^ source.elyx keyword.control.reserved.elyx
+#                         ^ source.elyx
+#                          ^^^^^ source.elyx keyword.control.reserved.elyx
+#                               ^ source.elyx
+#                                ^^^^^^ source.elyx keyword.control.reserved.elyx
+#                                      ^ source.elyx
+#                                       ^^^^^^ source.elyx keyword.control.reserved.elyx
+#                                             ^ source.elyx
+#                                              ^^^ source.elyx keyword.control.reserved.elyx
+#                                                 ^ source.elyx
+#                                                  ^^^ source.elyx keyword.control.reserved.elyx
+#                                                     ^ source.elyx
+#                                                      ^^^^ source.elyx keyword.control.reserved.elyx
+#                                                          ^ source.elyx
+#                                                           ^^ source.elyx keyword.control.reserved.elyx
+#                                                             ^ source.elyx
+#                                                              ^^^^ source.elyx keyword.control.reserved.elyx
+>async await if when then else match case not and or try catch rescue
+#^^^^^ source.elyx keyword.control.reserved.elyx
+#     ^ source.elyx
+#      ^^^^^ source.elyx keyword.control.reserved.elyx
+#           ^ source.elyx
+#            ^^ source.elyx keyword.control.reserved.elyx
+#              ^ source.elyx
+#               ^^^^ source.elyx keyword.control.reserved.elyx
+#                   ^ source.elyx
+#                    ^^^^ source.elyx keyword.control.reserved.elyx
+#                        ^ source.elyx
+#                         ^^^^ source.elyx keyword.control.reserved.elyx
+#                             ^ source.elyx
+#                              ^^^^^ source.elyx keyword.control.reserved.elyx
+#                                   ^ source.elyx
+#                                    ^^^^ source.elyx keyword.control.reserved.elyx
+#                                        ^ source.elyx
+#                                         ^^^ source.elyx keyword.control.reserved.elyx
+#                                            ^ source.elyx
+#                                             ^^^ source.elyx keyword.control.reserved.elyx
+#                                                ^ source.elyx
+#                                                 ^^ source.elyx keyword.control.reserved.elyx
+#                                                   ^ source.elyx
+#                                                    ^^^ source.elyx keyword.control.reserved.elyx
+#                                                       ^ source.elyx
+#                                                        ^^^^^ source.elyx keyword.control.reserved.elyx
+#                                                             ^ source.elyx
+#                                                              ^^^^^^ source.elyx keyword.control.reserved.elyx
+>finally throw return __file__ __canvas__
+#^^^^^^^ source.elyx keyword.control.reserved.elyx
+#       ^ source.elyx
+#        ^^^^^ source.elyx keyword.control.reserved.elyx
+#             ^ source.elyx
+#              ^^^^^^ source.elyx keyword.control.reserved.elyx
+#                    ^ source.elyx
+#                     ^^^^^^^^ source.elyx keyword.control.reserved.elyx
+#                             ^ source.elyx
+#                              ^^^^^^^^^^ source.elyx keyword.control.reserved.elyx
+>

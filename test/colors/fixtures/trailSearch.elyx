@@ -1,0 +1,99 @@
+import "design/tokens/colors.elyx" as colors
+import "design/tokens/spacing.elyx" as spacing
+import "design/tokens/radius.elyx" as radii
+import "design/typography/text.elyx" as typography
+
+// The trail search on the landing hero: a translucent white field with the
+// Find button inside, sitting on the dusk gradient.
+export trailSearch = frame {
+  title: "Trail search",
+  caption: "Search input with the Find button inside, on the landing hero.",
+  meta: {component: "TrailSearch", story: "hero"},
+  left: 0px,
+  top: 0px,
+  width: 520px,
+  layout: {
+    justify-content: .space-between,
+    align-items: .center,
+    item-gap: spacing.space.x4
+  },
+  fill: colors.effects.whiteAlpha80,
+  corner-radius: radii.radius.md,
+  padding: [spacing.space.x4, spacing.space.x6],
+  children: [input, submit],
+
+  input = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: spacing.space.x1},
+    children: placeholder
+  }
+
+  placeholder = text : typography.base {
+    contents: "Search trails, huts or summits",
+    fill[0].color: colors.palette.slateLight
+  }
+
+  submit = frame {
+    layout: {justify-content: .center, align-items: .center},
+    fill: colors.theme.accent,
+    corner-radius: radii.radius.field,
+    padding: spacing.inset.field,
+    children: submitLabel,
+
+    submitLabel = text : typography.buttonLabel {
+      contents: "Find",
+      fill[0].color: colors.palette.white
+    }
+  }
+}
+
+// No match: an ember message under the input.
+@variant
+export trailSearchError = frame : trailSearch {
+  title: "Trail search, error",
+  caption: "Validation message under the input.",
+  left: 640px,
+  top: 0px,
+
+  input {
+    overrides: [insert(errorMessage, after = trailSearch.placeholder)]
+  }
+
+  errorMessage = text : typography.caption {
+    contents: "We could not find that place. Try a nearby town.",
+    fill[0].color: colors.palette.ember
+  }
+}
+
+// The compact search floating over the map on the night screens: dark
+// glass with a thin white border and a bottom sheet corner shape.
+export trailSearchOverlay = frame {
+  title: "Trail search (map overlay)",
+  caption: "Compact search over the map on night screens.",
+  meta: {component: "TrailSearch", story: "overlay"},
+  left: 1280px,
+  top: 0px,
+  width: 320px,
+  layout: {align-items: .center},
+  fill: colors.effects.inkAlpha60,
+  border: colors.effects.whiteAlpha20,
+  corner-radius: radii.radius.lg,
+  padding: [spacing.space.x3, spacing.space.x4],
+  children: overlayPlaceholder,
+
+  overlayPlaceholder = text : typography.base {
+    contents: "Jump to a place",
+    fill[0].color: colors.palette.stone
+  }
+}
+
+// The same overlay docked to the bottom of the map as a sheet.
+@variant
+export trailSearchSheet = frame : trailSearchOverlay {
+  title: "Trail search (docked sheet)",
+  caption: "Docked to the bottom edge of the map on small screens.",
+  left: 1680px,
+  top: 0px,
+  corner-radius: radii.radius.sheet,
+  padding: spacing.inset.sheet
+}

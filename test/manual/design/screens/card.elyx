@@ -1,0 +1,42 @@
+import "design/tokens/colors.elyx" as colors
+import "design/tokens/spacing.elyx" as spacing
+import "design/tokens/grid.elyx" as grid
+
+// Colours, spacing and grid are imported. Radius, typography and legacy
+// resolve through the token folders by file name.
+export card = frame {
+  title: "Elyx test card",
+  fill: colors.palette.orange,
+  stroke: colors.palette.ink,
+  background: colors.palette.paper,
+  accent: colors.palette.sky,
+  success: colors.palette.grass,
+  muted: colors.palette.grey,
+  brand: colors.palette.brand,
+  calm: colors.palette.calm,
+  overlay: colors.palette.halfOrange,
+  glass: colors.effects.whiteAlpha7,
+  shadow: colors.effects.shadow,
+  corner-radius: radius.radius.lg,
+  pill: radius.radius.pill,
+  tab: radius.radius.top,
+  padding: [spacing.space.x3, spacing.space.x6],
+  item-gap: spacing.space.x1,
+  section-gap: spacing.space.huge,
+  custom-gutter: grid.grid.gutter,
+  custom-rounding: grid.grid.rounding,
+  retired: legacy.old.red,
+
+  label = text {
+    contents: "Hover each token",
+    font-size: typography.fontSize.body,
+    headline: typography.fontSize.hero,
+    line-height: typography.lineHeight.normal,
+    letter-spacing: typography.letterSpacing.wide,
+    font-family: typography.fonts.body,
+    display-family: typography.fonts.display,
+    font-weight: typography.fontWeight.bold,
+    regular-weight: typography.fontWeight.regular,
+    book-weight: typography.fontWeight.book
+  }
+}

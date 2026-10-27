@@ -1,0 +1,810 @@
+import "./colors.elyx" as colors
+import "./foundations.elyx" as scale
+import "./text.elyx" as typography
+
+// The Brambleway component library: buttons, navigation, badges, fields,
+// cards and the app header. Screens instance these and override only what
+// differs. The board parts at the bottom build the overview in index.elyx.
+file {}
+
+// Buttons
+
+export primaryButton = frame {
+  title: "Primary button",
+  caption: "Moss fill with a white label. One per screen.",
+  left: 0px,
+  top: 0px,
+  layout: {justify-content: .center, align-items: .center},
+  fill: colors.theme.accent,
+  corner-radius: scale.radius.lg,
+  padding: [scale.space.x3, scale.space.x6],
+  children: label,
+
+  label = text : typography.buttonLabel {
+    contents: "Book a bunk",
+    fill[0].color: colors.palette.white
+  }
+}
+
+@variant
+export primaryButtonHover = frame : primaryButton {
+  title: "Primary button, hover",
+  caption: "A shade darker, with a soft shadow.",
+  left: 200px,
+  top: 0px,
+  fill[0].color: colors.palette.pine,
+  shadow: {
+    drop-shadow: {
+      color: colors.effects.shadowCard,
+      offset: point(0px, 4px),
+      blur-radius: 12px
+    }
+  }
+}
+
+export ghostButton = frame : primaryButton {
+  title: "Ghost button",
+  caption: "Secondary actions: a border and no fill.",
+  left: 400px,
+  top: 0px,
+  fill: .transparent,
+  border: {color: colors.theme.border, width: 1px},
+
+  label {
+    contents: "Save for later",
+    fill[0].color: colors.theme.text
+  }
+}
+
+@variant
+export ghostButtonHover = frame : ghostButton {
+  title: "Ghost button, hover",
+  caption: "The border darkens and a tint fills the button.",
+  left: 600px,
+  top: 0px,
+  fill: colors.effects.inkAlpha10,
+  border[0].color: colors.theme.text
+}
+
+// Navigation
+
+export navLink = text : typography.base {
+  title: "Navigation link",
+  caption: "Header navigation: 16px in the muted colour.",
+  left: 0px,
+  top: 120px,
+  contents: "Routes",
+  fill[0].color: colors.theme.textMuted
+}
+
+@variant
+export navLinkActive = text : navLink {
+  title: "Navigation link, active",
+  caption: "The current section: full text colour and bold.",
+  left: 120px,
+  top: 120px,
+  font-style: "Bold",
+  fill[0].color: colors.theme.text
+}
+
+export dropdownTrigger = frame {
+  title: "Dropdown trigger",
+  caption: "A navigation link with a chevron that opens a menu.",
+  left: 260px,
+  top: 120px,
+  layout: {align-items: .center, item-gap: scale.space.x1},
+  children: [label, chevron],
+
+  label = text : navLink {
+    left: 0px,
+    top: 0px,
+    contents: "Huts"
+  }
+
+  chevron = frame {
+    width: 10px,
+    height: 6px,
+    fill: colors.theme.textMuted,
+    corner-radius: [0px, 0px, 5px, 5px]
+  }
+}
+
+@variant
+export dropdownTriggerActive = frame : dropdownTrigger {
+  title: "Dropdown trigger, active",
+  caption: "The current section.",
+  left: 380px,
+  top: 120px,
+
+  @with-variant(navLinkActive)
+  label {}
+}
+
+@variant
+export dropdownTriggerOpen = frame : dropdownTrigger {
+  title: "Dropdown trigger, open",
+  caption: "The chevron flips while the menu is open.",
+  left: 500px,
+  top: 120px,
+
+  chevron {
+    corner-radius: [5px, 5px, 0px, 0px],
+    fill[0].color: colors.theme.text
+  }
+}
+
+export dropdownItem = frame {
+  title: "Dropdown item",
+  caption: "One row in a dropdown menu.",
+  left: 640px,
+  top: 120px,
+  width: 208px,
+  layout: {align-items: .center},
+  corner-radius: scale.radius.md,
+  padding: [scale.space.x2, scale.space.x3],
+  children: label,
+
+  label = text : typography.base {
+    contents: "Mountain huts"
+  }
+}
+
+@variant
+export dropdownItemHover = frame : dropdownItem {
+  title: "Dropdown item, hover",
+  caption: "A tinted row under the pointer.",
+  left: 880px,
+  top: 120px,
+  fill: colors.effects.mossAlpha15
+}
+
+@variant
+export dropdownItemActive = frame : dropdownItem {
+  title: "Dropdown item, active",
+  caption: "The current page, in bold.",
+  left: 1120px,
+  top: 120px,
+
+  label {
+    font-style: "Bold"
+  }
+}
+
+// Badges
+
+export difficultyBadge = frame {
+  title: "Difficulty badge",
+  caption: "The waymark colour and its name. Easy by default.",
+  left: 0px,
+  top: 220px,
+  layout: {align-items: .center, item-gap: scale.space.x1},
+  fill: colors.trail.easyTint,
+  corner-radius: scale.radius.tag,
+  padding: [scale.space.x1, scale.space.x2],
+  children: [dot, label],
+
+  dot = frame {
+    width: 8px,
+    height: 8px,
+    fill: colors.trail.easy,
+    corner-radius: scale.radius.pill
+  }
+
+  label = text : typography.caption {
+    contents: "Easy",
+    font-style: "Bold",
+    fill[0].color: colors.trail.easy
+  }
+}
+
+@variant
+export difficultyBadgeModerate = frame : difficultyBadge {
+  title: "Difficulty badge, moderate",
+  left: 100px,
+  top: 220px,
+  fill[0].color: colors.trail.moderateTint,
+
+  dot {
+    fill[0].color: colors.trail.moderate
+  }
+
+  label {
+    contents: "Moderate",
+    fill[0].color: colors.trail.moderate
+  }
+}
+
+@variant
+export difficultyBadgeHard = frame : difficultyBadge {
+  title: "Difficulty badge, hard",
+  left: 220px,
+  top: 220px,
+  fill[0].color: colors.trail.hardTint,
+
+  dot {
+    fill[0].color: colors.trail.hard
+  }
+
+  label {
+    contents: "Hard",
+    fill[0].color: colors.trail.hard
+  }
+}
+
+@variant
+export difficultyBadgeAlpine = frame : difficultyBadge {
+  title: "Difficulty badge, alpine",
+  left: 320px,
+  top: 220px,
+  fill[0].color: colors.trail.alpineTint,
+
+  dot {
+    fill[0].color: colors.trail.alpine
+  }
+
+  label {
+    contents: "Alpine",
+    fill[0].color: colors.trail.alpine
+  }
+}
+
+export weatherChip = frame {
+  title: "Weather chip",
+  caption: "One day of the forecast strip.",
+  left: 440px,
+  top: 220px,
+  width: 72px,
+  layout: {direction: .column, align-items: .center, item-gap: scale.space.x1},
+  fill: colors.theme.surfaceRaised,
+  corner-radius: scale.radius.lg,
+  padding: scale.space.x2,
+  children: [day, glyph, temperature],
+
+  day = text : typography.caption {
+    contents: "Sat",
+    fill[0].color: colors.theme.textMuted
+  }
+
+  glyph = frame {
+    width: 24px,
+    height: 24px,
+    fill: colors.weather.clear,
+    corner-radius: scale.radius.pill
+  }
+
+  temperature = text : typography.bodyStrong {
+    contents: "14°"
+  }
+}
+
+@variant
+export weatherChipWarning = frame : weatherChip {
+  title: "Weather chip, warning",
+  caption: "A storm warning: ember tint and border.",
+  left: 540px,
+  top: 220px,
+  fill[0].color: colors.weather.warningTint,
+  border: {color: colors.weather.warning, width: 1px},
+
+  glyph {
+    fill[0].color: colors.weather.storm
+  }
+
+  temperature {
+    contents: "6°"
+  }
+}
+
+// Fields
+
+export searchField = frame {
+  title: "Trail search",
+  caption: "Search input with the Find button inside.",
+  meta: {component: "TrailSearch", story: "default"},
+  left: 0px,
+  top: 320px,
+  width: 480px,
+  layout: {
+    justify-content: .space-between,
+    align-items: .center,
+    item-gap: scale.space.x3
+  },
+  fill: colors.theme.field,
+  border: {color: colors.theme.fieldBorder, width: 1px},
+  corner-radius: scale.radius.field,
+  padding: [scale.space.x2, scale.space.x2, scale.space.x2, scale.space.x4],
+  children: [input, submit],
+
+  input = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x1},
+    children: placeholder
+  }
+
+  placeholder = text : typography.base {
+    contents: "Search trails, huts or summits",
+    fill[0].color: colors.palette.pebble
+  }
+
+  submit = frame : primaryButton {
+    padding: [scale.space.x2, scale.space.x4],
+
+    label {
+      contents: "Find"
+    }
+  }
+}
+
+@variant
+export searchFieldFocus = frame : searchField {
+  title: "Trail search, focus",
+  caption: "A lake-blue ring while the field has focus.",
+  left: 560px,
+  top: 320px,
+  border[0].color: colors.palette.lake,
+  shadow: {
+    drop-shadow: {
+      color: colors.theme.focus,
+      offset: point(0px, 0px),
+      blur-radius: 0px,
+      spread: 3px
+    }
+  }
+}
+
+@variant
+export searchFieldError = frame : searchField {
+  title: "Trail search, error",
+  caption: "Validation message under the input.",
+  left: 1120px,
+  top: 320px,
+  border[0].color: colors.palette.ember,
+
+  input {
+    overrides: [insert(errorMessage, after = searchField.placeholder)]
+  }
+
+  errorMessage = text : typography.errorText {
+    contents: "We could not find that place. Try a nearby town."
+  }
+}
+
+// Cards
+
+export trailCard = frame {
+  title: "Trail card",
+  caption: "A route in the results list: photo band, name, badges and stats.",
+  meta: {component: "TrailCard"},
+  left: 0px,
+  top: 440px,
+  width: 368px,
+  layout: {direction: .column},
+  fill: colors.theme.surface,
+  shadow: {
+    drop-shadow: {
+      color: colors.effects.shadowSoft,
+      offset: point(0px, 2px),
+      blur-radius: 6px
+    }
+  },
+  corner-radius: scale.radius.card,
+  overflow: .clip,
+  children: [cover, details],
+
+  cover = frame {
+    width: 100%,
+    height: 160px,
+    fill: {
+      linear-gradient: {
+        angle: 160deg,
+        stops: [stop(0%, colors.palette.fern), stop(100%, colors.palette.pine)]
+      }
+    }
+  }
+
+  details = frame {
+    width: 100%,
+    layout: {direction: .column, item-gap: scale.space.x3},
+    padding: scale.space.x5,
+    children: [name, badges, stats]
+  }
+
+  name = text : typography.cardTitle {
+    contents: "Ridge Loop from Hollin Tarn"
+  }
+
+  badges = frame {
+    layout: {item-gap: scale.space.x2},
+    children: [difficulty]
+  }
+
+  difficulty = frame : difficultyBadgeModerate {}
+
+  stats = text : typography.small {
+    contents: "12.4 km · 640 m ascent · 4 h 30",
+    fill[0].color: colors.theme.textMuted
+  }
+}
+
+@variant
+export trailCardHover = frame : trailCard {
+  title: "Trail card, hover",
+  caption: "Lifted with a deeper shadow.",
+  left: 400px,
+  top: 440px,
+  shadow[0].drop-shadow.color: colors.effects.shadowLifted,
+  shadow[0].drop-shadow.offset: point(0px, 8px),
+  shadow[0].drop-shadow.blur-radius: 24px
+}
+
+export statTile = frame {
+  title: "Statistic",
+  caption: "A big number with a label under it.",
+  left: 800px,
+  top: 440px,
+  width: 240px,
+  layout: {direction: .column, align-items: .center, item-gap: scale.space.x2},
+  padding: [scale.space.x6, scale.space.x4],
+  children: [value, label],
+
+  value = text : typography.statValue {}
+
+  label = text : typography.statLabel {}
+}
+
+export avatar = frame {
+  title: "Avatar",
+  caption: "A round initial for the ranger who last checked a route.",
+  left: 1080px,
+  top: 440px,
+  width: 40px,
+  height: 40px,
+  layout: {justify-content: .center, align-items: .center},
+  fill: colors.palette.fernPale,
+  corner-radius: scale.radius.pill,
+  children: initial,
+
+  initial = text : typography.bodyStrong {
+    contents: "R",
+    fill[0].color: colors.palette.pine
+  }
+}
+
+// App header
+
+export appHeader = frame {
+  title: "App header",
+  caption: "Logo, main navigation, the account avatar and the booking button.",
+  meta: {component: "AppHeader"},
+  left: 0px,
+  top: 760px,
+  width: 1200px,
+  layout: {align-items: .center, item-gap: scale.space.x6},
+  fill: colors.theme.surface,
+  shadow: {
+    drop-shadow: {
+      color: colors.effects.shadowSoft,
+      offset: point(0px, 2px),
+      blur-radius: 4px
+    }
+  },
+  corner-radius: scale.radius.xl,
+  overflow: .visible,
+  padding: [scale.space.x3, scale.space.x5],
+  children: [logo, navigation],
+
+  logo = text : typography.cardTitle {
+    contents: "Brambleway",
+    fill[0].color: colors.theme.accent
+  }
+
+  navigation = frame {
+    width: 100%,
+    layout: {justify-content: .space-between, align-items: .center},
+    overflow: .visible,
+    children: [mainNav, actions]
+  }
+
+  mainNav = frame {
+    layout: {align-items: .center, item-gap: scale.space.x6},
+    overflow: .visible,
+    children: [routes, huts, conditions, guides]
+  }
+
+  routes = text : navLink {
+    contents: "Routes"
+  }
+
+  huts = frame : dropdownTrigger {
+    overflow: .visible
+  }
+
+  conditions = text : navLink {
+    contents: "Conditions"
+  }
+
+  guides = text : navLink {
+    contents: "Guides"
+  }
+
+  actions = frame {
+    layout: {align-items: .center, item-gap: scale.space.x4},
+    children: [account, book]
+  }
+
+  account = frame : avatar {}
+
+  book = frame : primaryButton {}
+}
+
+export hutMenu = frame {
+  title: "Huts menu",
+  caption: "The dropdown under 'Huts' in the header.",
+  left: 1280px,
+  top: 760px,
+  width: 224px,
+  layout: {direction: .column, item-gap: 2px},
+  fill: colors.theme.surface,
+  border: colors.effects.ring,
+  shadow: [
+    {
+      drop-shadow: {
+        color: #1b23281a,
+        offset: point(0px, 12px),
+        blur-radius: 28px
+      }
+    },
+    {
+      drop-shadow: {
+        color: colors.effects.shadowCard,
+        offset: point(0px, 4px),
+        blur-radius: 12px
+      }
+    }
+  ],
+  corner-radius: scale.radius.xl,
+  padding: scale.space.x1,
+  children: [mountain, valley, bothies, map],
+
+  mountain = frame : dropdownItem {
+    width: 100%
+  }
+
+  valley = frame : dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Valley lodges"
+    }
+  }
+
+  bothies = frame : dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Open bothies"
+    }
+  }
+
+  map = frame : dropdownItem {
+    width: 100%,
+
+    label {
+      contents: "Hut map"
+    }
+  }
+}
+
+@variant
+export appHeaderRoutes = frame : appHeader {
+  title: "App header, routes section",
+  caption: "'Routes' highlighted.",
+  left: 0px,
+  top: 880px,
+
+  navigation {
+    mainNav {
+      @with-variant(navLinkActive)
+      routes {}
+    }
+  }
+}
+
+@variant
+export appHeaderMenuOpen = frame : appHeader {
+  title: "App header, huts menu open",
+  caption: "Hovering 'Huts' opens the menu.",
+  left: 0px,
+  top: 1000px,
+
+  navigation {
+    mainNav {
+      @with-variant(dropdownTriggerOpen)
+      huts {
+        overrides: [insert(openMenu, after = .nil)]
+      }
+    }
+  }
+
+  openMenu = frame : hutMenu {
+    left: -16px,
+    top: 36px,
+    ignore-stack: .true,
+
+    @with-variant(dropdownItemActive)
+    mountain {}
+
+    @with-variant(dropdownItemHover)
+    valley {}
+  }
+}
+
+export appFooter = frame {
+  title: "App footer",
+  caption: "Pine footer with the legal line and app links.",
+  left: 0px,
+  top: 1400px,
+  width: 1440px,
+  layout: {justify-content: .space-between, align-items: .center},
+  fill: colors.theme.footer,
+  padding: [scale.space.x10, scale.space.x16],
+  children: [legal, links],
+
+  legal = text : typography.small {
+    contents: "Brambleway is a sample project. Trails and huts are invented.",
+    fill[0].color: colors.theme.footerMuted
+  }
+
+  links = frame {
+    layout: {item-gap: scale.space.x6},
+    children: [privacy, status, help]
+  }
+
+  privacy = text : typography.small {
+    contents: "Privacy",
+    fill[0].color: colors.theme.footerText
+  }
+
+  status = text : typography.small {
+    contents: "Trail status",
+    fill[0].color: colors.theme.footerText
+  }
+
+  help = text : typography.small {
+    contents: "Help",
+    fill[0].color: colors.theme.footerText
+  }
+}
+
+// Board parts
+
+export sectionHeading = frame {
+  title: "Section heading",
+  caption: "The heading and rule that open each overview section.",
+  left: 0px,
+  top: 1600px,
+  width: 1200px,
+  layout: {direction: .column, item-gap: scale.space.x2},
+  border: {color: colors.theme.divider, width: 1px, sides: [.end]},
+  padding-bottom: scale.space.x3,
+  children: [heading, intro],
+
+  heading = text : typography.heading {
+    contents: "Colour"
+  }
+
+  intro = text : typography.muted {
+    width: 720px,
+    contents: "Every token, with its name and value."
+  }
+}
+
+export swatch = frame {
+  title: "Swatch",
+  caption: "A colour chip with the token name and its value.",
+  left: 0px,
+  top: 1720px,
+  width: 160px,
+  layout: {direction: .column, item-gap: scale.space.x2},
+  children: [chip, name, value],
+
+  chip = frame {
+    width: 100%,
+    height: 96px,
+    fill: colors.palette.stone,
+    border: {color: colors.effects.inkAlpha10, width: 1px},
+    corner-radius: scale.radius.lg
+  }
+
+  name = text : typography.bodyStrong {
+    contents: "stone"
+  }
+
+  value = text : typography.caption {
+    contents: "#d8d2c4",
+    fill[0].color: colors.theme.textMuted
+  }
+}
+
+export spaceBar = frame {
+  title: "Spacing bar",
+  caption: "A bar as long as the spacing step, with its name.",
+  left: 200px,
+  top: 1720px,
+  width: 100%,
+  layout: {align-items: .center, item-gap: scale.space.x4},
+  children: [name, bar],
+
+  name = text : typography.small {
+    width: 64px,
+    contents: "x4"
+  }
+
+  bar = frame {
+    width: 16px,
+    height: 12px,
+    fill: colors.palette.fern,
+    corner-radius: scale.radius.sm
+  }
+}
+
+export radiusChip = frame {
+  title: "Radius chip",
+  caption: "A square with one corner radius, and its name.",
+  left: 520px,
+  top: 1720px,
+  width: 112px,
+  layout: {direction: .column, align-items: .center, item-gap: scale.space.x2},
+  children: [shapeSample, name],
+
+  shapeSample = frame {
+    width: 80px,
+    height: 80px,
+    fill: colors.palette.fernPale,
+    border: {color: colors.palette.moss, width: 2px},
+    corner-radius: scale.radius.md
+  }
+
+  name = text : typography.caption {
+    contents: "md"
+  }
+}
+
+export specimen = frame {
+  title: "Specimen",
+  caption: "A labelled card for one component.",
+  left: 680px,
+  top: 1720px,
+  width: 368px,
+  layout: {direction: .column, item-gap: scale.space.x3},
+  fill: colors.theme.surface,
+  corner-radius: scale.radius.card,
+  padding: scale.space.x6,
+  children: [label, note, stage],
+
+  label = text : typography.bodyStrong {
+    contents: "Component"
+  }
+
+  note = text : typography.muted {
+    width: 100%,
+    contents: "What it is and where it is used."
+  }
+
+  stage = frame {
+    width: 100%,
+    layout: {direction: .row, align-items: .left, item-gap: scale.space.x4},
+    fill: colors.theme.page,
+    corner-radius: scale.radius.lg,
+    overflow: .visible,
+    padding: scale.space.x4,
+    children: placeholder
+  }
+
+  placeholder = frame {
+    width: 120px,
+    height: 40px,
+    fill: colors.theme.divider,
+    corner-radius: scale.radius.sm
+  }
+}

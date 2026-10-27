@@ -1,0 +1,4 @@
+export values = frame {
+  shadow[1].inner-shadow.blur-radius: 8px,
+  ::fill[0].color: colors.palette.royalBlue
+}

@@ -1,0 +1,589 @@
+{
+  "name": "elyx",
+  "displayName": "Elyx",
+  "description": "Syntax highlighting, colour swatches and visual token hovers for Elyx design files.",
+  "version": "0.4.0",
+  "publisher": "nord-forge",
+  "author": {
+    "name": "Nick Bevers",
+    "url": "https://github.com/NickBevers"
+  },
+  "icon": "images/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nord-forge/vscode-elyx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/nord-forge/vscode-elyx/issues"
+  },
+  "homepage": "https://github.com/nord-forge/vscode-elyx#readme",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "elyx",
+    "design",
+    "design tokens",
+    "syntax"
+  ],
+  "scripts": {
+    "test": "bun run test:semantic && bun run test:review && bun run test:snapshots && bun run test:coverage && bun run test:colors && bun run test:previews",
+    "test:semantic": "bun test/semantic.cjs",
+    "test:snapshots": "bun test/snapshots.cjs",
+    "test:snapshots:update": "bun run test:semantic && bun run test:review && bun test/snapshots.cjs --update",
+    "test:coverage": "bun test/coverage.cjs",
+    "test:tokens": "bun test/dump-tokens.cjs",
+    "test:diagnostics": "bun test/diagnostics.cjs",
+    "package": "bun scripts/package.ts",
+    "test:review": "bun test/review-regressions.cjs",
+    "test:zed": "bun run --cwd zed test",
+    "zed:prepare": "bun run --cwd zed prepare:local",
+    "verify": "bun scripts/verify.ts",
+    "test:colors": "bun test ./test/colors",
+    "test:host": "bun scripts/test-extension-host.ts",
+    "test:previews": "bun test ./test/previews"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.0.0",
+    "vscode-oniguruma": "2.0.1",
+    "vscode-textmate": "9.3.2",
+    "vscode-tmgrammar-test": "0.1.3"
+  },
+  "vsce": {
+    "dependencies": false
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "elyx",
+        "aliases": [
+          "Elyx"
+        ],
+        "extensions": [
+          ".elyx"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "elyx",
+        "scopeName": "source.elyx",
+        "path": "./syntaxes/elyx.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "Elyx",
+      "properties": {
+        "elyx.tokenDirectories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "default": [
+            "design/tokens",
+            "elyx/tokens"
+          ],
+          "scope": "resource",
+          "description": "Workspace-relative token folders. Explicit imports are also followed. Duplicate file names require an explicit import."
+        },
+        "elyx.tokenExclude": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[^{},]+$",
+            "patternErrorMessage": "Use one glob per entry, without braces or commas."
+          },
+          "default": [
+            "**/node_modules/**",
+            "**/.git/**",
+            "**/vendor/**"
+          ],
+          "scope": "resource",
+          "description": "Globs skipped while searching token folders. Use one glob per entry. Files that are imported explicitly still load."
+        },
+        "elyx.refreshDelay": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2000,
+          "default": 100,
+          "scope": "window",
+          "description": "Milliseconds to wait after an edit before swatches refresh."
+        },
+        "elyx.colorPreviews.enabled": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Show read-only colour swatches beside resolved tokens and colour expressions."
+        },
+        "elyx.colorPreviews.position": {
+          "type": "string",
+          "enum": [
+            "before",
+            "after"
+          ],
+          "enumDescriptions": [
+            "Show the swatch before the token.",
+            "Show the swatch after the token."
+          ],
+          "default": "before",
+          "scope": "resource",
+          "description": "Where colour swatches appear relative to the token."
+        },
+        "elyx.colorPreviews.size": {
+          "type": "number",
+          "minimum": 0.5,
+          "maximum": 2,
+          "default": 0.9,
+          "scope": "resource",
+          "description": "Swatch size in em, relative to the editor font size."
+        },
+        "elyx.colorPreviews.borderColor": {
+          "type": "string",
+          "format": "color-hex",
+          "default": "#888888",
+          "scope": "resource",
+          "description": "Border colour of colour swatches as a hex value."
+        },
+        "elyx.colorPreviews.checkerboard": {
+          "type": "object",
+          "default": {},
+          "additionalProperties": false,
+          "scope": "resource",
+          "properties": {
+            "light": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Light squares. Default #ffffff."
+            },
+            "dark": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Dark squares. Default #aaaaaa."
+            }
+          },
+          "description": "Checkerboard behind transparent colours in swatches."
+        },
+        "elyx.tokenPreviews.visualHovers": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Show visual samples for resolved tokens and literal values in hover cards."
+        },
+        "elyx.tokenPreviews.theme": {
+          "type": "string",
+          "enum": [
+            "editor",
+            "auto",
+            "dark",
+            "light"
+          ],
+          "enumDescriptions": [
+            "Use colours from the active VS Code theme and workbench.colorCustomizations.",
+            "Use the built-in palette that matches a dark or light editor theme.",
+            "Always use the built-in dark palette.",
+            "Always use the built-in light palette."
+          ],
+          "default": "editor",
+          "scope": "resource",
+          "description": "Colour scheme of visual hover cards."
+        },
+        "elyx.tokenPreviews.darkColors": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Card background."
+            },
+            "surface": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Panels inside the card."
+            },
+            "text": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Labels and samples."
+            },
+            "mutedText": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Footnote text."
+            },
+            "line": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Borders and measuring lines."
+            },
+            "accent": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Shapes and outlines."
+            },
+            "accentSoft": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Radius sample fill."
+            },
+            "checkerLight": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Light squares behind transparent colours."
+            },
+            "checkerDark": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Dark squares behind transparent colours."
+            }
+          },
+          "additionalProperties": false,
+          "scope": "resource",
+          "markdownDescription": "Hex colours for hover cards on dark themes. Leave a key out to keep its default."
+        },
+        "elyx.tokenPreviews.lightColors": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "background": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Card background."
+            },
+            "surface": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Panels inside the card."
+            },
+            "text": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Labels and samples."
+            },
+            "mutedText": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Footnote text."
+            },
+            "line": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Borders and measuring lines."
+            },
+            "accent": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Shapes and outlines."
+            },
+            "accentSoft": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Radius sample fill."
+            },
+            "checkerLight": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Light squares behind transparent colours."
+            },
+            "checkerDark": {
+              "type": "string",
+              "format": "color-hex",
+              "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+              "description": "Dark squares behind transparent colours."
+            }
+          },
+          "additionalProperties": false,
+          "scope": "resource",
+          "markdownDescription": "Hex colours for hover cards on light themes. Leave a key out to keep its default."
+        },
+        "elyx.tokenPreviews.themeColors": {
+          "type": "object",
+          "default": {},
+          "patternProperties": {
+            "^(\\[[^\\]]+\\])+$": {
+              "type": "object",
+              "default": {},
+              "properties": {
+                "background": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Card background."
+                },
+                "surface": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Panels inside the card."
+                },
+                "text": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Labels and samples."
+                },
+                "mutedText": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Footnote text."
+                },
+                "line": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Borders and measuring lines."
+                },
+                "accent": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Shapes and outlines."
+                },
+                "accentSoft": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Radius sample fill."
+                },
+                "checkerLight": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Light squares behind transparent colours."
+                },
+                "checkerDark": {
+                  "type": "string",
+                  "format": "color-hex",
+                  "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                  "description": "Dark squares behind transparent colours."
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false,
+          "scope": "resource",
+          "markdownDescription": "Hover card colours for specific VS Code themes, applied last. Keys use the `workbench.colorCustomizations` form: `[Theme Name]`, `[One][Two]` or `[*Dark*]`."
+        },
+        "elyx.tokenPreviews.minimumContrast": {
+          "type": "string",
+          "enum": [
+            "AA",
+            "AAA",
+            "off"
+          ],
+          "enumDescriptions": [
+            "Card text reaches 4.5:1 and lines and shapes reach 3:1 against the card.",
+            "Card text reaches 7:1 and lines and shapes reach 3:1 against the card.",
+            "Use theme and override colours exactly as given."
+          ],
+          "default": "AA",
+          "scope": "resource",
+          "description": "Lightens or darkens hover card colours that fall below this WCAG contrast level. Token colours are never changed."
+        },
+        "elyx.tokenPreviews.highContrast": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "on",
+            "off"
+          ],
+          "enumDescriptions": [
+            "Use high contrast cards with high contrast editor themes.",
+            "Always use high contrast cards.",
+            "Never use high contrast cards."
+          ],
+          "default": "auto",
+          "scope": "resource",
+          "description": "High contrast cards use thicker lines, a card border, no soft fills, larger footnotes and AAA text contrast."
+        },
+        "elyx.tokenPreviews.scale": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 2,
+          "default": 1,
+          "scope": "resource",
+          "description": "Draws hover cards larger, from 1x to 2x."
+        },
+        "elyx.tokenPreviews.textDescriptions": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "always",
+            "never"
+          ],
+          "enumDescriptions": [
+            "Add descriptions when editor.accessibilitySupport is on.",
+            "Always add descriptions.",
+            "Never add descriptions."
+          ],
+          "default": "auto",
+          "scope": "resource",
+          "markdownDescription": "Adds a written description of each visual sample to the hover text, for screen readers and the Accessible View."
+        },
+        "elyx.tokenPreviews.sampleText": {
+          "type": "string",
+          "maxLength": 80,
+          "default": "",
+          "scope": "resource",
+          "description": "Text used in font size, family, weight, line height and letter spacing samples. Leave empty for the built-in samples."
+        },
+        "elyx.tokenPreviews.fontFamily": {
+          "type": "string",
+          "default": "sans-serif",
+          "scope": "resource",
+          "description": "Font for card labels and the fallback for typography samples. Letters, digits, spaces, commas and hyphens only."
+        },
+        "elyx.tokenPreviews.fontWeights": {
+          "type": "object",
+          "default": {},
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 1,
+            "maximum": 1000
+          },
+          "scope": "resource",
+          "markdownDescription": "Extra font weight names, for example `{\"book\": 450}`. Built-in names such as `bold` and `semi-bold` still work."
+        },
+        "elyx.tokenPreviews.maxFontSize": {
+          "type": "number",
+          "minimum": 8,
+          "maximum": 96,
+          "default": 56,
+          "scope": "resource",
+          "description": "Largest font size drawn at full size. Larger values are scaled down and labelled."
+        },
+        "elyx.tokenPreviews.maxSpacing": {
+          "type": "number",
+          "minimum": 20,
+          "maximum": 170,
+          "default": 160,
+          "scope": "resource",
+          "description": "Largest spacing in pixels drawn at 1x. Larger values are scaled to fit the card and labelled."
+        },
+        "elyx.tokenPreviews.propertyNames": {
+          "type": "object",
+          "default": {},
+          "properties": {
+            "font-size": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "line-height": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "letter-spacing": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "font-weight": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "font-family": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "radius": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "spacing": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          },
+          "additionalProperties": false,
+          "scope": "resource",
+          "markdownDescription": "Extra property, group or file names that choose a hover sample. For example `{\"spacing\": [\"gutter\", \"inset\"]}`. camelCase names also match their kebab-case form."
+        },
+        "elyx.tokenPreviews.showColorHex": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Show the resolved hex value of colour tokens in hovers."
+        },
+        "elyx.tokenPreviews.showColorName": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Add a plain colour name, such as \"dark orange\", after the hex value."
+        },
+        "elyx.tokenPreviews.showContrast": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "For colour tokens, show the WCAG contrast ratio when the colour is used as text on white, black and the editor background."
+        },
+        "elyx.tokenPreviews.colorVision": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "For colour tokens, show how the colour looks with protanopia, deuteranopia and tritanopia."
+        },
+        "elyx.tokenPreviews.showDefinition": {
+          "type": "boolean",
+          "default": true,
+          "scope": "resource",
+          "description": "Show the file that defines a token in hovers."
+        }
+      }
+    }
+  },
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onLanguage:elyx"
+  ],
+  "extensionKind": [
+    "workspace"
+  ]
+}

@@ -1,0 +1,7 @@
+// Found through the second default folder, elyx/tokens.
+export radius = tokens {
+  sm: 4,
+  lg: 8,
+  pill: 999,
+  top: [12, 12, 0, 0]
+}

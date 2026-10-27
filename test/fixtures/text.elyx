@@ -1,0 +1,275 @@
+use "fonts/Inter-Medium.woff2"
+use "fonts/Inter-Bold.woff2"
+use "fonts/Fraunces-SemiBold.woff2"
+
+import "./colors.elyx" as colors
+import "./foundations.elyx" as typo
+
+// The Brambleway type scale. Every style derives from `body` and only
+// declares what differs. Inter carries the interface, Fraunces the trail
+// names and big numbers, JetBrains Mono the route snippets.
+file {}
+
+export body = text {
+  title: "Body",
+  caption: "Default text: Inter Medium 16 on 1.4. Every style derives from it.",
+  left: 0px,
+  top: 0px,
+  fill: colors.theme.text,
+  contents: "Pack for the weather you expect, then pack for the weather you do not.",
+  font-size: typo.fontSize.base,
+  font-family: typo.fonts.body,
+  font-style: "Medium",
+  line-height: typo.lineHeight.normal
+}
+
+// Long-form text in the trail guide: 18 on 1.6.
+@variant
+export prose = text : body {
+  title: "Prose",
+  caption: "Guide paragraphs: 18 on 1.6.",
+  left: 560px,
+  top: 0px,
+  contents: "The path leaves the car park through a gate and climbs gently through birch woods before the first viewpoint.",
+  font-size: typo.fontSize.lg,
+  line-height: typo.lineHeight.relaxed
+}
+
+@variant
+export bodyStrong = text : body {
+  title: "Body bold",
+  caption: "Bold body text for labels and small headings.",
+  left: 0px,
+  top: 180px,
+  contents: "Hut opens in June",
+  font-style: "Bold"
+}
+
+// Card intros and the hero subtitle: 24 on 32.
+@variant
+export lead = text : body {
+  title: "Lead",
+  caption: "Hero subtitles and card intros: 24 on 32.",
+  left: 240px,
+  top: 180px,
+  contents: "Plan the route, book the hut, check the sky.",
+  font-size: typo.fontSize.x2l,
+  line-height: 1.33
+}
+
+@variant
+export base = text : body {
+  title: "Base",
+  caption: "16px text: navigation, buttons and list rows.",
+  left: 760px,
+  top: 180px,
+  contents: "Routes",
+  line-height: 1.5
+}
+
+@variant
+export small = text : body {
+  title: "Small",
+  caption: "14px text: metadata, table cells and footers.",
+  left: 940px,
+  top: 180px,
+  contents: "12.4 km · 640 m ascent",
+  font-size: typo.fontSize.sm,
+  line-height: typo.lineHeight.normal
+}
+
+@variant
+export muted = text : body {
+  title: "Muted",
+  caption: "14px in the muted theme colour, for hints and asides.",
+  left: 1180px,
+  top: 180px,
+  contents: "Last updated by a ranger two days ago.",
+  font-size: typo.fontSize.sm,
+  line-height: typo.lineHeight.snug,
+  fill[0].color: colors.theme.textMuted
+}
+
+@variant
+export caption = text : body {
+  title: "Caption",
+  caption: "12px text: map labels, badges and error messages.",
+  left: 0px,
+  top: 360px,
+  contents: "Waymark 14",
+  font-size: typo.fontSize.xs,
+  line-height: 1.33
+}
+
+// Section labels above cards: uppercase, bold and widely tracked.
+@variant
+export eyebrow = text : body {
+  title: "Eyebrow",
+  caption: "Uppercase bold 12px with wide tracking.",
+  left: 160px,
+  top: 360px,
+  contents: "ELEVATION\nPROFILE",
+  font-size: typo.fontSize.xs,
+  font-style: "Bold",
+  line-height: typo.lineHeight.tight,
+  letter-spacing: typo.letterSpacing.wider,
+  fill[0].color: colors.theme.textMuted
+}
+
+@variant
+export heading = text : body {
+  title: "Heading (h2)",
+  caption: "32px Fraunces for section headings.",
+  left: 400px,
+  top: 360px,
+  contents: "Before you set off",
+  font-size: typo.fontSize.x3l,
+  font-family: typo.fonts.display,
+  font-style: "SemiBold",
+  line-height: typo.lineHeight.snug,
+  fill[0].color: colors.theme.heading
+}
+
+@variant
+export subheading = text : body {
+  title: "Subheading (h3)",
+  caption: "20px bold for subsections inside a guide.",
+  left: 760px,
+  top: 360px,
+  contents: "Water sources",
+  font-size: typo.fontSize.xl,
+  font-style: "Bold",
+  line-height: typo.lineHeight.snug
+}
+
+@variant
+export link = text : body {
+  title: "Link",
+  caption: "Underlined link in the theme link colour.",
+  left: 1000px,
+  top: 360px,
+  contents: "download the GPX file",
+  underline: .single,
+  fill[0].color: colors.theme.link
+}
+
+// Route snippets in the guide: JetBrains Mono 14 on 1.75.
+@variant
+export code = text : body {
+  title: "Code",
+  caption: "Mono 14 on 1.75, inside code blocks.",
+  left: 1240px,
+  top: 360px,
+  contents: "<trkpt lat=\"61.52\" lon=\"8.21\">",
+  font-size: typo.fontSize.sm,
+  font-family: typo.fonts.mono,
+  font-style: "Regular",
+  line-height: typo.lineHeight.loose,
+  fill[0].color: colors.syntax.text
+}
+
+@variant
+export display = text : body {
+  title: "Display",
+  caption: "Fraunces 64: screen titles.",
+  left: 0px,
+  top: 560px,
+  contents: "Ridge Loop",
+  font-size: typo.fontSize.display,
+  font-family: typo.fonts.display,
+  font-style: "SemiBold",
+  line-height: typo.lineHeight.tight,
+  letter-spacing: typo.letterSpacing.tight,
+  fill[0].color: colors.theme.heading
+}
+
+// The landing hero, two lines on purpose.
+@variant
+export heroTitle = text : body {
+  title: "Hero title",
+  caption: "Fraunces 96 on 1: the landing hero.",
+  left: 480px,
+  top: 560px,
+  contents: "WALK FURTHER,\nCARRY LESS",
+  font-size: typo.fontSize.hero,
+  font-family: typo.fonts.display,
+  font-style: "SemiBold",
+  line-height: typo.lineHeight.none,
+  letter-spacing: typo.letterSpacing.tight
+}
+
+@variant
+export cardTitle = text : body {
+  title: "Card title",
+  caption: "Fraunces 24: trail and hut cards.",
+  left: 0px,
+  top: 860px,
+  contents: "Ferncombe Hut",
+  font-size: typo.fontSize.x2l,
+  font-family: typo.fonts.display,
+  font-style: "SemiBold",
+  line-height: typo.lineHeight.snug
+}
+
+@variant
+export statValue = text : body {
+  title: "Statistic value",
+  caption: "Fraunces 72: distance, ascent and time on the trail page.",
+  left: 320px,
+  top: 860px,
+  contents: "12.4",
+  font-size: typo.fontSize.stat,
+  font-family: typo.fonts.display,
+  font-style: "SemiBold",
+  line-height: 1
+}
+
+@variant
+export statLabel = text : body {
+  title: "Statistic label",
+  caption: "Uppercase 12px under a statistic.",
+  left: 520px,
+  top: 860px,
+  contents: "KILOMETRES",
+  font-size: typo.fontSize.xs,
+  font-style: "Bold",
+  letter-spacing: typo.letterSpacing.wide,
+  fill[0].color: colors.theme.textMuted
+}
+
+@variant
+export mapLabel = text : body {
+  title: "Map label",
+  caption: "White 12px bold with a dark halo, on the map.",
+  left: 720px,
+  top: 860px,
+  contents: "Hollin Tarn",
+  font-size: typo.fontSize.xs,
+  font-style: "Bold",
+  line-height: 1,
+  fill[0].color: colors.palette.white
+}
+
+@variant
+export errorText = text : body {
+  title: "Error text",
+  caption: "12px in ember, under a field that failed validation.",
+  left: 920px,
+  top: 860px,
+  contents: "Pick a start date after today.",
+  font-size: typo.fontSize.xs,
+  line-height: 1.33,
+  fill[0].color: colors.palette.ember
+}
+
+@variant
+export buttonLabel = text : body {
+  title: "Button label",
+  caption: "16px bold, centred, on primary and ghost buttons.",
+  left: 1200px,
+  top: 860px,
+  contents: "Book a bunk",
+  font-style: "Bold",
+  align: .center,
+  line-height: 1.5
+}

@@ -1,0 +1,396 @@
+import "./colors.elyx" as colors
+import "./colors.dark.elyx" as colorsdark
+import "./foundations.elyx" as scale
+import "./text.elyx" as typography
+import "./components.elyx" as ui
+import "./backgrounds.elyx" as backgrounds
+
+// Every theme token in the blocks below, including the header and footer,
+// resolves to its colors.dark.elyx value.
+@with-context(theme="dark")
+file {}
+
+// The night hike page at 1440px: a summit glow behind the title, the route
+// statistics, the forecast for the night, the huts on the way and the
+// checklist cards. Positions follow the 1440px layout: hero at 160, the
+// statistics at 720, the forecast at 1040, the huts at 1400 and the
+// checklist from 2000.
+export nightHikeScreen = frame {
+  title: "Night hike: Hollin Tarn",
+  caption: "The night screen with its summit glow, forecast strip and checklist cards.",
+  meta: {route: "/routes/hollin-tarn/night"},
+  left: 0px,
+  top: 0px,
+  width: 1440px,
+  layout: {direction: .column, align-items: .center},
+  fill: colorsdark.darkTheme.page,
+  children: [glow, headerBar, body, footer],
+
+  glow = frame : backgrounds.summitGlow {
+    left: 0px,
+    top: 0px,
+    opacity: 0.6,
+    ignore-stack: .true
+  }
+
+  headerBar = frame {
+    width: 100%,
+    layout: {direction: .column, align-items: .center},
+    padding-top: 28px,
+    children: header
+  }
+
+  header = frame : ui.appHeaderRoutes {}
+
+  body = frame {
+    width: 100%,
+    layout: {
+      direction: .column,
+      align-items: .center,
+      item-gap: scale.space.x20
+    },
+    overflow: .visible,
+    padding: [120px, scale.space.x16, scale.space.x0],
+    children: [hero, stats, forecast, huts, checklist]
+  }
+
+  hero = frame {
+    width: 1200px,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [heroEyebrow, heroTitle, heroText, heroActions]
+  }
+
+  heroEyebrow = text : typography.eyebrow {
+    contents: "NIGHT ROUTE · FULL MOON ON SATURDAY",
+    fill[0].color: colors.palette.sun
+  }
+
+  heroTitle = text : typography.heroTitle {
+    contents: "HOLLIN TARN\nBY MOONLIGHT",
+    fill[0].color: colorsdark.darkTheme.heading
+  }
+
+  heroText = text {
+    width: 560px,
+    fill: colorsdark.darkTheme.text,
+    subrange: {range: [55, 75], underline: .single},
+    contents: "Leave at dusk, reach the tarn as the moon clears the ridge, and sleep at Ferncombe Hut. Head torches are required.",
+    font-size: 18,
+    font-family: "Inter",
+    font-style: "Medium",
+    line-height: 1.6
+  }
+
+  heroActions = frame {
+    layout: {align-items: .center, item-gap: scale.space.x4},
+    children: [bookBunk, saveRoute]
+  }
+
+  bookBunk = frame : ui.primaryButton {}
+
+  saveRoute = frame : ui.ghostButton {
+    label {
+      contents: "Save route",
+      fill[0].color: colorsdark.darkTheme.text
+    }
+  }
+
+  // Three statistics in a row, divided by translucent rules.
+  stats = frame {
+    width: 1200px,
+    layout: {direction: .row},
+    children: [distanceStat, ascentStat, timeStat]
+  }
+
+  distanceStat = frame : ui.statTile {
+    value {
+      contents: "9.8"
+    }
+
+    label {
+      contents: "KILOMETRES"
+    }
+  }
+
+  ascentStat = frame : ui.statTile {
+    border: {color: colorsdark.darkTheme.divider, width: 1px},
+    border[0].sides: [.left, .right],
+
+    value {
+      contents: "420"
+    }
+
+    label {
+      contents: "METRES OF ASCENT"
+    }
+  }
+
+  timeStat = frame : ui.statTile {
+    label {
+      contents: "HOURS, WITH STOPS"
+    }
+
+    value {
+      contents: "3.5"
+    }
+  }
+
+  // Tonight and the next four nights; Monday has a wind warning.
+  forecast = frame {
+    width: 1200px,
+    layout: {direction: .column, item-gap: scale.space.x4},
+    children: [forecastTitle, forecastStrip]
+  }
+
+  forecastTitle = text : typography.heading {
+    contents: "The next five nights"
+  }
+
+  forecastStrip = frame {
+    layout: {item-gap: scale.space.x3},
+    children: [nightSat, nightSun, nightMon, nightTue, nightWed]
+  }
+
+  nightSat = frame : ui.weatherChip {}
+
+  nightSun = frame : ui.weatherChip {
+    day {
+      contents: "Sun"
+    }
+
+    glyph {
+      fill[0].color: colors.weather.cloud
+    }
+
+    temperature {
+      contents: "9°"
+    }
+  }
+
+  @with-variant(ui.weatherChipWarning)
+  nightMon = frame : ui.weatherChip {
+    day {
+      contents: "Mon"
+    }
+  }
+
+  nightTue = frame : ui.weatherChip {
+    day {
+      contents: "Tue"
+    }
+
+    glyph {
+      fill[0].color: colors.weather.rain
+    }
+
+    temperature {
+      contents: "7°"
+    }
+  }
+
+  nightWed = frame : ui.weatherChip {
+    day {
+      contents: "Wed"
+    }
+
+    glyph {
+      fill[0].color: colors.weather.snow
+    }
+
+    temperature {
+      contents: "1°"
+    }
+  }
+
+  huts = frame {
+    width: 1200px,
+    layout: {direction: .column, item-gap: scale.space.x6},
+    children: [hutsTitle, hutCards]
+  }
+
+  hutsTitle = text : typography.heading {
+    contents: "Huts on the way"
+  }
+
+  hutCards = frame {
+    width: 100%,
+    layout: {item-gap: scale.space.x6},
+    children: [ferncombe, tarnside, gillHead]
+  }
+
+  ferncombe = frame : ui.trailCard {
+    details {
+      overrides: [
+        insert(ferncombeNote, after = ui.trailCard.badges),
+        remove(ui.trailCard.stats)
+      ],
+
+      name {
+        contents: "Ferncombe Hut"
+      }
+    }
+  }
+
+  ferncombeNote = text {
+    width: 100%,
+    fill: colorsdark.darkTheme.textMuted,
+    contents: "Sixteen bunks, warden on site, soup until four.",
+    font-size: 14,
+    font-family: "Inter",
+    font-style: "Medium",
+    line-height: 1.4
+  }
+
+  tarnside = frame : ui.trailCard {
+    details {
+      overrides: [
+        insert(tarnsideNote, after = .nil),
+        remove(ui.trailCard.badges),
+        remove(ui.trailCard.stats)
+      ],
+
+      name {
+        contents: "Tarnside Bothy"
+      }
+    }
+  }
+
+  tarnsideNote = text : typography.eyebrow {
+    contents: "OPEN BOTHY · NO BOOKING",
+    fill[0].color: colors.trail.easy
+  }
+
+  @with-variant(ui.trailCardHover)
+  gillHead = frame : ui.trailCard {
+    details {
+      overrides: [remove(ui.trailCard.badges)],
+
+      name {
+        contents: "Gill Head Lodge"
+      }
+
+      stats {
+        contents: "Valley lodge · 2.1 km off route"
+      }
+    }
+  }
+
+  // The checklist: odd cards lean left, even ones lean right, by 2 degrees
+  // around their centre.
+  checklist = frame {
+    width: 880px,
+    layout: {direction: .column, item-gap: scale.space.x4},
+    overflow: .visible,
+    children: [check1Row, check2Row, check3Row, check4Row]
+  }
+
+  check1Row = frame {
+    width: 100%,
+    layout: {justify-content: .end},
+    overflow: .visible,
+    children: check1
+  }
+
+  check1 = frame : ui.specimen {
+    transform: [0.9994, 0.0349, -4.1, -0.0349, 0.9994, 12.2],
+    fill[0].color: colorsdark.darkTheme.surface,
+
+    label {
+      contents: "01 · HEAD TORCH"
+    }
+
+    note {
+      contents: "A head torch with spare batteries, and a red mode so you keep your night vision."
+    }
+
+    stage {
+      overrides: [remove(ui.specimen.placeholder)]
+    }
+  }
+
+  check2Row = frame {
+    width: 100%,
+    layout: {direction: .row},
+    overflow: .visible,
+    children: check2
+  }
+
+  check2 = frame : ui.specimen {
+    transform: [0.9994, -0.0349, 5.2, 0.0349, 0.9994, -11.8],
+    fill[0].color: colorsdark.darkTheme.surface,
+
+    label {
+      contents: "02 · WARM LAYERS"
+    }
+
+    note {
+      contents: "It drops below five degrees by the tarn after midnight, even in July."
+    }
+
+    stage {
+      overrides: [remove(ui.specimen.placeholder)]
+    }
+  }
+
+  check3Row = frame {
+    width: 100%,
+    layout: {justify-content: .end},
+    overflow: .visible,
+    children: check3
+  }
+
+  check3 = frame : ui.specimen {
+    transform: [0.9994, 0.0349, -4.1, -0.0349, 0.9994, 12.2],
+    fill[0].color: colorsdark.darkTheme.surface,
+
+    label {
+      contents: "03 · OFFLINE MAP"
+    }
+
+    note {
+      contents: "There is no signal past the second stile. Download the map before you leave."
+    }
+
+    stage {
+      overrides: [
+        insert(offlineButton, after = .nil),
+        remove(ui.specimen.placeholder)
+      ]
+    }
+  }
+
+  offlineButton = frame : ui.ghostButton {
+    label {
+      contents: "Download map",
+      fill[0].color: colorsdark.darkTheme.text
+    }
+  }
+
+  check4Row = frame {
+    width: 100%,
+    layout: {direction: .row},
+    overflow: .visible,
+    children: check4
+  }
+
+  check4 = frame : ui.specimen {
+    transform: [0.9994, -0.0349, 5.2, 0.0349, 0.9994, -11.8],
+    fill[0].color: colorsdark.darkTheme.surface,
+
+    label {
+      contents: "04 · TELL SOMEONE"
+    }
+
+    note {
+      contents: "Share your route and the time you expect to be back. The app can send it for you."
+    }
+
+    stage {
+      overrides: [remove(ui.specimen.placeholder)]
+    }
+  }
+
+  footer = frame : ui.appFooter {
+    width: 100%
+  }
+}
