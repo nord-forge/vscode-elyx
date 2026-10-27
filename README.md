@@ -1,6 +1,7 @@
-# Elyx for VS Code and VSCodium
+# Elyx Language Support
 
-Highlights `.elyx` design files in VS Code and VSCodium.
+Highlights `.elyx` design files in VS Code and VSCodium, with colour swatches
+and visual hover cards for design tokens.
 
 Comments, strings and escapes, numbers, length units, hex colours, atoms,
 keywords, annotations, declarations, property keys, source types, override
