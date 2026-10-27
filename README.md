@@ -1,4 +1,4 @@
-# Elyx Language Support
+# Elyx Syntax and Previews
 
 Highlights `.elyx` design files in VS Code and VSCodium, with colour swatches
 and visual hover cards for design tokens.

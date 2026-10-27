@@ -1,6 +1,6 @@
 {
   "name": "elyx",
-  "displayName": "Elyx Language Support",
+  "displayName": "Elyx Syntax and Previews",
   "description": "Syntax highlighting, colour swatches and visual token hovers for Elyx design files.",
   "version": "0.4.0",
   "publisher": "nord-forge",
